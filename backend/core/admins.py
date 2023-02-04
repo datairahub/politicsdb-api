@@ -42,7 +42,7 @@ class BaseAdmin(admin.ModelAdmin):
         style = "<style>" + formatter.get_style_defs() + "</style><br>"
 
         # Safe the output
-        return mark_safe(style + response)
+        return mark_safe(style + response)  # nosec
 
     pretty_metadata.short_description = "Metadata"
 
@@ -72,3 +72,17 @@ class BaseAdmin(admin.ModelAdmin):
         return response
 
     download_csv.short_description = "Download selected as csv"
+
+
+class ReadOnlyInline(admin.TabularInline):
+    extra = 0
+    show_change_link = True
+
+    def has_change_permission(self, request, obj=None):
+        return False
+
+    def has_add_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False

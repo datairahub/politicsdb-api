@@ -14,12 +14,11 @@ class Person(BaseAbstracModel):
         ("M", "Male"),
         ("F", "Female"),
     )
-    full_name = models.CharField(max_length=250, db_index=True)
-    id_name = models.CharField(max_length=250, db_index=True, unique=True)
+    full_name = models.CharField(max_length=255, db_index=True)
+    id_name = models.CharField(max_length=255, db_index=True, unique=True)
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
     birth_date = models.DateField(null=True, blank=True)
-    # birth_date_source = models.ForeignKey('governors.BirthDateSource', null=True, blank=True, on_delete=models.PROTECT)
-    # birth_date_source_url = models.TextField(null=True, blank=True)
-    # birth_date_exact = models.BooleanField(default=False)
     genre = models.CharField(choices=GENRES, max_length=1, default=GENRES[0])
 
     def save(self, *args, **kwargs):

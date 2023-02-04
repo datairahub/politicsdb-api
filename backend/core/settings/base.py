@@ -12,6 +12,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "world",
     "persons",
+    "positions",
 ]
 
 MIDDLEWARE = [
