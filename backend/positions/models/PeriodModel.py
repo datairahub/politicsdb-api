@@ -5,7 +5,7 @@ from core.models import BaseAbstracModel
 
 class Period(BaseAbstracModel):
     """
-    Periodo en institución (legislatura...)
+    Periodo en una institución (legislatura X del Congreso...)
     """
 
     name = models.CharField(max_length=250, db_index=True)
@@ -16,7 +16,7 @@ class Period(BaseAbstracModel):
     end = models.DateField()
 
     def __str__(self):
-        return self.name
+        return f"{self.institution.name} - {self.name}"
 
     class Meta:
         unique_together = (

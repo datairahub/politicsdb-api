@@ -13,7 +13,7 @@ class BirthSource(BaseAbstracModel):
     Fuente (informativa) para la fecha de nacimiento
     """
 
-    person = models.ForeignKey("persons.Person", on_delete=models.CASCADE)
+    person = models.ForeignKey("people.Person", on_delete=models.CASCADE)
     name = models.CharField(max_length=255, db_index=True, null=False, blank=False)
     url = models.TextField(null=False, blank=False)
     is_exact = models.BooleanField(default=False)

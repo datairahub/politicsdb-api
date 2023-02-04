@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from urllib.parse import urlparse
 from django.db import migrations
-from persons.services.persons_id import person_id_from_name
-from persons.services.names import clean_spanish_name
+from people.services.people_id import people_id_from_name
+from people.services.names import clean_spanish_name
 
 # fmt: off
 DATA = [
@@ -262,14 +262,14 @@ DATA = [
 
 
 def apply_migration(apps, schema_editor):
-    Person = apps.get_model("persons", "Person")
-    BirthSource = apps.get_model("persons", "BirthSource")
+    Person = apps.get_model("people", "Person")
+    BirthSource = apps.get_model("people", "BirthSource")
 
     for row in DATA:
         full_name = clean_spanish_name(f"{row[0]} {row[1]}")
         person = Person(
             full_name=full_name,
-            id_name=person_id_from_name(full_name),
+            id_name=people_id_from_name(full_name),
             first_name=clean_spanish_name(row[0]),
             last_name=clean_spanish_name(row[1]),
             birth_date=row[3],
@@ -286,8 +286,8 @@ def apply_migration(apps, schema_editor):
 
 
 def revert_migration(apps, schema_editor):
-    Person = apps.get_model("persons", "Person")
-    BirthSource = apps.get_model("persons", "BirthSource")
+    Person = apps.get_model("people", "Person")
+    BirthSource = apps.get_model("people", "BirthSource")
     Person.objects.all().delete()
     BirthSource.objects.all().delete()
 
@@ -295,7 +295,7 @@ def revert_migration(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("persons", "0002_birthsource"),
+        ("people", "0001_initial"),
     ]
 
     operations = [

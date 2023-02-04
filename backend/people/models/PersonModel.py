@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 
-from persons.services.persons_id import person_id_from_name
+from people.services.people_id import people_id_from_name
 from core.models import BaseAbstracModel
 
 
@@ -22,7 +22,7 @@ class Person(BaseAbstracModel):
     genre = models.CharField(choices=GENRES, max_length=1, default=GENRES[0])
 
     def save(self, *args, **kwargs):
-        self.id_name = person_id_from_name(self.full_name)
+        self.id_name = people_id_from_name(self.full_name)
         super(Person, self).save(*args, **kwargs)
 
     def __str__(self):

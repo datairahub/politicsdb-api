@@ -15,7 +15,7 @@ def remove_double_whitespaces(text: str) -> str:
     return text.strip()
 
 
-def person_id_from_name(name: str) -> str:
+def people_id_from_name(name: str) -> str:
     """
     Transform person full name to snakecase to use as ID
 

@@ -1,13 +1,19 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from core.admins import BaseAdmin
-from positions.models import Period
+from core.admins import BaseAdmin, ReadOnlyInline
+from positions.models import Period, Position
+
+
+class PositionInline(ReadOnlyInline):
+    model = Position
+    fk_name = "period"
+    fields = ("full_name", "person")
 
 
 class PeriodAdmin(BaseAdmin):
     model = Period
     list_display = (
-        "name",
+        "__str__",
         "number",
         "code",
         "institution",
@@ -21,7 +27,7 @@ class PeriodAdmin(BaseAdmin):
         "start",
         "end",
     )
-    date_hierarchy = "start"
+    inlines = (PositionInline,)
 
 
 admin.site.register(Period, PeriodAdmin)

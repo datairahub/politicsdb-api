@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 from core.admins import BaseAdmin
-from persons.models import Person
+from people.models import Person
 
 
 class PersonAdmin(BaseAdmin):

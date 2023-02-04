@@ -56,7 +56,7 @@ def revert_migration(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("positions", "0003_period"),
+        ("positions", "0002_fill_spanish_institutions"),
     ]
 
     operations = [
