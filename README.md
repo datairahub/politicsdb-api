@@ -15,3 +15,9 @@ Update Spain legislators from `www.congreso.es`
 ```sh
 python backend/manage.py update_spain_legislators
 ```
+
+Update Spain senators from `www.senado.es`
+
+```sh
+python backend/manage.py update_spain_senators
+```
