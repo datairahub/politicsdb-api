@@ -25,21 +25,5 @@ class Person(BaseAbstracModel):
         self.id_name = person_id_from_name(self.full_name)
         super(Person, self).save(*args, **kwargs)
 
-    # def get_person_last_name(self):
-    #     if self.metadata.get('www.congreso.es', None):
-    #         last_name = None
-    #         for legislature_key in self.metadata.get('www.congreso.es'):
-    #             last_name = self.metadata['www.congreso.es'][legislature_key].get('apellidos', None)
-    #             if last_name:
-    #                 return last_name
-
-    #     elif self.metadata.get('www.senado.es'):
-    #         return self.metadata['www.senado.es'].get('apellidos', None)
-
-    #     elif self.metadata.get('manual_file'):
-    #         return self.metadata['manual_file'].get('last_name', None)
-
-    #     return None
-
     def __str__(self):
         return self.full_name
