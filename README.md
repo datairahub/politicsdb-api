@@ -16,6 +16,7 @@ Update Spain legislators from `www.congreso.es`
 
 ```sh
 python backend/manage.py update_spain_legislators
+python backend/manage.py update_birth_dates_from_congresoes
 ```
 
 Update Spain senators from `www.senado.es`
