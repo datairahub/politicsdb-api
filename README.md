@@ -39,7 +39,7 @@ Update people's birth date using local file
 python backend/manage.py update_birth_dates_from_file
 ```
 
-Update people's birth date using wikidata (wikipedia data archive)
+Update people's birth date using wikidata (project "WikiProject every politician")
 
 ```sh
 python backend/manage.py update_birth_dates_from_wikidata
