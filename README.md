@@ -40,3 +40,11 @@ Update people's genre based on their names
 ```sh
 python backend/manage.py update_genres
 ```
+
+### Update dates from indirect resources
+
+Update people's birth date using www.congreso.es historial archive
+
+```sh
+python backend/manage.py update_birth_dates_from_congresoes_historical
+```

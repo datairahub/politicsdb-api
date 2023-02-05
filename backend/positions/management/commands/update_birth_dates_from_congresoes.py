@@ -31,7 +31,6 @@ class Command(BaseCommand):
         logger.info("Done")
 
     def update_spain_legislators_from_congresoes(self):
-        # birth_date_source, _ = BirthDateSource.objects.get_or_create(name='www.congreso.es')
         for position in Position.objects.filter(
             period__institution__name="Parlamento de España",
             period__number__gte=7,  # conreso.es only has dates from legislature 7 onwards
