@@ -39,6 +39,12 @@ Update people's birth date using local file
 python backend/manage.py update_birth_dates_from_file
 ```
 
+Update people's birth date using wikidata (wikipedia data archive)
+
+```sh
+python backend/manage.py update_birth_dates_from_wikidata
+```
+
 ## Fix commands
 
 ### Fix duplicated people
