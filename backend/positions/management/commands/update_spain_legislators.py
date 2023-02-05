@@ -71,7 +71,7 @@ class Command(BaseCommand):
                         last_name=clean_spanish_name(member["apellidos"]),
                         id_name=people_id_from_name(full_name),
                         genre="M" if member["genero"] == 1 else "F",
-                        birth_date="1900-01-01",
+                        birth_date=None,
                     )
 
                 if not person.metadata.get("www.congreso.es", None):

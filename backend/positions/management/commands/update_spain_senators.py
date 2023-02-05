@@ -130,8 +130,8 @@ class Command(BaseCommand):
                     person=person,
                     short_name="Senador",
                     full_name=(f"Senador del {period.institution.name}, {period.name}"),
-                    start=date(1900, 1, 1),
-                    end=date(1900, 1, 1),
+                    start=date(1900, 1, 1),  # to be updated later
+                    end=date(1900, 1, 1),  # to be updated later
                     metadata={"www.senado.es": metadata},
                 )
                 position.save()

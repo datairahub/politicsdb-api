@@ -400,7 +400,7 @@ DATA = [  # city, start_date, end_date, birth_date, full_name, genre, birth_date
         "es_avi_avila",
         "1979-04-19",
         "1983-05-23",
-        "",
+        "1934-03-02",
         "Pedro García Burguillo",
         "M",
         False,

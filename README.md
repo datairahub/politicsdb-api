@@ -25,26 +25,34 @@ Update Spain senators from `www.senado.es`
 python backend/manage.py update_spain_senators
 ```
 
-### Fix duplicated people
-
-Remove duplicate persons (they are collected in different sources with different full names)
-
-```sh
-python backend/manage.py fix_duplicated_persons
-```
-
-### Update genres
-
-Update people's genre based on their names
-
-```sh
-python backend/manage.py update_genres
-```
-
-### Update dates from indirect resources
+### Update birth dates from indirect resources
 
 Update people's birth date using www.congreso.es historial archive
 
 ```sh
 python backend/manage.py update_birth_dates_from_congresoes_historical
+```
+
+Update people's birth date using local file
+
+```sh
+python backend/manage.py update_birth_dates_from_file
+```
+
+## Fix commands
+
+### Fix duplicated people
+
+Remove duplicate people (they are collected in different sources with different full names)
+
+```sh
+python backend/manage.py fix_duplicated_persons
+```
+
+### Fix genres
+
+Update people's genre based on their names
+
+```sh
+python backend/manage.py update_genres
 ```
