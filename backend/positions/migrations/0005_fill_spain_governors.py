@@ -520,7 +520,6 @@ def apply_migration(apps, schema_editor):
         position.save()
         PositionParty(
             position=position,
-            period=period,
             party=party,
             start=row[0],
             end=row[1],

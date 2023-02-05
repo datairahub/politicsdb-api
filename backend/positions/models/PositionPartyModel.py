@@ -9,13 +9,14 @@ class PositionParty(BaseAbstracModel):
     """
 
     position = models.ForeignKey(
-        "positions.Position", on_delete=models.CASCADE, related_name="positionparties"
-    )
-    period = models.ForeignKey(
-        "positions.Period", on_delete=models.PROTECT, related_name="positionparties"
+        "positions.Position",
+        on_delete=models.CASCADE,
+        related_name="positionparties",
     )
     party = models.ForeignKey(
-        "organizations.Party", on_delete=models.PROTECT, related_name="positionparties"
+        "organizations.Party",
+        on_delete=models.PROTECT,
+        related_name="positionparties",
     )
     start = models.DateField()
     end = models.DateField()
@@ -27,7 +28,6 @@ class PositionParty(BaseAbstracModel):
         unique_together = (
             (
                 "position",
-                "period",
                 "party",
             ),
         )

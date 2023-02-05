@@ -24,18 +24,18 @@ Update Spain senators from `www.senado.es`
 python backend/manage.py update_spain_senators
 ```
 
-### Update genres
-
-Update people's genre based on their names
-
-```sh
-python backend/manage.py update_genres
-```
-
 ### Fix duplicated people
 
 Remove duplicate persons (they are collected in different sources with different full names)
 
 ```sh
 python backend/manage.py fix_duplicated_persons
+```
+
+### Update genres
+
+Update people's genre based on their names
+
+```sh
+python backend/manage.py update_genres
 ```
