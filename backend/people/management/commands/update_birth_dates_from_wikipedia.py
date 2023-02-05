@@ -44,6 +44,7 @@ class Command(BaseCommand):
                     person=person,
                     url=url,
                     is_exact=is_exact,
+                    date=birth_date,
                 ).save()
 
             logger.info(f"{person} birth date updated")

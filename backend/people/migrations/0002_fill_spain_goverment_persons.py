@@ -281,6 +281,7 @@ def apply_migration(apps, schema_editor):
             name=urlparse(row[5]).netloc,
             url=row[5],
             is_exact=row[4],
+            date=row[3],
         )
         birthsource.save()
 

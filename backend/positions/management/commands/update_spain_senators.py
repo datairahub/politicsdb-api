@@ -263,6 +263,7 @@ class Command(BaseCommand):
                         birth_source = BirthSource(
                             person=position.person,
                             name=urlparse(url).netloc,
+                            date=birth_date,
                         )
                     birth_source.url = url
                     birth_source.is_exact = True

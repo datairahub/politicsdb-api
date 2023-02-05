@@ -31,9 +31,7 @@ class BirthSource(BaseAbstracModel):
     is_exact = models.BooleanField(
         default=False,
     )
-    date = models.DateField(
-        default=timezone.now,
-    )
+    date = models.DateField()
 
     def pre_save(self, *args, **kwargs):
         self.name = urlparse(self.url).netloc

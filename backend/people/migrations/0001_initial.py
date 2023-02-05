@@ -69,7 +69,7 @@ class Migration(migrations.Migration):
                 ("name", models.CharField(db_index=True, max_length=255)),
                 ("url", models.TextField()),
                 ("is_exact", models.BooleanField(default=False)),
-                ("date", models.DateField(default=django.utils.timezone.now)),
+                ("date", models.DateField()),
                 (
                     "person",
                     models.ForeignKey(

@@ -76,6 +76,7 @@ class Command(BaseCommand):
                         person=person,
                         url=row["source"],
                         is_exact=is_exact,
+                        date=birth_date,
                     ).save()
 
                 logger.info(f"{person} birth date updated")

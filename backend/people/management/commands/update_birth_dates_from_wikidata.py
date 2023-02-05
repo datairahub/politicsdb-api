@@ -95,6 +95,7 @@ class Command(BaseCommand):
                 person=person,
                 url=result["wikidata_table_url"],
                 is_exact=is_exact,
+                date=birth_date,
             ).save()
 
     def get_birth_dates_from_wikidata(self):

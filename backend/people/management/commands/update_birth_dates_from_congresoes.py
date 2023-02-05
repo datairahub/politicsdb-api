@@ -52,6 +52,7 @@ class Command(BaseCommand):
                     person=position.person,
                     url=url,
                     is_exact=True,
+                    date=birth_date,
                 ).save()
 
             logger.info(f"{position.person} birth date updated")

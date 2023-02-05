@@ -148,4 +148,5 @@ class Command(BaseCommand):
             ).exists():
                 # birth source not registered yet
                 old_birth_source.person = to_preserve
+                old_birth_source.date = to_preserve.birth_date
                 old_birth_source.save(update_fields=["person"])
