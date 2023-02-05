@@ -43,12 +43,13 @@ class Command(BaseCommand):
     ]
 
     def handle(self, *args, **options):
-        results = self.get_birth_dates_from_wikidata()
+        results = self.get_birth_dates_from_wikidata(args, options)
         for result in results.values():
-            self.update_birth_date(result)
-        logger.info("Done")
+            self.update_birth_date(result, args, options)
+        if options["verbosity"] >= 2:
+            logger.info("Done")
 
-    def update_birth_date(self, result):
+    def update_birth_date(self, result, *args, **options):
         if not result.get("fecha de nacimiento"):
             # birth date not found
             return
@@ -83,18 +84,21 @@ class Command(BaseCommand):
             # update person birth date if it's empty
             person.birth_date = birth_date
             person.save(update_fields=["birth_date"])
-            logger.info(f"{person} birth date updated")
+            if options["verbosity"] >= 2:
+                logger.info(f"{person} birth date updated")
 
         elif person.birth_date != birth_date and is_exact:
             # if previous date is set and its not the same, skip
-            logger.warn(
-                f"Different dates for {person}: {person.birth_date} -> {birth_date}"
-            )
+            if options["verbosity"] >= 1:
+                logger.warn(
+                    f"Different dates for {person}: {person.birth_date} -> {birth_date}"
+                )
 
-    def get_birth_dates_from_wikidata(self):
+    def get_birth_dates_from_wikidata(self, *args, **options):
         results = {}
         for url in self.source_urls:
-            logger.info(f"Collectiong data from {url}")
+            if options["verbosity"] >= 2:
+                logger.info(f"Collectiong data from {url}")
             response = request_page(url)
             time.sleep(self.sleep_time)
             soup = BeautifulSoup(response, "html.parser")

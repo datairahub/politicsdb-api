@@ -61,16 +61,18 @@ class Command(BaseCommand):
     sleep_time = 0.5
 
     def handle(self, *args, **options):
-        self.get_senators_from_web()
-        self.get_senators_data()
-        self.get_senators_dates()
-        logger.info("Done")
+        self.get_senators_from_web(args, options)
+        self.get_senators_data(args, options)
+        self.get_senators_dates(args, options)
+        if options["verbosity"] >= 2:
+            logger.info("Done")
 
-    def get_senators_from_web(self):
+    def get_senators_from_web(self, *args, **options):
         for period in Period.objects.filter(
             institution__name="Senado de España"
         ).order_by("-number"):
-            logger.info(f"Updating data from senate period {period.number}...")
+            if options["verbosity"] >= 2:
+                logger.info(f"Updating data from senate period {period.number}...")
             self.search_data["legis"] = str(period.number)
             response = request_page(self.search_url, self.search_data)
             soup = BeautifulSoup(response, "html.parser")
@@ -135,9 +137,10 @@ class Command(BaseCommand):
                     metadata={"www.senado.es": metadata},
                 )
                 position.save()
-                logger.info(f"{position} saved")
+                if options["verbosity"] >= 2:
+                    logger.info(f"{position} saved")
 
-    def get_senators_data(self):
+    def get_senators_data(self, *args, **options):
         fetched_persons_id = []
 
         for period in Period.objects.filter(
@@ -256,10 +259,10 @@ class Command(BaseCommand):
                     position.person.birth_date = birth_date
                     position.person.save(update_fields=["birth_date"])
                     register_birth_date_source(position.person, url, birth_date, True)
+                if options["verbosity"] >= 2:
+                    logger.info(f"{position} saved")
 
-                logger.info(f"{position} saved")
-
-    def get_senators_dates(self):
+    def get_senators_dates(self, *args, **options):
         last_period = (
             Period.objects.filter(institution__name="Senado de España")
             .order_by("number")
@@ -267,7 +270,7 @@ class Command(BaseCommand):
         )
 
         for position in Position.objects.filter(start__lt=date(1900, 1, 2)):
-            if self._is_dates_special_case(position):
+            if self._is_dates_special_case(position, options):
                 continue
             url = position.metadata["www.senado.es"]["link"] + "&id2=g"
             response = request_page(url).decode("utf-8")
@@ -290,9 +293,10 @@ class Command(BaseCommand):
                 position.end = datetime.strptime(search, "%d/%m/%Y").date()
 
             position.save(update_fields=["end", "start"])
-            logger.info(f"{position} saved")
+            if options["verbosity"] >= 2:
+                logger.info(f"{position} saved")
 
-    def _is_dates_special_case(self, position):
+    def _is_dates_special_case(self, position, options):
         """
         Special cases that the shitty senado.es does not handle
         """
@@ -303,7 +307,8 @@ class Command(BaseCommand):
             position.start = date(2019, 5, 21)
             position.end = date(2019, 9, 24)
             position.save(update_fields=["end", "start"])
-            logger.info(f"{position} saved")
+            if options["verbosity"] >= 2:
+                logger.info(f"{position} saved")
             return True
 
         if (
@@ -313,7 +318,8 @@ class Command(BaseCommand):
             position.start = date(2000, 3, 12)
             position.end = date(2004, 2, 11)
             position.save(update_fields=["end", "start"])
-            logger.info(f"{position} saved")
+            if options["verbosity"] >= 2:
+                logger.info(f"{position} saved")
             return True
 
         if (
@@ -323,7 +329,8 @@ class Command(BaseCommand):
             position.start = date(1993, 6, 29)
             position.end = date(1996, 1, 9)
             position.save(update_fields=["end", "start"])
-            logger.info(f"{position} saved")
+            if options["verbosity"] >= 2:
+                logger.info(f"{position} saved")
             return True
 
         if (
@@ -333,7 +340,8 @@ class Command(BaseCommand):
             position.start = date(1986, 6, 22)
             position.end = date(1986, 6, 22)
             position.save(update_fields=["end", "start"])
-            logger.info(f"{position} saved")
+            if options["verbosity"] >= 2:
+                logger.info(f"{position} saved")
             return True
 
         return False

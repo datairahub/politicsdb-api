@@ -120,9 +120,11 @@ class Command(BaseCommand):
                 self.update_positions(to_preserve, to_remove)
                 self.update_birth_sources(to_preserve, to_remove)
                 to_remove.delete()
-                logger.info(f"{to_remove} -> {to_preserve} fixed")
+                if options["verbosity"] >= 2:
+                    logger.info(f"{to_remove} -> {to_preserve} fixed")
 
-        logger.info("Done")
+        if options["verbosity"] >= 2:
+            logger.info("Done")
 
     def update_new_field(self, to_preserve, to_remove, field):
         """

@@ -1,6 +1,15 @@
 # PoliticsDB API
 
-## Update commands
+## Commands
+
+All commands admits verbosity level with `-v` or `--verbosity` flags:
+
+```
+0 - ERROR -> Only ERROR level
+1 - WARN  -> WARN and ERROR levels
+2 - INFO  -> INFO, WARN and ERROR levels
+3 - DEBUG -> DEBUG, INFO, WARN and ERROR levels
+```
 
 ### Update spain parties
 

@@ -54,7 +54,8 @@ class Command(BaseCommand):
         spain_congress = Institution.objects.get(name="Parlamento de España")
 
         for period in Period.objects.filter(institution=spain_congress):
-            logger.info(f"Getting legislators from {period.name}...")
+            if options["verbosity"] >= 2:
+                logger.info(f"Getting legislators from {period.name}...")
 
             for member in self.get_legislature_members(period.number):
                 # Person
@@ -81,7 +82,8 @@ class Command(BaseCommand):
                 ] = member
 
                 person.save()
-                logger.info(f"{person} saved")
+                if options["verbosity"] >= 2:
+                    logger.info(f"{person} saved")
 
                 # Position
                 position = Position.objects.filter(period=period, person=person).first()
@@ -101,9 +103,11 @@ class Command(BaseCommand):
 
                 position.metadata["www.congreso.es"] = member
                 position.save()
-                logger.info(f"{position} saved")
+                if options["verbosity"] >= 2:
+                    logger.info(f"{position} saved")
 
-        logger.info("Done")
+        if options["verbosity"] >= 2:
+            logger.info("Done")
 
     def get_custom_fix_full_name(self, name):
         names = {

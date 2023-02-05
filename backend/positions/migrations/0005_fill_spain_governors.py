@@ -503,7 +503,7 @@ def apply_migration(apps, schema_editor):
     Party = apps.get_model("organizations", "Party")
     spain = apps.get_model("world", "Adm0").objects.get(code="es")
 
-    call_command("update_parties")
+    call_command("update_parties", verbosity=1)
 
     for row in DATA:
         person = Person.objects.get(full_name=row[4])

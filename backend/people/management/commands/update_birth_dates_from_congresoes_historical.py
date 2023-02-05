@@ -32,10 +32,11 @@ class Command(BaseCommand):
     }
 
     def handle(self, *args, **options):
-        self.update_birth_dates_from_congresoes_historical()
-        logger.info("Done")
+        self.update_birth_dates_from_congresoes_historical(args, options)
+        if options["verbosity"] >= 2:
+            logger.info("Done")
 
-    def update_birth_dates_from_congresoes_historical(self):
+    def update_birth_dates_from_congresoes_historical(self, *args, **options):
         names = self.get_historical_legislators_names()
 
         for person in Person.objects.filter(birth_date=None):
@@ -60,7 +61,8 @@ class Command(BaseCommand):
                 person.birth_date = birth_date
                 person.save(update_fields=["birth_date"])
                 register_birth_date_source(person, url, birth_date, True)
-                logger.info(f"{person} birth date updated")
+                if options["verbosity"] >= 2:
+                    logger.info(f"{person} birth date updated")
                 break
 
     def get_birth_date_from_detail_page(self, page):

@@ -40,4 +40,5 @@ class Command(BaseCommand):
                     party.color = row["color"]
                     party.save()
 
-        logger.info(f"Parties update done")
+        if options["verbosity"] >= 2:
+            logger.info(f"Parties update done")

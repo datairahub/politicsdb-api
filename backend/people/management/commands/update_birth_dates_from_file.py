@@ -18,9 +18,9 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         for filename in self.get_data_files():
-            self.update_birth_dates_from_file(filename)
-
-        logger.info("Done")
+            self.update_birth_dates_from_file(filename, args, options)
+        if options["verbosity"] >= 2:
+            logger.info("Done")
 
     def get_data_files(self):
         return [
@@ -29,7 +29,7 @@ class Command(BaseCommand):
             if str(file).endswith(".csv")
         ]
 
-    def update_birth_dates_from_file(self, filename):
+    def update_birth_dates_from_file(self, filename, *args, **options):
         with open(self.data_folder / filename, "r") as f:
             csv_reader = csv.DictReader(f, delimiter=",")
             for row in csv_reader:
@@ -41,9 +41,10 @@ class Command(BaseCommand):
                 try:
                     person = Person.objects.get(full_name=full_name)
                 except Exception as e:
-                    logger.warn(
-                        f"Name not found from local birth data file {filename}: {full_name}"
-                    )
+                    if options["verbosity"] >= 1:
+                        logger.warn(
+                            f"Name not found from local birth data file {filename}: {full_name}"
+                        )
                     continue
 
                 if not person.metadata.get(filename):
@@ -62,14 +63,16 @@ class Command(BaseCommand):
 
                 if person.birth_date and person.birth_date != birth_date and is_exact:
                     # if previous date is set and its not the same, skip
-                    logger.warn(
-                        f"Different dates for {person}: {person.birth_date} -> {birth_date}"
-                    )
+                    if options["verbosity"] >= 1:
+                        logger.warn(
+                            f"Different dates for {person}: {person.birth_date} -> {birth_date}"
+                        )
                     continue
 
                 person.birth_date = birth_date
                 person.save(update_fields=["birth_date"])
-                logger.info(f"{person} birth date updated")
+                if options["verbosity"] >= 2:
+                    logger.info(f"{person} birth date updated")
 
     def get_birth_date_from_row(self, row: dict) -> tuple:
 

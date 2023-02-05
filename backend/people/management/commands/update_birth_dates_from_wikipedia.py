@@ -17,10 +17,11 @@ class Command(BaseCommand):
     help = "Update birth dates using wikipedia"
 
     def handle(self, *args, **options):
-        self.update_birth_dates_from_wikipedia()
-        logger.info("Done")
+        self.update_birth_dates_from_wikipedia(args, options)
+        if options["verbosity"] >= 2:
+            logger.info("Done")
 
-    def update_birth_dates_from_wikipedia(self):
+    def update_birth_dates_from_wikipedia(self, *args, **options):
         for person in Person.objects.filter(birth_date=None):
             # Update birth dates using es.wikipedia.org
             birth_date, is_exact, url = self.get_birth_date_from_spanish_wikipedia(
@@ -39,7 +40,8 @@ class Command(BaseCommand):
             person.birth_date = birth_date
             person.save(update_fields=["birth_date"])
             register_birth_date_source(person, url, birth_date, is_exact)
-            logger.info(f"{person} birth date updated")
+            if options["verbosity"] >= 2:
+                logger.info(f"{person} birth date updated")
 
     def get_birth_date_from_spanish_wikipedia(self, person):
         site = pywikibot.Site("es", "wikipedia")

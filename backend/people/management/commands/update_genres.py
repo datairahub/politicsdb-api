@@ -22,15 +22,17 @@ class Command(BaseCommand):
         self.names = self.get_genre_names_from_files()
 
         for adm0 in Adm0.objects.all():
-            logger.info(f"Updating names for country {adm0.name}...")
+            if options["verbosity"] >= 2:
+                logger.info(f"Updating names for country {adm0.name}...")
             for person in Person.objects.filter(
                 positions__period__institution__adm0=adm0
             ).distinct():
-                self.update_person_genre(person, adm0.code)
+                self.update_person_genre(person, adm0.code, args, options)
 
-        logger.info("Done")
+        if options["verbosity"] >= 2:
+            logger.info("Done")
 
-    def update_person_genre(self, person, country_code):
+    def update_person_genre(self, person, country_code, *args, **options):
         first_name = person.full_name.split(" ")[0].lower()
 
         if first_name in self.names[country_code]["female"]:
@@ -41,7 +43,8 @@ class Command(BaseCommand):
             raise Exception(f'Genre for "{first_name}" not found ({person.full_name})')
 
         person.save(update_fields=["genre"])
-        logger.info(f"{person} genre updated ({person.genre})")
+        if options["verbosity"] >= 2:
+            logger.info(f"{person} genre updated ({person.genre})")
 
     def get_genre_names_from_files(self):
         country_names = {}
