@@ -27,7 +27,7 @@ class Command(BaseCommand):
             for person in Person.objects.filter(
                 positions__period__institution__adm0=adm0
             ).distinct():
-                self.update_person_genre(person, adm0.code, args, options)
+                self.update_person_genre(person, adm0.code, *args, **options)
 
         if options["verbosity"] >= 2:
             logger.info("Done")

@@ -43,9 +43,9 @@ class Command(BaseCommand):
     ]
 
     def handle(self, *args, **options):
-        results = self.get_birth_dates_from_wikidata(args, options)
+        results = self.get_birth_dates_from_wikidata(*args, **options)
         for result in results.values():
-            self.update_birth_date(result, args, options)
+            self.update_birth_date(result, *args, **options)
         if options["verbosity"] >= 2:
             logger.info("Done")
 

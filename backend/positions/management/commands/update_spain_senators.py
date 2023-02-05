@@ -61,9 +61,9 @@ class Command(BaseCommand):
     sleep_time = 0.5
 
     def handle(self, *args, **options):
-        self.get_senators_from_web(args, options)
-        self.get_senators_data(args, options)
-        self.get_senators_dates(args, options)
+        self.get_senators_from_web(*args, **options)
+        self.get_senators_data(*args, **options)
+        self.get_senators_dates(*args, **options)
         if options["verbosity"] >= 2:
             logger.info("Done")
 
@@ -270,7 +270,7 @@ class Command(BaseCommand):
         )
 
         for position in Position.objects.filter(start__lt=date(1900, 1, 2)):
-            if self._is_dates_special_case(position, options):
+            if self._is_dates_special_case(position, *args, **options):
                 continue
             url = position.metadata["www.senado.es"]["link"] + "&id2=g"
             response = request_page(url).decode("utf-8")
@@ -296,7 +296,7 @@ class Command(BaseCommand):
             if options["verbosity"] >= 2:
                 logger.info(f"{position} saved")
 
-    def _is_dates_special_case(self, position, options):
+    def _is_dates_special_case(self, position, *args, **options):
         """
         Special cases that the shitty senado.es does not handle
         """

@@ -17,7 +17,7 @@ class Command(BaseCommand):
     help = "Update birth dates using wikipedia"
 
     def handle(self, *args, **options):
-        self.update_birth_dates_from_wikipedia(args, options)
+        self.update_birth_dates_from_wikipedia(*args, **options)
         if options["verbosity"] >= 2:
             logger.info("Done")
 

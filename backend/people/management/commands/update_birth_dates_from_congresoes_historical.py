@@ -32,7 +32,7 @@ class Command(BaseCommand):
     }
 
     def handle(self, *args, **options):
-        self.update_birth_dates_from_congresoes_historical(args, options)
+        self.update_birth_dates_from_congresoes_historical(*args, **options)
         if options["verbosity"] >= 2:
             logger.info("Done")
 

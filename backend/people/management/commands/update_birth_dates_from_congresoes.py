@@ -27,28 +27,30 @@ class Command(BaseCommand):
     }
 
     def handle(self, *args, **options):
-        self.update_spain_legislators_from_congresoes(args, options)
+        print(options)
+        self.update_spain_legislators_from_congresoes(*args, **options)
         if options["verbosity"] >= 2:
             logger.info("Done")
 
     def update_spain_legislators_from_congresoes(self, *args, **options):
-        for position in Position.objects.filter(
-            period__institution__name="Parlamento de España",
-            period__number__gte=7,  # conreso.es only has dates from legislature 7 onwards
-        ):
-            if not position.metadata.get("www.congreso.es"):
-                continue
+        print(options)
+        # for position in Position.objects.filter(
+        #     period__institution__name="Parlamento de España",
+        #     period__number__gte=7,  # conreso.es only has dates from legislature 7 onwards
+        # ):
+        #     if not position.metadata.get("www.congreso.es"):
+        #         continue
 
-            time.sleep(self.sleep_time)
-            birth_date, url = self.get_spain_legislators_date(position)
-            if not birth_date:
-                continue
+        #     time.sleep(self.sleep_time)
+        #     birth_date, url = self.get_spain_legislators_date(position)
+        #     if not birth_date:
+        #         continue
 
-            position.person.birth_date = birth_date
-            position.person.save(update_fields=["birth_date"])
-            register_birth_date_source(position.person, url, birth_date, True)
-            if options["verbosity"] >= 2:
-                logger.info(f"{position.person} birth date updated")
+        #     position.person.birth_date = birth_date
+        #     position.person.save(update_fields=["birth_date"])
+        #     register_birth_date_source(position.person, url, birth_date, True)
+        #     if options["verbosity"] >= 2:
+        #         logger.info(f"{position.person} birth date updated")
 
     def get_spain_legislators_date(self, position):
         codParlamentario = position.metadata["www.congreso.es"]["codParlamentario"]
