@@ -11,11 +11,11 @@ from django.core.management.base import BaseCommand
 
 from people.services.people_id import people_id_from_name
 from people.services.names import clean_spanish_name
+from people.services.birth_dates import register_birth_date_source
 from core.services.requests import request_page
 
 from people.models import (
     Person,
-    BirthSource,
 )
 from positions.models import (
     Period,
@@ -255,18 +255,7 @@ class Command(BaseCommand):
                     birth_date = datetime.strptime(birth_date_str, "%d/%m/%Y").date()
                     position.person.birth_date = birth_date
                     position.person.save(update_fields=["birth_date"])
-                    birth_source = BirthSource.objects.filter(
-                        person=position.person,
-                        name=urlparse(url).netloc,
-                    ).first()
-                    if not birth_source:
-                        birth_source = BirthSource(
-                            person=position.person,
-                            name=urlparse(url).netloc,
-                            date=birth_date,
-                        )
-                    birth_source.url = url
-                    birth_source.is_exact = True
+                    register_birth_date_source(position.person, url, birth_date, True)
 
                 logger.info(f"{position} saved")
 

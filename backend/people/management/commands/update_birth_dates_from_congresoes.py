@@ -5,8 +5,8 @@ import logging
 from datetime import datetime
 from django.core.management.base import BaseCommand
 from core.services.requests import request_page
+from people.services.birth_dates import register_birth_date_source
 from positions.models import Position
-from people.models import BirthSource
 
 logger = logging.getLogger("commands")
 
@@ -45,16 +45,7 @@ class Command(BaseCommand):
 
             position.person.birth_date = birth_date
             position.person.save(update_fields=["birth_date"])
-
-            if not BirthSource.objects.filter(person=position.person, url=url).exists():
-                # birth source not registered yet
-                BirthSource(
-                    person=position.person,
-                    url=url,
-                    is_exact=True,
-                    date=birth_date,
-                ).save()
-
+            register_birth_date_source(position.person, url, birth_date, True)
             logger.info(f"{position.person} birth date updated")
 
     def get_spain_legislators_date(self, position):

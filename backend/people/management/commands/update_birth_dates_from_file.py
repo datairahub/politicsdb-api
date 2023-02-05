@@ -3,11 +3,11 @@ import os
 import csv
 import logging
 from datetime import datetime
-from urllib.parse import urlparse
 from django.conf import settings
 from django.core.management.base import BaseCommand
 
-from people.models import Person, BirthSource
+from people.models import Person
+from people.services.birth_dates import register_birth_date_source
 
 logger = logging.getLogger("commands")
 
@@ -58,6 +58,8 @@ class Command(BaseCommand):
                     # Skip if current date and the new one it's the same
                     continue
 
+                register_birth_date_source(person, row["source"], birth_date, is_exact)
+
                 if person.birth_date and person.birth_date != birth_date and is_exact:
                     # if previous date is set and its not the same, skip
                     logger.warn(
@@ -65,20 +67,8 @@ class Command(BaseCommand):
                     )
                     continue
 
-                # update person birth date
                 person.birth_date = birth_date
                 person.save(update_fields=["birth_date"])
-
-                domain = urlparse(row["source"]).netloc
-                if not BirthSource.objects.filter(person=person, name=domain).exists():
-                    # birth source not registered yet
-                    BirthSource(
-                        person=person,
-                        url=row["source"],
-                        is_exact=is_exact,
-                        date=birth_date,
-                    ).save()
-
                 logger.info(f"{person} birth date updated")
 
     def get_birth_date_from_row(self, row: dict) -> tuple:

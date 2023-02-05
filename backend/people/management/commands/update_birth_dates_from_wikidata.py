@@ -8,8 +8,9 @@ from django.core.management.base import BaseCommand
 from core.services.requests import request_page
 from people.services.people_id import people_id_from_name
 from people.services.names import clean_spanish_name
+from people.services.birth_dates import register_birth_date_source
 
-from people.models import Person, BirthSource
+from people.models import Person
 
 logger = logging.getLogger("commands")
 
@@ -74,6 +75,10 @@ class Command(BaseCommand):
         if not birth_date:
             return
 
+        register_birth_date_source(
+            person, result["wikidata_table_url"], birth_date, is_exact
+        )
+
         if not person.birth_date:
             # update person birth date if it's empty
             person.birth_date = birth_date
@@ -85,18 +90,6 @@ class Command(BaseCommand):
             logger.warn(
                 f"Different dates for {person}: {person.birth_date} -> {birth_date}"
             )
-            return
-
-        if not BirthSource.objects.filter(
-            person=person, url=result["wikidata_table_url"]
-        ).exists():
-            # birth source not registered yet
-            BirthSource(
-                person=person,
-                url=result["wikidata_table_url"],
-                is_exact=is_exact,
-                date=birth_date,
-            ).save()
 
     def get_birth_dates_from_wikidata(self):
         results = {}

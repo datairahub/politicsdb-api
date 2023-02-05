@@ -7,7 +7,8 @@ from django.conf import settings
 sys.path.append(str(settings.BASE_DIR.parent))
 from wikipedia import SpanishWikiParser, GalicianWikiParser
 from django.core.management.base import BaseCommand
-from people.models import Person, BirthSource
+from people.services.birth_dates import register_birth_date_source
+from people.models import Person
 
 logger = logging.getLogger("commands")
 
@@ -37,16 +38,7 @@ class Command(BaseCommand):
 
             person.birth_date = birth_date
             person.save(update_fields=["birth_date"])
-
-            if not BirthSource.objects.filter(person=person, url=url).exists():
-                # birth source not registered yet
-                BirthSource(
-                    person=person,
-                    url=url,
-                    is_exact=is_exact,
-                    date=birth_date,
-                ).save()
-
+            register_birth_date_source(person, url, birth_date, is_exact)
             logger.info(f"{person} birth date updated")
 
     def get_birth_date_from_spanish_wikipedia(self, person):

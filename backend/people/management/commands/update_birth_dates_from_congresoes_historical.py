@@ -5,13 +5,13 @@ import string
 import logging
 from bs4 import BeautifulSoup
 from datetime import datetime
-from urllib.parse import urlparse
 from django.core.management.base import BaseCommand
 
 from core.services.requests import request_page
 from people.services.people_id import people_id_from_name
 from people.services.names import clean_spanish_name
-from people.models import Person, BirthSource
+from people.services.birth_dates import register_birth_date_source
+from people.models import Person
 
 logger = logging.getLogger("commands")
 
@@ -59,18 +59,7 @@ class Command(BaseCommand):
                 # save person birth date
                 person.birth_date = birth_date
                 person.save(update_fields=["birth_date"])
-
-                # save birth date source
-                domain = urlparse(url).netloc
-                if not BirthSource.objects.filter(person=person, name=domain).exists():
-                    # birth source not registered yet
-                    BirthSource(
-                        person=person,
-                        url=url,
-                        is_exact=True,
-                        date=birth_date,
-                    ).save()
-
+                register_birth_date_source(person, url, birth_date, True)
                 logger.info(f"{person} birth date updated")
                 break
 
