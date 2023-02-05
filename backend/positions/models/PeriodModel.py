@@ -8,10 +8,20 @@ class Period(BaseAbstracModel):
     Periodo en una institución (legislatura X del Congreso...)
     """
 
-    name = models.CharField(max_length=250, db_index=True)
+    name = models.CharField(
+        max_length=250,
+        db_index=True,
+    )
     number = models.IntegerField()
-    code = models.CharField(max_length=250, db_index=True)
-    institution = models.ForeignKey("positions.Institution", on_delete=models.PROTECT)
+    code = models.CharField(
+        max_length=250,
+        db_index=True,
+    )
+    institution = models.ForeignKey(
+        "positions.Institution",
+        on_delete=models.PROTECT,
+        related_name="periods",
+    )
     start = models.DateField()
     end = models.DateField()
 

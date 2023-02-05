@@ -8,9 +8,19 @@ class Adm0(BaseAbstracModel):
     Country
     """
 
-    name = models.CharField(max_length=100, db_index=True)
-    iso_name = models.CharField(max_length=100, db_index=True)
-    code = models.CharField(max_length=2, db_index=True, unique=True)
+    name = models.CharField(
+        max_length=100,
+        db_index=True,
+    )
+    iso_name = models.CharField(
+        max_length=100,
+        db_index=True,
+    )
+    code = models.CharField(
+        max_length=2,
+        db_index=True,
+        unique=True,
+    )
 
     def __str__(self):
         return f"{self.name} ({self.iso_name})"

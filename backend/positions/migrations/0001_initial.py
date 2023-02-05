@@ -39,6 +39,7 @@ class Migration(migrations.Migration):
                     models.ForeignKey(
                         null=True,
                         on_delete=django.db.models.deletion.PROTECT,
+                        related_name="institutions",
                         to="world.adm0",
                     ),
                 ),
@@ -47,6 +48,7 @@ class Migration(migrations.Migration):
                     models.ForeignKey(
                         null=True,
                         on_delete=django.db.models.deletion.PROTECT,
+                        related_name="institutions",
                         to="world.adm1",
                     ),
                 ),
@@ -55,6 +57,7 @@ class Migration(migrations.Migration):
                     models.ForeignKey(
                         null=True,
                         on_delete=django.db.models.deletion.PROTECT,
+                        related_name="institutions",
                         to="world.adm2",
                     ),
                 ),
@@ -63,6 +66,7 @@ class Migration(migrations.Migration):
                     models.ForeignKey(
                         null=True,
                         on_delete=django.db.models.deletion.PROTECT,
+                        related_name="institutions",
                         to="world.adm3",
                     ),
                 ),
@@ -71,6 +75,7 @@ class Migration(migrations.Migration):
                     models.ForeignKey(
                         null=True,
                         on_delete=django.db.models.deletion.PROTECT,
+                        related_name="institutions",
                         to="world.adm4",
                     ),
                 ),
@@ -103,6 +108,7 @@ class Migration(migrations.Migration):
                     "institution",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
+                        related_name="periods",
                         to="positions.institution",
                     ),
                 ),
@@ -138,13 +144,16 @@ class Migration(migrations.Migration):
                     "period",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
+                        related_name="positions",
                         to="positions.period",
                     ),
                 ),
                 (
                     "person",
                     models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="people.person"
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="positions",
+                        to="people.person",
                     ),
                 ),
             ],
@@ -173,6 +182,7 @@ class Migration(migrations.Migration):
                     "party",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
+                        related_name="positionparties",
                         to="organizations.party",
                     ),
                 ),
@@ -180,6 +190,7 @@ class Migration(migrations.Migration):
                     "period",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
+                        related_name="positionparties",
                         to="positions.period",
                     ),
                 ),
@@ -187,6 +198,7 @@ class Migration(migrations.Migration):
                     "position",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
+                        related_name="positionparties",
                         to="positions.position",
                     ),
                 ),

@@ -8,10 +8,20 @@ class Adm1(BaseAbstracModel):
     Autonomous Community
     """
 
-    name = models.CharField(max_length=100, db_index=True)
-    code = models.CharField(max_length=6, db_index=True, unique=True)  # es_and
+    name = models.CharField(
+        max_length=100,
+        db_index=True,
+    )
+    code = models.CharField(
+        max_length=6,
+        db_index=True,
+        unique=True,
+    )  # es_and
     adm0 = models.ForeignKey(
-        "world.Adm0", null=False, on_delete=models.PROTECT, related_name="adm1"
+        "world.Adm0",
+        null=False,
+        on_delete=models.PROTECT,
+        related_name="adm1",
     )
 
     def __str__(self):

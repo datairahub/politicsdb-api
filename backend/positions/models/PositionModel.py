@@ -8,10 +8,20 @@ class Position(BaseAbstracModel):
     Cargo en institución (parlamentario, senador...)
     """
 
-    short_name = models.CharField(max_length=255)
+    short_name = models.CharField(
+        max_length=255,
+    )
     full_name = models.TextField()
-    person = models.ForeignKey("people.Person", on_delete=models.CASCADE)
-    period = models.ForeignKey("positions.Period", on_delete=models.PROTECT)
+    person = models.ForeignKey(
+        "people.Person",
+        on_delete=models.CASCADE,
+        related_name="positions",
+    )
+    period = models.ForeignKey(
+        "positions.Period",
+        on_delete=models.PROTECT,
+        related_name="positions",
+    )
     start = models.DateField()
     end = models.DateField()
 
