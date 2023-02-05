@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 import re
+import time
 import logging
-from datetime import datetime
 from bs4 import BeautifulSoup
+from unidecode import unidecode
 from urllib.parse import urlparse
 from urllib.error import HTTPError
-from datetime import date
+from datetime import date, datetime
 from django.core.management.base import BaseCommand
 
 from people.services.people_id import people_id_from_name
@@ -26,8 +27,7 @@ logger = logging.getLogger("commands")
 
 class Command(BaseCommand):
     """
-    Obtener miembros del senado de España desde el índice de
-    la página del senado.
+    Obtener miembros del senado de España desde la página del senado.
 
     get_senators_from_web() obtiene los siguientes datos:
         - Nombre completo
@@ -44,6 +44,11 @@ class Command(BaseCommand):
         - Fecha de fallecimiento
         - Biografías
         - Legislaturas en el senado
+
+    get_senators_dates() obtiene información sobre los mandatos de los
+    senadores (solo última legislatura). Datos:
+        - Fecha de alta
+        - Fecha de baja
     """
 
     help = "Update Spain senators"
@@ -53,10 +58,12 @@ class Command(BaseCommand):
         "order": "A",
         "boton_obtener_listado": "OBTENER LISTADO",
     }
+    sleep_time = 0.5
 
     def handle(self, *args, **options):
-        # self.get_senators_from_web()
+        self.get_senators_from_web()
         self.get_senators_data()
+        self.get_senators_dates()
         logger.info("Done")
 
     def get_senators_from_web(self):
@@ -130,9 +137,8 @@ class Command(BaseCommand):
                 position.save()
                 logger.info(f"{position} saved")
 
-    def get_senators_data(self, *args, **options):
+    def get_senators_data(self):
         fetched_persons_id = []
-        # senadoes, created = BirthSource.objects.get_or_create(name='www.senado.es')
 
         for period in Period.objects.filter(
             institution__name="Senado de España"
@@ -242,9 +248,7 @@ class Command(BaseCommand):
                 fetched_persons_id.append(position.person.id)
 
                 # Save person birth date
-                if position.person.metadata["www.senado.es"].get(
-                    "fechanacimiento", None
-                ):
+                if position.person.metadata["www.senado.es"].get("fechanacimiento"):
                     birth_date_str = position.person.metadata["www.senado.es"][
                         "fechanacimiento"
                     ]
@@ -264,3 +268,82 @@ class Command(BaseCommand):
                     birth_source.is_exact = True
 
                 logger.info(f"{position} saved")
+
+    def get_senators_dates(self):
+        last_period = (
+            Period.objects.filter(institution__name="Senado de España")
+            .order_by("number")
+            .last()
+        )
+
+        for position in Position.objects.filter(start__lt=date(1900, 1, 2)):
+            if self._is_dates_special_case(position):
+                continue
+            url = position.metadata["www.senado.es"]["link"] + "&id2=g"
+            response = request_page(url).decode("utf-8")
+            time.sleep(self.sleep_time)
+            soup = BeautifulSoup(response, "html.parser")
+
+            # Fecha alta y fecha baja
+            info = soup.select(".caja5-4")[0]
+            info_text = unidecode(info.text.lower())
+            search = re.search(r"fecha: (\d{2}/\d{2}/\d{4})", info_text)
+            search = search.group(1)
+            position.start = datetime.strptime(search, "%d/%m/%Y").date()
+
+            if position.period == last_period:
+                # legislatura actual
+                position.end = date(2999, 12, 31)
+            else:
+                search = re.search(r"baja \((.+?): (\d{2}/\d{2}/\d{4})", info_text)
+                search = search.group(2)
+                position.end = datetime.strptime(search, "%d/%m/%Y").date()
+
+            position.save(update_fields=["end", "start"])
+            logger.info(f"{position} saved")
+
+    def _is_dates_special_case(self, position):
+        """
+        Special cases that the shitty senado.es does not handle
+        """
+        if (
+            position.person.id_name == "jose_montilla_aguilera"
+            and position.period.number == 13
+        ):
+            position.start = date(2019, 5, 21)
+            position.end = date(2019, 9, 24)
+            position.save(update_fields=["end", "start"])
+            logger.info(f"{position} saved")
+            return True
+
+        if (
+            position.person.id_name == "arseni_gibert_bosch"
+            and position.period.number == 7
+        ):
+            position.start = date(2000, 3, 12)
+            position.end = date(2004, 2, 11)
+            position.save(update_fields=["end", "start"])
+            logger.info(f"{position} saved")
+            return True
+
+        if (
+            position.person.id_name == "andres_cuevas_gonzalez"
+            and position.period.number == 5
+        ):
+            position.start = date(1993, 6, 29)
+            position.end = date(1996, 1, 9)
+            position.save(update_fields=["end", "start"])
+            logger.info(f"{position} saved")
+            return True
+
+        if (
+            position.person.id_name == "jose_luis_alvarez_emparanza"
+            and position.period.number == 3
+        ):
+            position.start = date(1986, 6, 22)
+            position.end = date(1986, 6, 22)
+            position.save(update_fields=["end", "start"])
+            logger.info(f"{position} saved")
+            return True
+
+        return False
