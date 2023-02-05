@@ -45,6 +45,12 @@ Update people's birth date using wikidata (project "WikiProject every politician
 python backend/manage.py update_birth_dates_from_wikidata
 ```
 
+Update people's birth date using wikipedia (search for each people)
+
+```sh
+python backend/manage.py update_birth_dates_from_wikipedia
+```
+
 ## Fix commands
 
 ### Fix duplicated people

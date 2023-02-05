@@ -3,7 +3,6 @@ import time
 import logging
 from bs4 import BeautifulSoup
 from datetime import datetime
-from urllib.parse import urlparse
 from django.core.management.base import BaseCommand
 
 from core.services.requests import request_page
