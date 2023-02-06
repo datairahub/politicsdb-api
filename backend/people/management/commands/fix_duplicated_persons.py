@@ -4,7 +4,7 @@ from django.core.management.base import BaseCommand
 from positions.models import Position
 from people.models import (
     Person,
-    BirthSource,
+    BirthDateSource,
 )
 
 logger = logging.getLogger("commands")
@@ -144,8 +144,8 @@ class Command(BaseCommand):
         """
         Update all birth date sources from old person to new person
         """
-        for old_birth_source in BirthSource.objects.filter(person=to_remove):
-            if not BirthSource.objects.filter(
+        for old_birth_source in BirthDateSource.objects.filter(person=to_remove):
+            if not BirthDateSource.objects.filter(
                 person=to_preserve, url=old_birth_source.url
             ).exists():
                 # birth source not registered yet

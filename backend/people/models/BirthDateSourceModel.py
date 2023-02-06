@@ -1,14 +1,10 @@
 # -*- coding: utf-8 -*-
 from urllib.parse import urlparse
 from django.db import models
-from django.utils import timezone
 from core.models import BaseAbstracModel
 
 
-models.Manager
-
-
-class BirthSource(BaseAbstracModel):
+class BirthDateSource(BaseAbstracModel):
     """
     Fuente (informativa) para la fecha de nacimiento
     """
@@ -16,7 +12,7 @@ class BirthSource(BaseAbstracModel):
     person = models.ForeignKey(
         "people.Person",
         on_delete=models.CASCADE,
-        related_name="birthsources",
+        related_name="BirthDateSources",
     )
     name = models.CharField(
         max_length=255,

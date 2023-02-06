@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 from core.admins import BaseAdmin
-from people.models import BirthSource
+from people.models import BirthDateSource
 
 
-class BirthSourceAdmin(BaseAdmin):
-    model = BirthSource
+class BirthDateSourceAdmin(BaseAdmin):
+    model = BirthDateSource
     list_display = (
         "person",
         "name",
@@ -22,4 +22,4 @@ class BirthSourceAdmin(BaseAdmin):
     readonly_fields = ("person",)
 
 
-admin.site.register(BirthSource, BirthSourceAdmin)
+admin.site.register(BirthDateSource, BirthDateSourceAdmin)

@@ -263,7 +263,7 @@ DATA = [
 
 def apply_migration(apps, schema_editor):
     Person = apps.get_model("people", "Person")
-    BirthSource = apps.get_model("people", "BirthSource")
+    BirthDateSource = apps.get_model("people", "BirthDateSource")
 
     for row in DATA:
         full_name = clean_spanish_name(f"{row[0]} {row[1]}")
@@ -276,21 +276,21 @@ def apply_migration(apps, schema_editor):
             genre=row[2],
         )
         person.save()
-        birthsource = BirthSource(
+        birth_date_source = BirthDateSource(
             person=person,
             name=urlparse(row[5]).netloc,
             url=row[5],
             is_exact=row[4],
             date=row[3],
         )
-        birthsource.save()
+        birth_date_source.save()
 
 
 def revert_migration(apps, schema_editor):
     Person = apps.get_model("people", "Person")
-    BirthSource = apps.get_model("people", "BirthSource")
+    BirthDateSource = apps.get_model("people", "BirthDateSource")
     Person.objects.all().delete()
-    BirthSource.objects.all().delete()
+    BirthDateSource.objects.all().delete()
 
 
 class Migration(migrations.Migration):
