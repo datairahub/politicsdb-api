@@ -5,7 +5,7 @@ from datetime import date
 from django.conf import settings
 
 sys.path.append(str(settings.BASE_DIR.parent))
-from wikipedia import SpanishWikiParser
+from parsers.wikipedia import SpanishWikiParser
 
 
 class SpanishWikiParserBirthDatesTests(unittest.TestCase):

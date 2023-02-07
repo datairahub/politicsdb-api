@@ -5,7 +5,7 @@ import pywikibot
 from django.conf import settings
 
 sys.path.append(str(settings.BASE_DIR.parent))
-from wikipedia import SpanishWikiParser, GalicianWikiParser
+from parsers.wikipedia import SpanishWikiParser, GalicianWikiParser
 from django.core.management.base import BaseCommand
 from people.services.birth_dates import register_birth_date_source
 from people.models import Person
