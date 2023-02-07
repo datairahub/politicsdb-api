@@ -9,9 +9,8 @@ class BirthDateSourceAdmin(BaseAdmin):
     list_display = (
         "person",
         "name",
-        "url",
-        "is_exact",
         "date",
+        "is_exact",
     )
     ordering = ("date",)
     list_filter = (

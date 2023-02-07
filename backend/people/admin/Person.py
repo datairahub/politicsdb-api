@@ -1,7 +1,21 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from core.admins import BaseAdmin
-from people.models import Person
+from core.admins import BaseAdmin, ReadOnlyInline
+from people.models import (
+    Person,
+    BirthDateSource,
+    BiographySource,
+)
+
+
+class BirthDateSourceInline(ReadOnlyInline):
+    model = BirthDateSource
+    fields = ("name", "date", "is_exact", "url")
+
+
+class BiographySourceInline(ReadOnlyInline):
+    model = BiographySource
+    fields = ("name", "url", "bio")
 
 
 class PersonAdmin(BaseAdmin):
@@ -19,6 +33,10 @@ class PersonAdmin(BaseAdmin):
         "genre",
     )
     date_hierarchy = "birth_date"
+    inlines = (
+        BirthDateSourceInline,
+        BiographySourceInline,
+    )
 
 
 admin.site.register(Person, PersonAdmin)
