@@ -137,7 +137,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         self.update_birth_dates_from_paresmcues()
-        logger.info("Done")
+        if options["verbosity"] >= 2:
+            logger.info("Done")
 
     def update_birth_dates_from_paresmcues(self):
         for person in Person.objects.filter(
@@ -208,4 +209,5 @@ class Command(BaseCommand):
                     person.birth_date = parser.birth_date
 
             person.save(update_fields=["metadata", "birth_date"])
-            logger.info(f"{person} saved")
+            if options["verbosity"] >= 2:
+                logger.info(f"{person} saved")
