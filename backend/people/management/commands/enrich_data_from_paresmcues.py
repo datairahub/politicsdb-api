@@ -13,11 +13,7 @@ sys.path.append(str(settings.BASE_DIR.parent))
 from parsers.paresmcu import ParesmcuParser
 from people.services.biographies import register_biography_source
 from people.services.birth_dates import register_birth_date_source
-from people.models import (
-    Person,
-    BirthDateSource,
-    BiographySource,
-)
+from people.models import Person
 
 logger = logging.getLogger("commands")
 
@@ -149,10 +145,10 @@ class Command(BaseCommand):
                 # last_name is used to verify that the match is correct
                 continue
 
-            # Check if person is already enriched:
             if person.metadata.get("pares.mcu.es") and person.metadata[
                 "pares.mcu.es"
             ].get("link"):
+                # If person is already enriched, continue
                 continue
 
             time.sleep(self.sleep_time)
@@ -199,15 +195,21 @@ class Command(BaseCommand):
             person.metadata["pares.mcu.es"]["death_place"] = parser.death_place
 
             if parser.description:
-                register_biography_source(person, profile_url, parser.description)
+                register_biography_source(
+                    person=person,
+                    url=profile_url,
+                    bio=parser.description,
+                )
 
             if parser.birth_date:
                 register_birth_date_source(
-                    person, profile_url, parser.birth_date, parser.birth_date_is_exact
+                    person=person,
+                    url=profile_url,
+                    date=parser.birth_date,
+                    is_exact=parser.birth_date_is_exact,
                 )
-                if not person.birth_date:
-                    person.birth_date = parser.birth_date
 
-            person.save(update_fields=["metadata", "birth_date"])
+            person.save(update_fields=["metadata"])
+
             if options["verbosity"] >= 2:
                 logger.info(f"{person} saved")

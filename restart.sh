@@ -31,4 +31,4 @@ python backend/manage.py update_birth_dates_from_wikipedia -v 1
 
 echo "Enrich data"
 python manage.py enrich_data_from_paresmcues -v 1
-# python manage.py enrich_data_from_fpabloiglesias
+python manage.py enrich_data_from_fpabloiglesias -v 1
