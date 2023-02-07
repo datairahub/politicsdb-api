@@ -4,15 +4,15 @@ from django.db import models
 from core.models import BaseAbstracModel
 
 
-class BirthDateSource(BaseAbstracModel):
+class BiographySource(BaseAbstracModel):
     """
-    Fuente (informativa) para la fecha de nacimiento
+    Fuente (informativa) para la biografía (descripción)
     """
 
     person = models.ForeignKey(
         "people.Person",
         on_delete=models.CASCADE,
-        related_name="birthdatesources",
+        related_name="biographysources",
     )
     name = models.CharField(
         max_length=255,
@@ -24,10 +24,10 @@ class BirthDateSource(BaseAbstracModel):
         null=False,
         blank=False,
     )
-    is_exact = models.BooleanField(
-        default=False,
+    bio = models.TextField(
+        null=False,
+        blank=False,
     )
-    date = models.DateField()
 
     def pre_save(self, *args, **kwargs):
         self.name = urlparse(self.url).netloc
