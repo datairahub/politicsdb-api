@@ -136,7 +136,7 @@ class Command(BaseCommand):
     sleep_time = 0
 
     def handle(self, *args, **options):
-        self.update_birth_dates_from_paresmcues()
+        self.update_birth_dates_from_paresmcues(*args, **options)
         if options["verbosity"] >= 2:
             logger.info("Done")
 
