@@ -140,7 +140,7 @@ class Command(BaseCommand):
         if options["verbosity"] >= 2:
             logger.info("Done")
 
-    def update_birth_dates_from_paresmcues(self):
+    def update_birth_dates_from_paresmcues(self, *args, **options):
         for person in Person.objects.filter(
             positions__period__institution__adm0__code="es"
         ).distinct():
