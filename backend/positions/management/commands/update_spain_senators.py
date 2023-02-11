@@ -4,7 +4,6 @@ import time
 import logging
 from bs4 import BeautifulSoup
 from unidecode import unidecode
-from urllib.parse import urlparse
 from urllib.error import HTTPError
 from datetime import date, datetime
 from django.core.management.base import BaseCommand
@@ -269,7 +268,7 @@ class Command(BaseCommand):
             .last()
         )
 
-        for position in Position.objects.filter(start__lt=date(1900, 1, 2)):
+        for position in Position.objects.filter(start=date(1900, 1, 1)):
             if self._is_dates_special_case(position, *args, **options):
                 continue
             url = position.metadata["www.senado.es"]["link"] + "&id2=g"

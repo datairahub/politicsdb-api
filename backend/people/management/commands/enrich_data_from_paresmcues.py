@@ -5,7 +5,6 @@ import logging
 from bs4 import BeautifulSoup
 from unidecode import unidecode
 from django.conf import settings
-from django.db.models import Q
 from django.core.management.base import BaseCommand
 from core.services.requests import request_page
 
