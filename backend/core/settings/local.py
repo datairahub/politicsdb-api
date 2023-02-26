@@ -10,3 +10,7 @@ SECRET_KEY = os.environ.get(
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+
+FRONTEND_URL = os.environ.get("FRONTEND_URL", "http://localhost:5173")
+
+ADMIN_PATH = os.environ.get("ADMIN_PATH", "admin/")

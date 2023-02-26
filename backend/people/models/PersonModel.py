@@ -45,3 +45,6 @@ class Person(BaseAbstracModel):
 
     def __str__(self):
         return self.full_name
+
+    class Meta:
+        ordering = ("id",)

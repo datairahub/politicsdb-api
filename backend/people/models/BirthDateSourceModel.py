@@ -37,4 +37,5 @@ class BirthDateSource(BaseAbstracModel):
         return self.name
 
     class Meta:
+        ordering = ("id",)
         unique_together = (("person", "url"),)

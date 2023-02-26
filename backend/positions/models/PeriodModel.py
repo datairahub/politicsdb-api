@@ -29,6 +29,7 @@ class Period(BaseAbstracModel):
         return f"{self.institution.name} - {self.name}"
 
     class Meta:
+        ordering = ("id",)
         unique_together = (
             (
                 "name",

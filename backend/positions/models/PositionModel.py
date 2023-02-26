@@ -27,3 +27,6 @@ class Position(BaseAbstracModel):
 
     def __str__(self):
         return f"{self.person.full_name} - {self.full_name}"
+
+    class Meta:
+        ordering = ("id",)

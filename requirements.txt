@@ -6,6 +6,8 @@ cfgv==3.3.1
 charset-normalizer==3.0.1
 distlib==0.3.6
 Django==4.1.6
+django-filter==22.1
+djangorestframework==3.14.0
 filelock==3.9.0
 identify==2.5.17
 idna==3.4
@@ -14,6 +16,7 @@ nodeenv==1.7.0
 platformdirs==2.6.2
 pre-commit==3.0.4
 Pygments==2.14.0
+pytz==2022.7.1
 pywikibot==8.0.0
 PyYAML==6.0
 requests==2.28.2

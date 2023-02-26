@@ -10,6 +10,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Third party
+    "rest_framework",
+    "django_filters",
+    # Apps
     "world",
     "people",
     "positions",
@@ -27,6 +31,19 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "core.urls"
+
+API_PATH = "api/v1/"
+
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+    "DEFAULT_FILTER_BACKENDS": (
+        "django_filters.rest_framework.DjangoFilterBackend",
+        "rest_framework.filters.OrderingFilter",
+    ),
+    "DEFAULT_PAGINATION_CLASS": "core.pagination.PageNumberPagination",
+    "PAGE_SIZE": 100,
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+}
 
 TEMPLATES = [
     {
@@ -112,10 +129,5 @@ LOGGING = {
             "level": "INFO",
             "propagate": False,
         },
-        # Uncomment to see database queries
-        # 'django.db.backends': {
-        #     'handlers': ['console'],
-        #     'level': 'DEBUG',
-        # }
     },
 }

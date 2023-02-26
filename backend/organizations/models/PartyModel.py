@@ -30,6 +30,7 @@ class Party(BaseAbstracModel):
         return self.name
 
     class Meta:
+        ordering = ("id",)
         verbose_name_plural = "Parties"
         unique_together = (
             ("name", "adm0"),

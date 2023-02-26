@@ -25,6 +25,7 @@ class PositionParty(BaseAbstracModel):
         return self.name
 
     class Meta:
+        ordering = ("id",)
         unique_together = (
             (
                 "position",
