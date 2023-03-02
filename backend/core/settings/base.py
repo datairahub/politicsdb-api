@@ -41,7 +41,8 @@ REST_FRAMEWORK = {
         "rest_framework.filters.OrderingFilter",
     ),
     "DEFAULT_PAGINATION_CLASS": "core.pagination.PageNumberPagination",
-    "PAGE_SIZE": 100,
+    "PAGE_SIZE": 20,
+    "MAX_PAGE_SIZE": 100,
     "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
 }
 
@@ -94,6 +95,10 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = "static/"
+
+STATICFILES_DIRS = [
+    BASE_DIR.parent / "static",
+]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 

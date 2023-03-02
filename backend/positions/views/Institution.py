@@ -11,5 +11,8 @@ class InstitutionViewSet(BaseModelViewSet):
     """
 
     model = models.Institution
-    serializer_class = serializers.InstitutionSerializer
+    serializer_class = serializers.InstitutionListSerializer
+    serializer_classes = {
+        "retrieve": serializers.InstitutionRetrieveSerializer,
+    }
     filterset_fields = ("adm0",)

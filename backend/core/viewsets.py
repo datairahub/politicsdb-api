@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
-from rest_framework import viewsets, filters, status, mixins
+from rest_framework import viewsets, filters, mixins
 from rest_framework.permissions import AllowAny
-from rest_framework.response import Response
 from django_filters import rest_framework as rf_filters
 
 
@@ -47,8 +46,14 @@ class BaseModelViewSet(
             return super().get_serializer_class()
 
     def get_queryset(self):
-        self.pagination_class.max_page_size = 1000
-        self.pagination_class.page_size = int(self.request.GET.get("page_size", 100))
+        self.pagination_class.max_page_size = settings.REST_FRAMEWORK.get(
+            "MAX_PAGE_SIZE", 100
+        )
+        self.pagination_class.page_size = int(
+            self.request.GET.get(
+                "page_size", settings.REST_FRAMEWORK.get("PAGE_SIZE", 10)
+            )
+        )
         return self.model.objects.all()
 
     def finalize_response(self, request, *args, **kwargs):
