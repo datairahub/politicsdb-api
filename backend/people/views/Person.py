@@ -7,15 +7,12 @@ class PersonViewSet(BaseModelViewSet):
     """
     Person Viewset
 
-    :model:`positions.Person` management endpoint.
+    :model:`people.Person` management endpoint.
     """
 
     model = models.Person
     serializer_class = serializers.PersonListSerializer
-    # serializer_classes = {
-    #     "retrieve": serializers.PersonRetrieveSerializer,
-    # }
+    serializer_classes = {
+        "retrieve": serializers.PersonRetrieveSerializer,
+    }
     filterset_class = filters.PersonFilter
-
-    # def filter_queryset(self, *args, **kwargs):
-    #     print('--> ook')

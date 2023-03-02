@@ -13,3 +13,16 @@ class PersonListSerializer(serializers.ModelSerializer):
             "birth_date",
             "genre",
         )
+
+
+class PersonRetrieveSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Person
+        fields = (
+            "id",
+            "full_name",
+            "first_name",
+            "last_name",
+            "birth_date",
+            "genre",
+        )
