@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+from django.db.models import Q
 from django_filters import CharFilter, rest_framework as rf_filters
 from people.models import Person
+from people.services.people_id import people_id_from_name
 
 
 class PersonFilter(rf_filters.FilterSet):
@@ -9,7 +11,10 @@ class PersonFilter(rf_filters.FilterSet):
     institution = CharFilter(method="filter_institution")
 
     def filter_search(self, queryset, name, value):
-        return queryset.filter(full_name__icontains=value)
+        return queryset.filter(
+            Q(full_name__icontains=value)
+            | Q(id_name__icontains=people_id_from_name(value))
+        )
 
     def filter_period(self, queryset, name, value):
         return (
