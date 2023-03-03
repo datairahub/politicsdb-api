@@ -3,3 +3,9 @@ from .Person import (
     PersonListSerializer,
     PersonRetrieveSerializer,
 )
+from .BirthDateSource import (
+    BirthDateSourceListSerializer,
+)
+from .BiographySource import (
+    BiographySourceListSerializer,
+)
