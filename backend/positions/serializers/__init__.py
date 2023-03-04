@@ -2,6 +2,7 @@
 from .Institution import (
     InstitutionListSerializer,
     InstitutionRetrieveSerializer,
+    InstitutionAgeStatsSerializer,
 )
 from .Period import (
     PeriodListSerializer,
