@@ -72,6 +72,13 @@ CORRECT_PERSONS_MISMATCH = [
     "francisco_gonzalez_amadios",
 ]
 
+INCORRECT_PERSONS_MISMATCH = [
+    # People who are marked as correct when comparing
+    # person.last_name with a profile pares.mcu.es page title
+    # but they are an incorrect match
+    "jose_latorre_ruiz",
+]
+
 
 class Command(BaseCommand):
     """
@@ -99,6 +106,10 @@ class Command(BaseCommand):
 
             if not person.last_name:
                 # last_name is used to verify that the match is correct
+                continue
+
+            if person.id_name in INCORRECT_PERSONS_MISMATCH:
+                # person is an incorrect match
                 continue
 
             if person.metadata.get("fpabloiglesias.es") and person.metadata[
