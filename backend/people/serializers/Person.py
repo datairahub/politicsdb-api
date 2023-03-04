@@ -20,6 +20,7 @@ class PersonRetrieveSerializer(serializers.ModelSerializer):
         model = Person
         fields = (
             "id",
+            "id_name",
             "full_name",
             "first_name",
             "last_name",
