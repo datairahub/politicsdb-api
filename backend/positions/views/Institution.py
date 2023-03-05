@@ -26,4 +26,4 @@ class InstitutionViewSet(BaseModelViewSet):
         """
         Return institution age stats
         """
-        return Response(get_institution_age_stats(pk))
+        return Response(get_institution_age_stats(pk, request.GET))
