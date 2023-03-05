@@ -36,6 +36,7 @@ class InstitutionRetrieveSerializer(serializers.ModelSerializer):
 class InstitutionAgeStatsSerializer(serializers.Serializer):
     id = serializers.CharField()
     full_name = serializers.CharField()
+    genre = serializers.CharField()
     position_start = serializers.DateField()
     position_end = serializers.DateField()
     birth_date = serializers.DateField()
