@@ -33,10 +33,25 @@ class InstitutionRetrieveSerializer(serializers.ModelSerializer):
         )
 
 
-class InstitutionAgeStatsSerializer(serializers.Serializer):
+class InstitutionDistributionAgeSerializer(serializers.Serializer):
     id = serializers.CharField()
     full_name = serializers.CharField()
     genre = serializers.CharField()
     position_start = serializers.DateField()
     position_end = serializers.DateField()
     birth_date = serializers.DateField()
+
+
+class InstitutionMeanAgeSerializer(serializers.Serializer):
+    id = serializers.CharField()
+    name = serializers.CharField()
+    start = serializers.DateField()
+    end = serializers.DateField()
+    mean_seconds = serializers.SerializerMethodField()
+    genre = serializers.SerializerMethodField()
+
+    def get_mean_seconds(self, obj):
+        return obj["mean_age"].total_seconds()
+
+    def get_genre(self, obj):
+        return obj.get("genre")
