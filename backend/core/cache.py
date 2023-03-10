@@ -26,7 +26,7 @@ def cached_stats(base: str):
             if cache.get(cache_name):
                 return cache.get(cache_name)
             result = func(pk, params, *args, **kwargs)
-            cache.set(cache_name, result)
+            cache.set(cache_name, result, 60 * 60 * 24 * 30)
             return result
 
         return wrapper
