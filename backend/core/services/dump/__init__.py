@@ -12,6 +12,7 @@ DUMPS_DIR = settings.BASE_DIR.parent / "static" / "dump"
 DUMPS_TEMP_DIR = DUMPS_DIR / "temp"
 LICENSES_DIR = settings.BASE_DIR.parent / "static" / "licenses"
 EXCLUDED_APPS = (
+    "world",
     "admin",
     "auth",
     "contenttypes",
