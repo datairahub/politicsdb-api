@@ -14,6 +14,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "django_filters",
     # Apps
+    "admin_extension",
     "world",
     "people",
     "positions",

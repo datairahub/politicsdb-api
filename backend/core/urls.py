@@ -4,13 +4,13 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-urlpatterns = (
-    [
-        # fmt: off
+# fmt: off
+urlpatterns = [
+    path(f"{settings.ADMIN_PATH}ext/", include(("admin_extension.urls", "adminext"), namespace="adminext")),
     path(settings.ADMIN_PATH, admin.site.urls),
+
     path(f"{settings.API_PATH}position/",   include(("positions.urls", "position"),   namespace="position")),
     path(f"{settings.API_PATH}people/",     include(("people.urls",    "people"),     namespace="people")),
-        # fmt: on
-    ]
-    + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-)
+
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# fmt: on

@@ -1,0 +1,57 @@
+{% extends 'admin/index.html' %}
+
+{% block extrahead %}
+<style>
+.ext {
+  background: var(--darkened-bg);
+  padding: 15px;
+  margin-bottom: 20px;
+}
+.ext h2 {
+  background: none;
+  margin-bottom: 16px;
+  font-size: 1.125rem;
+  color: var(--body-fg);
+  font-weight: 400;
+  margin-top: 0;
+}
+.ext button {
+  background: var(--button-bg);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  color: var(--button-fg);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.ext button:hover {
+  background: var(--button-hover-bg);
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="ext">
+  <div class="ext__buttons">
+    <button id="dump" type="button">Dump data</button>
+  </div>
+</div>
+
+<div id="content-main">
+  {% include "admin/app_list.html" with app_list=app_list show_changelinks=True %}
+</div>
+
+<script>
+const dumpBtn = document.getElementById("dump");
+const dumpUrl = "{% url 'adminext:dump' %}";
+
+dumpBtn.addEventListener('click', () => {
+  const httpRequest = new XMLHttpRequest();
+  httpRequest.open("GET", dumpUrl, true);
+  httpRequest.send();
+  alert("Data dump initialized. Please wait until the process is done.")
+})
+</script>
+
+{% endblock %}

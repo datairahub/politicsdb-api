@@ -132,3 +132,6 @@ dmypy.json
 apicache-py3/
 pywikibot.lwp
 throttle.ctrl
+
+# dump
+/static/dump/
