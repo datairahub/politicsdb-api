@@ -23,7 +23,11 @@ def register_death_date_source(person: Person, url: str, value: str) -> None:
         death_date = f"{value}-01-01"
         accuracy = 1
 
-    death_date = date.fromisoformat(death_date)
+    try:
+        death_date = date.fromisoformat(death_date)
+    except Exception:
+        return
+
     registered = DeathDateSource.objects.filter(person=person, name=name).first()
     if registered and registered.accuracy >= accuracy:
         return
@@ -43,7 +47,11 @@ def register_death_date_source(person: Person, url: str, value: str) -> None:
             accuracy=accuracy,
         ).save()
 
-    if not person.death_date or accuracy > person.death_date_accuracy:
+    if (
+        not person.death_date
+        or not person.death_date_accuracy
+        or accuracy > person.death_date_accuracy
+    ):
         person.death_date = death_date
         person.death_date_accuracy = accuracy
         person.save(update_fields=["death_date", "death_date_accuracy"])

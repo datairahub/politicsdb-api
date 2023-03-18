@@ -23,7 +23,11 @@ def register_birth_date_source(person: Person, url: str, value: str) -> None:
         birth_date = f"{value}-01-01"
         accuracy = 1
 
-    birth_date = date.fromisoformat(birth_date)
+    try:
+        birth_date = date.fromisoformat(birth_date)
+    except Exception:
+        return
+
     registered = BirthDateSource.objects.filter(person=person, name=name).first()
     if registered and registered.accuracy >= accuracy:
         return
@@ -43,7 +47,11 @@ def register_birth_date_source(person: Person, url: str, value: str) -> None:
             accuracy=accuracy,
         ).save()
 
-    if not person.birth_date or accuracy > person.birth_date_accuracy:
+    if (
+        not person.birth_date
+        or not person.birth_date_accuracy
+        or accuracy > person.birth_date_accuracy
+    ):
         person.birth_date = birth_date
         person.birth_date_accuracy = accuracy
         person.save(update_fields=["birth_date", "birth_date_accuracy"])

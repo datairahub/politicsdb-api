@@ -7,7 +7,7 @@ from people.services.people_id import people_id_from_name
 from people.services.names import clean_spanish_name
 from people.services.birth_dates import register_birth_date_source
 
-DATA_DIR = settings.BASE_DIR.parent / "data_input" / "birth_dates"
+DATA_DIR = settings.BASE_DIR.parent / "data_input" / "people"
 FILENAME = "es_governors.csv"
 
 

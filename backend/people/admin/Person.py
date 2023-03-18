@@ -32,9 +32,7 @@ class PersonAdmin(BaseAdmin):
         "birth_date",
         "genre",
     )
-    readonly_fields = BaseAdmin.readonly_fields + ("birth_date",)
-    exclude = BaseAdmin.exclude + (
-        "id_name",
+    readonly_fields = BaseAdmin.readonly_fields + (
         "birth_date",
         "birth_date_accuracy",
         "birth_place",
@@ -44,6 +42,7 @@ class PersonAdmin(BaseAdmin):
         "death_place",
         "death_place_name",
     )
+    exclude = BaseAdmin.exclude + ("id_name",)
     inlines = (
         BirthDateSourceInline,
         BiographySourceInline,

@@ -22,13 +22,20 @@ logger = logging.getLogger("commands")
 
 class Command(BaseCommand):
     """
-    Obtener miembros del congreso de España desde el índice de
-    la página del congreso. Se obtienen los siguientes datos:
-        - Nombre completo
-        - Género
-        - Fecha de alta
-        - Fecha de baja
-    Los datos raw se guardan en metadata['www.congreso.es']
+    Get or update spanish congress members from the
+    index of the congress page. The following data are obtained:
+
+    Person:
+    - first_name, last_name, full_name and id_name
+    - genre
+    - metadata    # Updated
+
+    Position:
+    - person
+    - institution
+    - start       # Updated
+    - end         # Updated
+    - metadata    # Updated
     """
 
     help = "Update Spain legislators"
@@ -46,12 +53,24 @@ class Command(BaseCommand):
     }
     headers = settings.SCRAPERS["congreso_headers"]
 
-    def handle(self, *args, **options):
+    def add_arguments(self, parser):
+        parser.add_argument(
+            "-p", "--period", type=int, nargs="?", help="Period number", default=None
+        )
+
+    def get_periods(self, *args, **options):
         spain_congress = Institution.objects.get(name="Parlamento de España")
 
-        for period in Period.objects.filter(institution=spain_congress):
+        periods = Period.objects.filter(institution=spain_congress)
+        if options["period"]:
+            periods = periods.filter(number=options["period"])
+
+        return periods.order_by("-number")
+
+    def handle(self, *args, **options):
+        for period in self.get_periods(*args, **options):
             if options["verbosity"] >= 2:
-                logger.info(f"Getting legislators from {period.name}...")
+                logger.info(f"Updating legislators from {period.name}...")
 
             for member in self.get_legislature_members(period.number):
                 # Person
@@ -68,26 +87,25 @@ class Command(BaseCommand):
                         last_name=clean_spanish_name(member["apellidos"]),
                         id_name=people_id_from_name(full_name),
                         genre="M" if member["genero"] == 1 else "F",
-                        birth_date=None,
                     )
 
                 if not person.metadata.get("www.congreso.es"):
                     person.metadata["www.congreso.es"] = {}
 
                 person.metadata["www.congreso.es"][f"leg-{period.number}"] = member
-
                 person.save()
-                if options["verbosity"] >= 2:
-                    logger.info(f"{person} saved")
 
                 # Position
                 position = Position.objects.filter(period=period, person=person).first()
+
                 if not position:
-                    position = Position(period=period, person=person)
-                position.short_name = "Diputado"
-                position.full_name = (
-                    f"Diputado del {period.institution.name}, {period.name}"
-                )
+                    position = Position(
+                        period=period,
+                        person=person,
+                        short_name="Diputado",
+                        full_name=f"Diputado del {period.institution.name}, {period.name}",
+                    )
+
                 position.start = datetime.strptime(member["fchAlta"], "%d/%m/%Y").date()
                 if member["fchBaja"]:
                     position.end = datetime.strptime(
@@ -98,8 +116,9 @@ class Command(BaseCommand):
 
                 position.metadata["www.congreso.es"] = member
                 position.save()
+
                 if options["verbosity"] >= 2:
-                    logger.info(f"{position} saved")
+                    logger.info(f"{person}")
 
         if options["verbosity"] >= 2:
             logger.info("Done")
