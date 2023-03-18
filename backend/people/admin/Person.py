@@ -30,6 +30,8 @@ class PersonAdmin(BaseAdmin):
     ordering = ("full_name",)
     list_filter = (
         "birth_date",
+        "birth_date_accuracy",
+        "death_date",
         "genre",
     )
     readonly_fields = BaseAdmin.readonly_fields + (
