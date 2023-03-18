@@ -197,15 +197,14 @@ class Command(BaseCommand):
                 register_biography_source(
                     person=person,
                     url=profile_url,
-                    bio=parser.description,
+                    value=parser.description,
                 )
 
             if parser.birth_date:
                 register_birth_date_source(
                     person=person,
                     url=profile_url,
-                    date=parser.birth_date,
-                    is_exact=parser.birth_date_is_exact,
+                    value=parser.birth_date,
                 )
 
             person.save(update_fields=["metadata"])

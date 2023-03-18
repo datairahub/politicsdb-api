@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import csv
 import json
-from django.contrib import admin
+from django.contrib.gis import admin
 from pygments import highlight
 from pygments.lexers import JsonLexer
 from pygments.formatters import HtmlFormatter
@@ -9,7 +9,7 @@ from django.utils.safestring import mark_safe
 from django.http import HttpResponse
 
 
-class BaseAdmin(admin.ModelAdmin):
+class BaseAdmin(admin.OSMGeoAdmin):
     readonly_fields = ("pretty_metadata",)
     exclude = ("metadata",)
     actions = ("download_csv",)

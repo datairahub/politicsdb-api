@@ -24,22 +24,21 @@ class Command(BaseCommand):
     def update_birth_dates_from_wikipedia(self, *args, **options):
         for person in Person.objects.filter(birth_date=None):
             # Update birth dates using es.wikipedia.org
-            birth_date, is_exact, url = self.get_birth_date_from_spanish_wikipedia(
-                person
-            )
+            birth_date, url = self.get_birth_date_from_spanish_wikipedia(person)
 
             if not birth_date:
                 # Update birth dates using gl.wikipedia.org
-                birth_date, is_exact, url = self.get_birth_date_from_galician_wikipedia(
-                    person
-                )
+                birth_date, url = self.get_birth_date_from_galician_wikipedia(person)
 
             if not birth_date:
                 continue
 
-            person.birth_date = birth_date
-            person.save(update_fields=["birth_date"])
-            register_birth_date_source(person, url, birth_date, is_exact)
+            register_birth_date_source(
+                person=person,
+                url=url,
+                value=birth_date,
+            )
+
             if options["verbosity"] >= 2:
                 logger.info(f"{person} birth date updated")
 
@@ -51,14 +50,14 @@ class Command(BaseCommand):
             page = page.getRedirectTarget()
 
         if not (page and page.text.strip()):
-            return None, None, None
+            return None, page.full_url()
 
         parser = SpanishWikiParser(page)
         if not parser.is_politician():
-            return None, None, None
+            return None, page.full_url()
 
-        date, exact = parser.get_birth_date()
-        return date, exact, page.full_url()
+        date = parser.get_birth_date()
+        return date, page.full_url()
 
     def get_birth_date_from_galician_wikipedia(self, person):
         site = pywikibot.Site("gl", "wikipedia")
@@ -68,11 +67,11 @@ class Command(BaseCommand):
             page = page.getRedirectTarget()
 
         if not (page and page.text.strip()):
-            return None, None, None
+            return None, page.full_url()
 
         parser = GalicianWikiParser(page)
         if not parser.is_politician():
-            return None, None, None
+            return None, page.full_url()
 
-        date, exact = parser.get_birth_date()
-        return date, exact, page.full_url()
+        date = parser.get_birth_date()
+        return date, page.full_url()

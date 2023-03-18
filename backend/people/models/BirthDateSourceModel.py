@@ -1,41 +1,13 @@
 # -*- coding: utf-8 -*-
-from urllib.parse import urlparse
-from django.db import models
-from core.models import BaseAbstracModel
+from core.models import DateSourceAbstractModel
 
 
-class BirthDateSource(BaseAbstracModel):
+class BirthDateSource(DateSourceAbstractModel):
     """
     Fuente (informativa) para la fecha de nacimiento
     """
 
-    person = models.ForeignKey(
-        "people.Person",
-        on_delete=models.CASCADE,
-        related_name="birthdatesources",
-    )
-    name = models.CharField(
-        max_length=255,
-        db_index=True,
-        null=False,
-        blank=False,
-    )
-    url = models.TextField(
-        null=False,
-        blank=False,
-    )
-    is_exact = models.BooleanField(
-        default=False,
-    )
-    date = models.DateField()
-
-    def pre_save(self, *args, **kwargs):
-        self.name = urlparse(self.url).netloc
-        super().pre_save(*args, **kwargs)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        ordering = ("id",)
-        unique_together = (("person", "url"),)
+    class Meta(DateSourceAbstractModel.Meta):
+        db_table = "people_birthdatesource"
+        verbose_name = "Fecha de nacimiento"
+        verbose_name_plural = "Fechas de nacimiento"

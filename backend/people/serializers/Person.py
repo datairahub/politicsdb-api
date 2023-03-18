@@ -11,6 +11,7 @@ class PersonListSerializer(serializers.ModelSerializer):
             "id",
             "full_name",
             "birth_date",
+            "birth_date_accuracy",
             "genre",
         )
 
@@ -25,5 +26,6 @@ class PersonRetrieveSerializer(serializers.ModelSerializer):
             "first_name",
             "last_name",
             "birth_date",
+            "birth_date_accuracy",
             "genre",
         )

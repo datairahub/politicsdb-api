@@ -14,15 +14,15 @@ class SpanishWikiParser(WikiParser):
         )
         return bool(search_politic)
 
-    def get_birth_date(self):
+    def get_birth_date(self) -> str:
         """
         Get person's birth date
-        Returns (date, is_exact:bool) or (None, None)
         """
         # Full date from card
         parsed_date = self.get_full_date_from_authority_card(self.text.lower())
+
         if parsed_date:
-            return parsed_date, True
+            return parsed_date
 
         text = self.text.lower()
         text = re.sub(
@@ -36,28 +36,27 @@ class SpanishWikiParser(WikiParser):
         # Full date from bio (formatted)
         parsed_date = self.get_full_date_from_bio_with_format(text)
         if parsed_date:
-            return parsed_date, True
+            return parsed_date
 
         # Full date from bio (unformatted)
         parsed_date = self.get_full_date_from_bio_without_format(text)
         if parsed_date:
-            return parsed_date, True
+            return parsed_date
 
         # Partial date from card
         parsed_date = self.get_partial_date_from_authority_card(self.text.lower())
         if parsed_date:
-            return parsed_date, False
+            return parsed_date
 
         # Partial date from bio
         parsed_date = self.get_partial_date_from_bio_with_format(text)
         if parsed_date:
-            return parsed_date, False
+            return parsed_date
 
-        # No results
-        return None, None
+        return None
 
     @staticmethod
-    def get_full_date_from_authority_card(text: str):
+    def get_full_date_from_authority_card(text: str) -> str:
         """
         Extract full birth date from "ficha autoridad"
         Matchs:
@@ -67,17 +66,24 @@ class SpanishWikiParser(WikiParser):
         """
         text = SpanishWikiParser.remove_double_whitespaces(text)
         structured_dates = re.search(r"fecha de nacimiento =(.+)", text)
+
         if not structured_dates:
             structured_dates = re.search(r"fechanac =(.+)", text)
+
         if structured_dates:
             datesrt = structured_dates.group(1).lower().strip()
             datesrt = SpanishWikiParser.clean_authority_card(datesrt)
             datesrt = re.search(r"(\d{1,2}) (\d{1,2}) (\d{4})", datesrt)
             if datesrt:
-                return datetime.strptime(
-                    f"{datesrt.group(1)} {datesrt.group(2)} {datesrt.group(3)}",
-                    "%d %m %Y",
-                ).date()
+                return (
+                    datetime.strptime(
+                        f"{datesrt.group(1)} {datesrt.group(2)} {datesrt.group(3)}",
+                        "%d %m %Y",
+                    )
+                    .date()
+                    .strftime("%Y-%m-%d")
+                )
+
         return None
 
     @staticmethod
@@ -99,9 +105,9 @@ class SpanishWikiParser(WikiParser):
             datesrt = SpanishWikiParser.clean_authority_card(datesrt)
             if datesrt:
                 if len(datesrt) == 4:
-                    return datetime.strptime(datesrt, "%Y").date()
+                    return datesrt
                 if datesrt.count(" ") == 1:
-                    return datetime.strptime(datesrt, "%m %Y").date()
+                    return datetime.strptime(datesrt, "%m %Y").date().strftime("%Y-%m")
 
     @staticmethod
     def get_full_date_from_bio_with_format(text):
@@ -121,11 +127,12 @@ class SpanishWikiParser(WikiParser):
             day = bio_date.group(1)
             month = SpanishWikiParser.named_month_to_number(bio_date.group(2))
             year = bio_date.group(3)
-            return date(int(year), int(month), int(day))
+            return date(int(year), int(month), int(day)).strftime("%Y-%m-%d")
+
         return None
 
     @staticmethod
-    def get_full_date_from_bio_without_format(text):
+    def get_full_date_from_bio_without_format(text) -> str:
         """
         Extract full birth date (unformatted) from spanish wikipedia bio.
         Matchs:
@@ -141,11 +148,11 @@ class SpanishWikiParser(WikiParser):
             day = bio_date.group(2)
             month = SpanishWikiParser.named_month_to_number(bio_date.group(3))
             year = bio_date.group(4)
-            return date(int(year), int(month), int(day))
+            return date(int(year), int(month), int(day)).strftime("%Y-%m-%d")
         return None
 
     @staticmethod
-    def get_partial_date_from_bio_with_format(text):
+    def get_partial_date_from_bio_with_format(text) -> str:
         """
         Extract partial birth date (formatted) from spanish wikipedia bio.
         Matchs:
@@ -155,9 +162,8 @@ class SpanishWikiParser(WikiParser):
         bio_date = re.search(
             r"''' \([a-zÀ-ÿø-ÿ0-9 ,;\.\|\(\)]*?(\d{4})", text, re.IGNORECASE
         )
-        if bio_date:
-            return date(int(bio_date.group(1)), 1, 1)
-        return None
+
+        return bio_date.group(1) if bio_date else None
 
     @staticmethod
     def replace_month_to_num_from_str(date_str):

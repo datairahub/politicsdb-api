@@ -2,7 +2,7 @@
 
 ## Commands
 
-All commands admits verbosity level with `-v` or `--verbosity` flags:
+All commands admit verbosity level with `-v` or `--verbosity` flags:
 
 ```
 0 - ERROR -> Only ERROR level

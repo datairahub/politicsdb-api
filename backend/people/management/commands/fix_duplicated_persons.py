@@ -126,7 +126,7 @@ class Command(BaseCommand):
         if options["verbosity"] >= 2:
             logger.info("Done")
 
-    def update_new_field(self, to_preserve, to_remove, field):
+    def update_new_field(self, to_preserve: Person, to_remove: Person, field: str):
         """
         Update field from old person to new person if new person
         doesn't have it
@@ -134,13 +134,13 @@ class Command(BaseCommand):
         if getattr(to_remove, field) and not getattr(to_preserve, field):
             setattr(to_preserve, field, getattr(to_remove, field))
 
-    def update_positions(self, to_preserve, to_remove):
+    def update_positions(self, to_preserve: Person, to_remove: Person):
         """
         Update all positions from old person to new person
         """
         Position.objects.filter(person=to_remove).update(person=to_preserve)
 
-    def update_birth_sources(self, to_preserve, to_remove):
+    def update_birth_sources(self, to_preserve: Person, to_remove: Person):
         """
         Update all birth date sources from old person to new person
         """

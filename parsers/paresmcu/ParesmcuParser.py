@@ -6,7 +6,6 @@ from datetime import datetime
 class ParesmcuParser:
     birth_date = None
     birth_date_str = None
-    birth_date_is_exact = None
     death_date_str = None
     birth_place = None
     death_place = None
@@ -53,16 +52,18 @@ class ParesmcuParser:
                     self.death_date_str = p.select("span")[1].text.strip()
 
                 if len(self.birth_date_str) == 4:
-                    self.birth_date = datetime.strptime(
-                        self.birth_date_str, "%Y"
-                    ).date()
-                    self.birth_date_is_exact = False
+                    self.birth_date = (
+                        datetime.strptime(self.birth_date_str, "%Y")
+                        .date()
+                        .strftime("%Y")
+                    )
 
                 elif len(self.birth_date_str) == 10:
-                    self.birth_date = datetime.strptime(
-                        self.birth_date_str, "%Y-%m-%d"
-                    ).date()
-                    self.birth_date_is_exact = True
+                    self.birth_date = (
+                        datetime.strptime(self.birth_date_str, "%Y-%m-%d")
+                        .date()
+                        .strftime("%Y-%m-%d")
+                    )
 
                 continue
 

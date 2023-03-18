@@ -69,30 +69,17 @@ class Command(BaseCommand):
         person.metadata["www.wikidata.org"]["wikiproject_every_politician"] = result
         person.save(update_fields=["metadata"])
 
-        birth_date, is_exact = self.get_birth_date_from_result(
-            result["fecha de nacimiento"]
-        )
-
-        if not birth_date:
+        if not result["fecha de nacimiento"]:
             return
 
         register_birth_date_source(
-            person, result["wikidata_table_url"], birth_date, is_exact
+            person=person,
+            url=result["wikidata_table_url"],
+            value=result["fecha de nacimiento"],
         )
 
-        if not person.birth_date:
-            # update person birth date if it's empty
-            person.birth_date = birth_date
-            person.save(update_fields=["birth_date"])
-            if options["verbosity"] >= 2:
-                logger.info(f"{person} birth date updated")
-
-        elif person.birth_date != birth_date and is_exact:
-            # if previous date is set and its not the same, skip
-            if options["verbosity"] >= 1:
-                logger.warn(
-                    f"Different dates for {person}: {person.birth_date} -> {birth_date}"
-                )
+        if options["verbosity"] >= 2:
+            logger.info(f"{person} birth date updated")
 
     def get_birth_dates_from_wikidata(self, *args, **options):
         results = {}
@@ -129,12 +116,3 @@ class Command(BaseCommand):
                     results[result["id_name"]] = result
 
         return results
-
-    def get_birth_date_from_result(self, strdate: str) -> tuple:
-        if len(strdate) == 4:
-            return datetime.strptime(strdate, "%Y").date(), False
-        if len(strdate) == 7:
-            return datetime.strptime(strdate, "%Y-%m").date(), False
-        if len(strdate) == 10:
-            return datetime.strptime(strdate, "%Y-%m-%d").date(), True
-        return None, None

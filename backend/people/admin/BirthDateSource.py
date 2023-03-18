@@ -9,16 +9,16 @@ class BirthDateSourceAdmin(BaseAdmin):
     list_display = (
         "person",
         "name",
-        "date",
-        "is_exact",
+        "value",
     )
     ordering = ("date",)
     list_filter = (
-        "is_exact",
         "date",
+        "accuracy",
     )
-    date_hierarchy = "date"
+    search_fields = ("person__full_name", "value")
     readonly_fields = ("person",)
+    exclude = ("name", "date", "accuracy")
 
 
 admin.site.register(BirthDateSource, BirthDateSourceAdmin)

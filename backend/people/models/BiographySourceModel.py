@@ -1,41 +1,16 @@
 # -*- coding: utf-8 -*-
-from urllib.parse import urlparse
 from django.db import models
-from core.models import BaseAbstracModel
+from core.models import DataSourceAbstractModel
 
 
-class BiographySource(BaseAbstracModel):
+class BiographySource(DataSourceAbstractModel):
     """
-    Fuente (informativa) para la biografía (descripción)
+    Fuente (informativa) para la biografía
     """
 
-    person = models.ForeignKey(
-        "people.Person",
-        on_delete=models.CASCADE,
-        related_name="biographysources",
-    )
-    name = models.CharField(
-        max_length=255,
-        db_index=True,
-        null=False,
-        blank=False,
-    )
-    url = models.TextField(
-        null=False,
-        blank=False,
-    )
-    bio = models.TextField(
-        null=False,
-        blank=False,
-    )
+    value = models.TextField(null=False, blank=False, help_text="Biografía")
 
-    def pre_save(self, *args, **kwargs):
-        self.name = urlparse(self.url).netloc
-        super().pre_save(*args, **kwargs)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        ordering = ("id",)
-        unique_together = (("person", "url"),)
+    class Meta(DataSourceAbstractModel.Meta):
+        db_table = "people_biographysource"
+        verbose_name = "Biografía"
+        verbose_name_plural = "Biografías"

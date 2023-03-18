@@ -10,6 +10,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.gis",
     # Third party
     "rest_framework",
     "django_filters",
@@ -128,5 +129,14 @@ LOGGING = {
             "level": "INFO",
             "propagate": False,
         },
+    },
+}
+
+SCRAPERS = {
+    "congreso_headers": {
+        "cookie": "COOKIE_SUPPORT=true; JSESSIONID=bPub0TvWm3MecVEwZK0SQzn9LQ-Frt5BYHz5A1xh.cgdpjbnode1pro; dtCookie=v_4_srv_7_sn_468E81E31CD9190788CED6D420C97E65_perc_100000_ol_0_mul_1_app-3Aea7c4b59f27d43eb_1; rxVisitor=1679142847154UGP21RO4CHIKD6N7RCFFGEH523QN4I69; GUEST_LANGUAGE_ID=es_ES; dtSa=-; LFR_SESSION_STATE_20104=1679142852830; rxvt=1679144652901|1679142847156; dtPC=7$342851851_420h-vNICGNNKKRIMONOPAMNRAVRPFCPPHRFQP-0e0; dtLatC=3",
+        "origin": "https://www.congreso.es",
+        "referer": "https://www.congreso.es/busqueda-de-diputados",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
     },
 }

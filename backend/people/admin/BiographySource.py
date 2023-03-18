@@ -11,6 +11,7 @@ class BiographySourceAdmin(BaseAdmin):
         "name",
     )
     readonly_fields = ("person",)
+    exclude = ("name",)
 
 
 admin.site.register(BiographySource, BiographySourceAdmin)

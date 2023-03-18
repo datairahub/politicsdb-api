@@ -5,6 +5,7 @@ import string
 import logging
 from bs4 import BeautifulSoup
 from datetime import datetime
+from django.conf import settings
 from django.core.management.base import BaseCommand
 
 from core.services.requests import request_page
@@ -24,12 +25,7 @@ class Command(BaseCommand):
     """
 
     help = "Update Spain legislators birth dates from congreso.es historial archive"
-    headers = {
-        "cookie": "GUEST_LANGUAGE_ID=es_ES; COOKIE_SUPPORT=true; JSESSIONID=IUl3YyP_aO-ox9UyGdTnCAbnXBRTALdSd1kwmXry.cgdpjbnode2pro",
-        "origin": "https://www.congreso.es",
-        "referer": "https://www.congreso.es/busqueda-de-diputados",
-        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
-    }
+    headers = settings.SCRAPERS["congreso_headers"]
 
     def handle(self, *args, **options):
         self.update_birth_dates_from_congresoes_historical(*args, **options)
@@ -54,18 +50,22 @@ class Command(BaseCommand):
 
                 page, url = self.get_historical_detail_page(result[key]["nume"])
                 birth_date = self.get_birth_date_from_detail_page(page)
+
                 if not birth_date:
                     continue
 
-                # save person birth date
-                person.birth_date = birth_date
-                person.save(update_fields=["birth_date"])
-                register_birth_date_source(person, url, birth_date, True)
+                register_birth_date_source(
+                    person=person,
+                    url=url,
+                    value=birth_date,
+                )
+
                 if options["verbosity"] >= 2:
                     logger.info(f"{person} birth date updated")
+
                 break
 
-    def get_birth_date_from_detail_page(self, page):
+    def get_birth_date_from_detail_page(self, page) -> str:
         if not page:
             return None
         soup = BeautifulSoup(page, "html.parser")
@@ -75,7 +75,9 @@ class Command(BaseCommand):
         search = re.search(r"nacimiento: (\d{1,2}\.\d{1,2}\.\d{4})", body[0].text)
         if not search:
             return None
-        return datetime.strptime(search.group(1), "%d.%m.%Y").date()
+        return (
+            datetime.strptime(search.group(1), "%d.%m.%Y").date().strftime("%Y-%m-%d")
+        )
 
     def get_historical_detail_page(self, legislatornum):
         url = (

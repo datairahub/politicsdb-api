@@ -12,5 +12,5 @@ class BiographySourceListSerializer(serializers.ModelSerializer):
             "person",
             "name",
             "url",
-            "bio",
+            "value",
         )

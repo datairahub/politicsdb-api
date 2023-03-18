@@ -25,85 +25,67 @@ class SpanishWikiParserBirthDatesTests(unittest.TestCase):
         strings_and_dates = [
             [
                 "'''León Rodríguez''' ([[Santo Domingo-Caudilla|Santo Domingo]], [[11 de abril]] de [[1909]] - [[Madrid]], [[9 de septiembre]] de [[1997]])",
-                date(1909, 4, 11),
-                True,
+                "1909-04-11",
             ],
             [
                 "'''Francisco Javier Máximo Aguirre de la Hoz''' ([[Ávila]], [[1946]]-[[2013]]) fue un abogado y [[político]] [[España|español]].",
-                date(1946, 1, 1),
-                False,
+                "1946",
             ],
             [
                 "'''Jesús Aizpún Tuero''' ([[Pamplona]], [[17 de junio]] de [[1928]] - ''[[Ibidem]]''., [[29 de diciembre]] de [[1999]])",
-                date(1928, 6, 17),
-                True,
+                "1928-06-17",
             ],
             [
                 "'''Manuel Benítez Rufo''' ([[Monterrubio de la Serena]], [[Provincia de Badajoz|Badajoz]], [[16 de noviembre]] de [[1917]] – [[Dos Hermanas]], [[Provincia de Sevilla|Sevilla]], [[29 de julio]] de [[2004]])",
-                date(1917, 11, 16),
-                True,
+                "1917-11-16",
             ],
             [
                 "'''Manuel Bermejo Hernández''' ([[Plasencia (Cáceres)|Plasencia]], [[provincia de Cáceres]], [[26 de marzo]] de [[1936]] - [[Madrid]], [[22 de septiembre]] de [[2009]])",
-                date(1936, 3, 26),
-                True,
+                "1936-03-26",
             ],
             [
                 "'''Ramón Germinal Bernal Soto''' (n.{{esd}}[[Linares (Jaén)|Linares]], 22 de mayo de 1924)",
-                date(1924, 5, 22),
-                True,
+                "1924-05-22",
             ],
             [
                 "'''Esteban Caamaño Bernal''', [[sindicalista]] y [[político]] nacido en [[El Puerto]], provincia de [[Cádiz]], el 25 de diciembre de 1925 y fallecido el 19 de junio de 2006.",
-                date(1925, 12, 25),
-                True,
+                "1925-12-25",
             ],
             [
                 "'''Jesús Hervella García''' ([[1926]] - [[Palencia]], [[29 de abril]] de [[2009]])",
-                date(1926, 1, 1),
-                False,
+                "1926",
             ],
             [
                 "'''José Ramón Lasuén Sancho'''<ref>{{Cita web|url=http://www.ediciones2010.es/losautores/jose_ramon_lasuen_sancho.html|título=Ediciones 2010 - José Ramón Lasuen Sancho|fechaacceso=15 de marzo de 2016|apellido=MAGS|sitioweb=www.ediciones2010.es}}</ref> ([[Alcañiz]], [[provincia de Teruel]], [[20 de noviembre]] de [[1932]])",
-                date(1932, 11, 20),
-                True,
+                "1932-11-20",
             ],
             [
                 "'''Miguel Ángel Vázquez Bermúdez''' ([[Sevilla]], 1965) es un político español. Ha sido [[Junta de Andalucía|portavoz del Gobierno de la Junta de Andalucía]] desde el 8 de mayo de 2012 hasta el 9 de junio de 2017",
-                date(1965, 1, 1),
-                False,
+                "1965",
             ],
-            ["| fecha de nacimiento = [[1935]]", date(1935, 1, 1), False],
+            ["| fecha de nacimiento = [[1935]]", "1935"],
             [
                 "| fecha de nacimiento = 14 de noviembre de 1914",
-                date(1914, 11, 14),
-                True,
+                "1914-11-14",
             ],
-            ["| fechanac = [[21 de julio]] de [[1928]]", date(1928, 7, 21), True],
+            ["| fechanac = [[21 de julio]] de [[1928]]", "1928-07-21"],
             [
                 "| fecha de nacimiento    = [[28 de abril]] de [[1935]] ({{edad|28|4|1935}})",
-                date(1935, 4, 28),
-                True,
+                "1935-04-28",
             ],
             [
                 "| fecha de nacimiento = [[1939]] '''Carlota Bustelo García del Real''' ([[Madrid]], [[1 de noviembre]] de [[1939]]",
-                date(1939, 11, 1),
-                True,
+                "1939-11-01",
             ],
         ]
         for str_and_date in strings_and_dates:
             page.text = str_and_date[0]
             parser = SpanishWikiParser(page)
-            extracted_date, exact_date = parser.get_birth_date()
+            extracted_date = parser.get_birth_date()
             self.assertEqual(
                 str_and_date[1],
                 extracted_date,
                 f'Date parser failed for "{str_and_date[0]}"',
-            )
-            self.assertEqual(
-                str_and_date[2],
-                exact_date,
-                f'Exact parser failed for "{str_and_date[0]}"',
             )
 
     def test_formatted_birth_dates_are_extracted_from_bio(self):
@@ -114,45 +96,45 @@ class SpanishWikiParserBirthDatesTests(unittest.TestCase):
         strings_and_dates = [
             [
                 "'''lorem''' (irún, guipúzcoa, país vasco (españa), 20 de mayo de 1969)",
-                date(1969, 5, 20),
+                "1969-05-20",
             ],
             [
                 "'''lorem ''' (laredo (cantabria)|laredo, cantabria; 14 de octubre de 1950)",
-                date(1950, 10, 14),
+                "1950-10-14",
             ],
             [
                 "'''lorem''' (torres (jaén)|torres, provincia de jaén (españa)|jaén, 26 de octubre de 1955)",
-                date(1955, 10, 26),
+                "1955-10-26",
             ],
             [
                 "'''lorem''' (n. cádiz, españa; 15 de diciembre de 1947)",
-                date(1947, 12, 15),
+                "1947-12-15",
             ],
             [
                 "'''lorem''' (motilla del palancar, cuenca (españa)|cuenca, españa, 25 de noviembre de 1989)",
-                date(1989, 11, 25),
+                "1989-11-25",
             ],
-            ["'''lorem''' (bilbao, 27 de diciembre de 1976)", date(1976, 12, 27)],
+            ["'''lorem''' (bilbao, 27 de diciembre de 1976)", "1976-12-27"],
             [
                 "'''lorem''' (n. las palmas de gran canaria, 28 de septiembre de 1958)",
-                date(1958, 9, 28),
+                "1958-09-28",
             ],
             [
                 "'''lorem''', más conocida como '''ipsum''' (melilla, 22 de septiembre de 1953)",
-                date(1953, 9, 22),
+                "1953-09-22",
             ],
             [
                 "'''lorem''' (puebla de sanabria, provincia de zamora|zamora, 30 de julio de 1956)",
-                date(1956, 7, 30),
+                "1956-07-30",
             ],
             [
                 "'''lorem''' (gines, 12 de enero de 1970 - 3 de febrero de 2013)",
-                date(1970, 1, 12),
+                "1970-01-12",
             ],
-            ["'''lorem''' (13 de noviembre de 1954)", date(1954, 11, 13)],
+            ["'''lorem''' (13 de noviembre de 1954)", "1954-11-13"],
             [
                 "'''lorem''' (domingo, 11 de abril de 1909 - madrid, 9 de enero de 1997)",
-                date(1909, 4, 11),
+                "1909-04-11",
             ],
         ]
         for str_and_date in strings_and_dates:
@@ -171,16 +153,16 @@ class SpanishWikiParserBirthDatesTests(unittest.TestCase):
         when date is placed in the bio without wikipedia's convention format
         """
         strings_and_dates = [
-            ["nacido en málaga el 21 de junio de 1955", date(1955, 6, 21)],
+            ["nacido en málaga el 21 de junio de 1955", "1955-06-21"],
             [
                 "nació el 13 de diciembre de 1954 y falleció el 12 de mayo de 1988...",
-                date(1954, 12, 13),
+                "1954-12-13",
             ],
             [
                 "nacido en san cristóbal de la laguna (tenerife, canarias) el 12 de mayo de 1954. El 13 de mayo de 1982...",
-                date(1954, 5, 12),
+                "1954-05-12",
             ],
-            ["Nacida en ponferrada (león) el 9 de mayo de 1957", date(1957, 5, 9)],
+            ["Nacida en ponferrada (león) el 9 de mayo de 1957", "1957-05-09"],
         ]
         for str_and_date in strings_and_dates:
             extracted_date = SpanishWikiParser.get_full_date_from_bio_without_format(
@@ -215,44 +197,44 @@ class SpanishWikiParserBirthDatesTests(unittest.TestCase):
         when partial date is correctly formatted (wikipedia conventions)
         """
         strings_and_dates = [
-            ["'''lorem''' (lugar de alicante, 1958)", date(1958, 1, 1)],
+            ["'''lorem''' (lugar de alicante, 1958)", "1958"],
             [
                 "'''lorem''' (irún, guipúzcoa, país vasco (españa), 1969)",
-                date(1969, 1, 1),
+                "1969",
             ],
             [
                 "'''lorem''' (laredo (cantabria)|laredo, cantabria; 1950)",
-                date(1950, 1, 1),
+                "1950",
             ],
             [
                 "'''lorem''' (torres (jaén)|torres, provincia de jaén (españa)|jaén, 1955)",
-                date(1955, 1, 1),
+                "1955",
             ],
-            ["'''lorem''' (n. cádiz, españa; 1947)", date(1947, 1, 1)],
+            ["'''lorem''' (n. cádiz, españa; 1947)", "1947"],
             [
                 "'''lorem''' (motilla del palancar, cuenca (españa)|cuenca, españa, 1989) (este 1234)",
-                date(1989, 1, 1),
+                "1989",
             ],
-            ["'''lorem''' (bilbao, 1976) lorem 2012", date(1976, 1, 1)],
-            ["'''lorem''' (n. las palmas de gran canaria, 1958)", date(1958, 1, 1)],
+            ["'''lorem''' (bilbao, 1976) lorem 2012", "1976"],
+            ["'''lorem''' (n. las palmas de gran canaria, 1958)", "1958"],
             [
                 "'''lorem''', más conocida como '''ipsum''' (melilla, 1953)",
-                date(1953, 1, 1),
+                "1953",
             ],
             [
                 "'''lorem''' (puebla de sanabria, provincia de zamora|zamora, 1956)",
-                date(1956, 1, 1),
+                "1956",
             ],
-            ["'''lorem''' (gines, 1970-3 de febrero de 2013)", date(1970, 1, 1)],
+            ["'''lorem''' (gines, 1970-3 de febrero de 2013)", "1970"],
             [
                 "'''lorem''' (españa, 1949 - zaragoza, 27 de enero de 2022)",
-                date(1949, 1, 1),
+                "1949",
             ],
             [
                 "'''lorem''' (n. en tollo, vega de liébana, cantabria, en 1945)",
-                date(1945, 1, 1),
+                "1945",
             ],
-            ["'''lorem''' (1926 - palencia, 29 de abril de 2009)", date(1926, 1, 1)],
+            ["'''lorem''' (1926 - palencia, 29 de abril de 2009)", "1926"],
         ]
         for str_and_date in strings_and_dates:
             extracted_date = SpanishWikiParser.get_partial_date_from_bio_with_format(
@@ -288,13 +270,13 @@ class SpanishWikiParserBirthDatesTests(unittest.TestCase):
         with authority card
         """
         strings_and_dates = [
-            ["| fecha de nacimiento = {{fecha|12|1|1962|edad}}", date(1962, 1, 12)],
-            ["| fecha de nacimiento = 18 de agosto de [[1944]]", date(1944, 8, 18)],
-            ["| fecha de nacimiento = 30 noviembre [[1922]]", date(1922, 11, 30)],
-            ["| fechanac = [[30 de noviembre]] de [[1951]]", date(1951, 11, 30)],
+            ["| fecha de nacimiento = {{fecha|12|1|1962|edad}}", "1962-01-12"],
+            ["| fecha de nacimiento = 18 de agosto de [[1944]]", "1944-08-18"],
+            ["| fecha de nacimiento = 30 noviembre [[1922]]", "1922-11-30"],
+            ["| fechanac = [[30 de noviembre]] de [[1951]]", "1951-11-30"],
             [
                 "| fecha de nacimiento = [[28 de abril]] de [[1935]] ({{edad|28|4|1935}})",
-                date(1935, 4, 28),
+                "1935-04-28",
             ],
         ]
         for str_and_date in strings_and_dates:
@@ -313,10 +295,10 @@ class SpanishWikiParserBirthDatesTests(unittest.TestCase):
         with authority card
         """
         strings_and_dates = [
-            ["| fecha de nacimiento = {{fecha|1937}}", date(1937, 1, 1)],
-            ["| fecha de nacimiento = {{fecha|5|1937}}", date(1937, 5, 1)],
-            ["| fechanac = [[1951]]", date(1951, 1, 1)],
-            ["| fechanac = Marzo de [[1951]]", date(1951, 3, 1)],
+            ["| fecha de nacimiento = {{fecha|1937}}", "1937"],
+            ["| fecha de nacimiento = {{fecha|5|1937}}", "1937-05"],
+            ["| fechanac = [[1951]]", "1951"],
+            ["| fechanac = Marzo de [[1951]]", "1951-03"],
         ]
         for str_and_date in strings_and_dates:
             extracted_date = SpanishWikiParser.get_partial_date_from_authority_card(

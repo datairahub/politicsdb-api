@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+
+
 def clean_spanish_name(name):
     while "  " in name:
         name = name.replace("  ", " ")

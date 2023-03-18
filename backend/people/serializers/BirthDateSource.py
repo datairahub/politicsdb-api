@@ -12,6 +12,7 @@ class BirthDateSourceListSerializer(serializers.ModelSerializer):
             "person",
             "name",
             "url",
-            "is_exact",
+            "value",
             "date",
+            "accuracy",
         )

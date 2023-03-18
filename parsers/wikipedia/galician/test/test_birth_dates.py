@@ -19,15 +19,15 @@ class GalicianWikiParserBirthDatesTests(unittest.TestCase):
         when date is placed in the bio
         """
         strings_and_dates = [
-            [" nado o 25 de febreiro de 1953 en Madrid", date(1953, 2, 25)],
-            [" nado en Málaga o 21 de xunio de 1955", date(1955, 6, 21)],
+            [" nado o 25 de febreiro de 1953 en Madrid", "1953-02-25"],
+            [" nado en Málaga o 21 de xunio de 1955", "1955-06-21"],
             [
                 " nada en Cebreros (provincia de Ávila) o 25 de setembro de 1932",
-                date(1932, 9, 25),
+                "1932-09-25",
             ],
             [
                 " nado en Pozuelo, Madrid o 14 de abril de 1926 e finado o 3 de maio de 2008",
-                date(1926, 4, 14),
+                "1926-04-14",
             ],
         ]
         for str_and_date in strings_and_dates:
@@ -65,9 +65,9 @@ class GalicianWikiParserBirthDatesTests(unittest.TestCase):
         when partial date is in bio
         """
         strings_and_dates = [
-            [" nado en Málaga en 1955", date(1955, 1, 1)],
-            [" nada en Nador (Marrocos) en 1952", date(1952, 1, 1)],
-            [" nada en 1945", date(1945, 1, 1)],
+            [" nado en Málaga en 1955", "1955"],
+            [" nada en Nador (Marrocos) en 1952", "1952"],
+            [" nada en 1945", "1945"],
         ]
         for str_and_date in strings_and_dates:
             extracted_date = (
@@ -87,13 +87,13 @@ class GalicianWikiParserBirthDatesTests(unittest.TestCase):
         with authority card
         """
         strings_and_dates = [
-            ["| datanac = [[27 de marzo]] de [[1955]]", date(1955, 3, 27)],
-            ["| datanac = {{data|25|2|1953|idade}}", date(1953, 2, 25)],
+            ["| datanac = [[27 de marzo]] de [[1955]]", "1955-03-27"],
+            ["| datanac = {{data|25|2|1953|idade}}", "1953-02-25"],
             [
                 "| data de nacemento = [[5 de xaneiro]] de [[1938]] {{Idade|5|1|1938}}",
-                date(1938, 1, 5),
+                "1938-01-05",
             ],
-            ["| datadenacemento = [[7 de xuño]] de [[1948]]|", date(1948, 6, 7)],
+            ["| datadenacemento = [[7 de xuño]] de [[1948]]|", "1948-06-07"],
         ]
         for str_and_date in strings_and_dates:
             extracted_date = GalicianWikiParser.get_full_date_from_authority_card(

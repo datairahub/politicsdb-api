@@ -14,15 +14,14 @@ class GalicianWikiParser(WikiParser):
         )
         return bool(search_politic)
 
-    def get_birth_date(self):
+    def get_birth_date(self) -> str:
         """
         Get person's birth date
-        Returns (date, is_exact:bool) or (None, None)
         """
         # Full date from card
         parsed_date = self.get_full_date_from_authority_card(self.text.lower())
         if parsed_date:
-            return parsed_date, True
+            return parsed_date
 
         text = self.remove_brackets_content(self.text.lower())
         text = self.remove_html_tags(text)
@@ -33,18 +32,17 @@ class GalicianWikiParser(WikiParser):
         # Full date from bio
         parsed_date = self.get_full_date_from_bio_without_format(text)
         if parsed_date:
-            return parsed_date, True
+            return parsed_date
 
         # Partial date from bio
         parsed_date = self.get_partial_date_from_bio_without_format(text)
         if parsed_date:
-            return parsed_date, False
+            return parsed_date
 
-        # No results
-        return None, None
+        return None
 
     @staticmethod
-    def get_full_date_from_authority_card(text: str):
+    def get_full_date_from_authority_card(text: str) -> str:
         """
         Extract full birth date from "ficha autoridad"
         Matchs:
@@ -54,19 +52,27 @@ class GalicianWikiParser(WikiParser):
             datadenacemento = [[7 de xuño]] de [[1948]]|
         """
         structured_dates = re.search(r"data de nacemento =(.+)", text)
+
         if not structured_dates:
             structured_dates = re.search(r"datadenacemento =(.+)", text)
+
         if not structured_dates:
             structured_dates = re.search(r"datanac =(.+)", text)
+
         if structured_dates:
             datesrt = structured_dates.group(1).lower().strip()
             datesrt = GalicianWikiParser.clean_authority_card(datesrt)
             datesrt = re.search(r"(\d{1,2}) (\d{1,2}) (\d{4})", datesrt)
             if datesrt:
-                return datetime.strptime(
-                    f"{datesrt.group(1)} {datesrt.group(2)} {datesrt.group(3)}",
-                    "%d %m %Y",
-                ).date()
+                return (
+                    datetime.strptime(
+                        f"{datesrt.group(1)} {datesrt.group(2)} {datesrt.group(3)}",
+                        "%d %m %Y",
+                    )
+                    .date()
+                    .strftime("%Y-%m-%d")
+                )
+
         return None
 
     @staticmethod
@@ -90,7 +96,7 @@ class GalicianWikiParser(WikiParser):
             day = bio_date.group(1)
             month = GalicianWikiParser.named_month_to_number(bio_date.group(2))
             year = bio_date.group(3)
-            return date(int(year), int(month), int(day))
+            return date(int(year), int(month), int(day)).strftime("%Y-%m-%d")
 
         return None
 
@@ -108,8 +114,7 @@ class GalicianWikiParser(WikiParser):
         if bio_date and not (
             "finad" in bio_date.group(0) or "falecid" in bio_date.group(0)
         ):
-            year = bio_date.group(1)
-            return date(int(year), 1, 1)
+            return bio_date.group(1)
 
         return None
 

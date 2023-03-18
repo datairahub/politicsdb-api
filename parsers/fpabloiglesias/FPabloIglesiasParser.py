@@ -8,7 +8,6 @@ class FPabloIglesiasParser:
     position = None
     birth_date = None
     birth_date_str = None
-    birth_date_is_exact = None
     description = None
     is_parsed = False
 
@@ -57,16 +56,16 @@ class FPabloIglesiasParser:
                         int(birth_date_search.group(3)),
                         int(birth_date_search.group(2)),
                         int(birth_date_search.group(1)),
-                    )
-                    self.birth_date_is_exact = True
+                    ).strftime("%Y-%m-%d")
                     self.birth_date_str = birth_date_search.group(0)
                     continue
 
-                # Search partial date
+                # Search partial date (only year)
                 birth_date_search = re.search(r"\d{4}", birth)
                 if birth_date_search:
-                    self.birth_date = date(int(birth_date_search.group(0)), 1, 1)
-                    self.birth_date_is_exact = False
+                    self.birth_date = date(
+                        int(birth_date_search.group(0)), 1, 1
+                    ).strftime("%Y")
                     self.birth_date_str = birth_date_search.group(0)
                 continue
 

@@ -10,12 +10,12 @@ from people.models import (
 
 class BirthDateSourceInline(ReadOnlyInline):
     model = BirthDateSource
-    fields = ("name", "date", "is_exact", "url")
+    fields = ("value", "url")
 
 
 class BiographySourceInline(ReadOnlyInline):
     model = BiographySource
-    fields = ("name", "url", "bio")
+    fields = ("value", "url")
 
 
 class PersonAdmin(BaseAdmin):
@@ -32,7 +32,17 @@ class PersonAdmin(BaseAdmin):
         "birth_date",
         "genre",
     )
-    date_hierarchy = "birth_date"
+    exclude = BaseAdmin.exclude + (
+        "id_name",
+        "birth_date",
+        "birth_date_accuracy",
+        "birth_place",
+        "birth_place_name",
+        "death_date",
+        "death_date_accuracy",
+        "death_place",
+        "death_place_name",
+    )
     inlines = (
         BirthDateSourceInline,
         BiographySourceInline,
