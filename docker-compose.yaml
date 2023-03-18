@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+  # django-backend:
+  #   image: django-backend:local
+  #   container_name: django-backend
+  #   # ports:
+  #   #  - '8000:8000'
+  #   command: 'python manage.py runserver localhost:8000'
+  #   env_file: local.env
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   depends_on:
+  #     - db-postgis
+  #   network_mode: host
+
+  db-postgis:
+    image: postgis/postgis:13-master
+    shm_size: 1g
+    container_name: pdb-db-postgis
+    # ports:
+    #  - 5432:5432
+    env_file: local.env
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: .Passw0rd.
+      POSTGRES_DB: pdb_backend
+    network_mode: host

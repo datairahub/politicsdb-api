@@ -14,3 +14,14 @@ ALLOWED_HOSTS = ["*"]
 FRONTEND_URL = os.environ.get("FRONTEND_URL", "http://localhost:5173")
 
 ADMIN_PATH = os.environ.get("ADMIN_PATH", "admin/")
+
+DATABASES = {
+    "default": {
+        "NAME": os.environ.get("DB_NAME"),
+        "ENGINE": "django.contrib.gis.db.backends.postgis",
+        "HOST": os.environ.get("DB_HOST"),
+        "USER": os.environ.get("DB_USER"),
+        "PORT": os.environ.get("DB_PORT"),
+        "PASSWORD": os.environ.get("DB_PASSWORD"),
+    }
+}
