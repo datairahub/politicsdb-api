@@ -7,7 +7,7 @@ def adm_flag_path(instance, filename: str) -> str:
     Generate Adm flag path
     """
     model = instance._meta.model.__name__.lower()
-    return f"static/images/{model}/{instance.id}.png"
+    return f"static/images/{model}/{instance.code}.png"
 
 
 def validate_flag_filetype(value):

@@ -5,12 +5,18 @@ from positions.models import Institution
 
 
 class InstitutionListSerializer(serializers.ModelSerializer):
+    adm0_code = serializers.SerializerMethodField()
+
+    def get_adm0_code(self, obj):
+        return obj.adm0.code
+
     class Meta:
         model = Institution
         fields = (
             "id",
             "name",
             "adm0",
+            "adm0_code",
             "adm1",
             "adm2",
             "adm3",
@@ -19,12 +25,18 @@ class InstitutionListSerializer(serializers.ModelSerializer):
 
 
 class InstitutionRetrieveSerializer(serializers.ModelSerializer):
+    adm0_code = serializers.SerializerMethodField()
+
+    def get_adm0_code(self, obj):
+        return obj.adm0.code
+
     class Meta:
         model = Institution
         fields = (
             "id",
             "name",
             "adm0",
+            "adm0_code",
             "adm1",
             "adm2",
             "adm3",
