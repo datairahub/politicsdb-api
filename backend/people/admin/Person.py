@@ -32,6 +32,7 @@ class PersonAdmin(BaseAdmin):
         "birth_date",
         "genre",
     )
+    readonly_fields = BaseAdmin.readonly_fields + ("birth_date",)
     exclude = BaseAdmin.exclude + (
         "id_name",
         "birth_date",

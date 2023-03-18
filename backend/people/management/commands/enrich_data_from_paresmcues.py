@@ -171,7 +171,10 @@ class Command(BaseCommand):
 
             # Get profile page
             profile_url = self.domain + rows[0].select(".titulo a")[0]["href"]
-            response = request_page(profile_url).decode("utf-8")
+            try:
+                response = request_page(profile_url).decode("utf-8")
+            except Exception:
+                continue
             parser = ParesmcuParser(response)
 
             if not parser.is_persona_page:

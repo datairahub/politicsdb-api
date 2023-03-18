@@ -32,6 +32,7 @@ def register_death_date_source(person: Person, url: str, value: str) -> None:
         registered.value = value
         registered.date = death_date
         registered.accuracy = accuracy
+
     else:
         DeathDateSource(
             person=person,
@@ -42,6 +43,7 @@ def register_death_date_source(person: Person, url: str, value: str) -> None:
             accuracy=accuracy,
         ).save()
 
-    person.death_date = death_date
-    person.death_date_accuracy = accuracy
-    person.save(update_fields=["death_date", "death_date_accuracy"])
+    if not person.death_date or accuracy > person.death_date_accuracy:
+        person.death_date = death_date
+        person.death_date_accuracy = accuracy
+        person.save(update_fields=["death_date", "death_date_accuracy"])

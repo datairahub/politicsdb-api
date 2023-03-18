@@ -43,6 +43,7 @@ def register_birth_date_source(person: Person, url: str, value: str) -> None:
             accuracy=accuracy,
         ).save()
 
-    person.birth_date = birth_date
-    person.birth_date_accuracy = accuracy
-    person.save(update_fields=["birth_date", "birth_date_accuracy"])
+    if not person.birth_date or accuracy > person.birth_date_accuracy:
+        person.birth_date = birth_date
+        person.birth_date_accuracy = accuracy
+        person.save(update_fields=["birth_date", "birth_date_accuracy"])

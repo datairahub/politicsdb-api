@@ -27,5 +27,6 @@ class PersonRetrieveSerializer(serializers.ModelSerializer):
             "last_name",
             "birth_date",
             "birth_date_accuracy",
+            "image",
             "genre",
         )

@@ -5,4 +5,4 @@ def person_profile_image_path(instance, filename: str) -> str:
     """
     Generate Person profile image path
     """
-    return f"static/images/person/{instance.id}/{filename}"
+    return f"static/images/person/{instance.id_name}/{filename}"

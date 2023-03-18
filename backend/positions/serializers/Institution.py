@@ -2,7 +2,6 @@
 from rest_framework import serializers
 
 from positions.models import Institution
-from positions.serializers.Period import PeriodListSerializer
 
 
 class InstitutionListSerializer(serializers.ModelSerializer):
