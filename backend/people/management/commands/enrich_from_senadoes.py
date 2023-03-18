@@ -70,10 +70,6 @@ class Command(BaseCommand):
         for period in self.get_periods(*args, **options):
             for position in Position.objects.filter(period=period):
 
-                if not options["override"]:
-                    if not position.end or position.end < datetime.now().date():
-                        continue
-
                 if not position.metadata.get("www.senado.es"):
                     continue
 

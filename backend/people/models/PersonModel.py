@@ -54,6 +54,7 @@ class Person(BaseAbstractModel):
     )
     birth_place = models.PointField(
         null=True,
+        blank=True,
         default=None,
         db_index=True,
         help_text="Coordenadas del lugar de nacimiento",
@@ -61,6 +62,7 @@ class Person(BaseAbstractModel):
     birth_place_name = models.CharField(
         max_length=255,
         null=True,
+        blank=True,
         default=None,
         db_index=True,
         help_text="Nombre del lugar de nacimiento",
@@ -78,6 +80,7 @@ class Person(BaseAbstractModel):
     )
     death_place = models.PointField(
         null=True,
+        blank=True,
         default=None,
         db_index=True,
         help_text="Coordenadas del lugar de fallecimiento",
@@ -85,6 +88,7 @@ class Person(BaseAbstractModel):
     death_place_name = models.CharField(
         max_length=255,
         null=True,
+        blank=True,
         default=None,
         db_index=True,
         help_text="Nombre del lugar de fallecimiento",

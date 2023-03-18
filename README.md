@@ -91,7 +91,7 @@ python backend/manage.py enrich_from_local_files [-v <int>]
 
 ### Enrich deputies data using profile detail page
 
-Enrich spanish deputies data using the detail page of each depity. The following data are obtained:
+Enrich spanish deputies data using the detail page of each deputy. The following data are obtained:
 
 ```
 Person:
@@ -125,17 +125,17 @@ Enrich spanish senators data using the detail page of each senator. The followin
 
 ```
 Person:
-- image      # Updated with --override
-- biography  # Updated with --override
+- image      # Updated always
+- biography  # Updated always
 
 Position:
-- start      # Updated with --override
-- end        # Updated with --override
+- start      # Updated always
+- end        # Updated always
 ```
 
 ```sh
-python backend/manage.py enrich_from_senadoes [--period <int>] [--override] [-v <int>]
-# Example: enrich_from_senadoes --period 14 --override -v 2
+python backend/manage.py enrich_from_senadoes [--period <int>] [-v <int>]
+# Example: enrich_from_senadoes --period 14 -v 2
 ```
 
 ### Enrich senators data using profile open data xml files

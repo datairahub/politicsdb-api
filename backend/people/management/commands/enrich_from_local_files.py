@@ -33,13 +33,17 @@ class Command(BaseCommand):
         with open(self.data_folder / filename, "r") as f:
             csv_reader = csv.DictReader(f, delimiter=",")
             for row in csv_reader:
-                if not row.get("source"):
+                if not row.get("source") or not row.get("birth_date"):
                     continue
 
-                if not row.get("full_name") and not (row.get("first_name") and row.get("last_name")):
+                if not row.get("full_name") and not (
+                    row.get("first_name") and row.get("last_name")
+                ):
                     continue
 
-                full_name = row.get("full_name", f"{row.get('first_name')} {row.get('last_name')}")
+                full_name = row.get(
+                    "full_name", f"{row.get('first_name')} {row.get('last_name')}"
+                )
                 person = Person.objects.filter(full_name=full_name).first()
 
                 if not person:

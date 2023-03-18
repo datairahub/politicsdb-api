@@ -14,6 +14,11 @@ from people.models import Person
 
 logger = logging.getLogger("commands")
 
+INCORRECT_MISMATCHS = [
+    # People with wrong date on wikidata
+    "isaias_monforte_francia",
+]
+
 
 class Command(BaseCommand):
     """
@@ -70,6 +75,9 @@ class Command(BaseCommand):
             ).first()
             if not person:
                 return
+
+        if person.id_name in INCORRECT_MISMATCHS:
+            return
 
         if not person.metadata.get("www.wikidata.org"):
             person.metadata["www.wikidata.org"] = {}
