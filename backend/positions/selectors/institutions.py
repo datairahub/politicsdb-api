@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from django.db.models import F, Avg, Count
+from django.db.models import F, Avg, Count, Sum
+from django.db.models.functions import ExtractMonth
 
 from core.cache import cached_stats
 from people.models import Person
@@ -12,6 +13,7 @@ from positions.serializers import (
     InstitutionDistributionAgeSerializer,
     InstitutionMeanAgeSerializer,
     InstitutionGenreSerializer,
+    InstitutionBirthMonthSerializer,
 )
 
 
@@ -163,4 +165,55 @@ def get_institution_genre_stats(pk: str, params: dict) -> dict:
         "periods": InstitutionGenreSerializer(periods_query, many=True).data,
         "has_genre": has_query.count(),
         "no_genre": none_query.count(),
+    }
+
+
+@cached_stats(base="INSTITUTION_BIRTH_MONTH")
+def get_institution_birth_month_stats(pk: str, params: dict) -> dict:
+    """
+    Return institution birth month stats
+
+    :param pk: institution primary key
+    :param params: filter params
+    """
+    instance = Institution.objects.get(pk=pk)
+
+    periods_query = Period.objects.prefetch_related(
+        "positions",
+        "positions__person",
+    ).filter(
+        institution=instance,
+        positions__person__birth_date_accuracy__gte=2,
+    )
+
+    has_query = Person.objects.prefetch_related(
+        "positions",
+        "positions__period",
+        "positions__period__institution",
+    ).filter(
+        positions__period__institution_id=pk,
+        birth_date_accuracy__gte=2,
+    )
+
+    none_query = Period.objects.prefetch_related(
+        "positions",
+        "positions__person",
+    ).filter(
+        institution=instance,
+        positions__person__birth_date_accuracy__lt=2,
+    )
+
+    periods_query = (
+        periods_query.values("id", "name", "start", "end")
+        .annotate(month=ExtractMonth("positions__person__birth_date"))
+        .annotate(total=Count("month"))
+    )
+
+    periods_query = periods_query.order_by("id")
+
+    return {
+        "instance": InstitutionRetrieveSerializer(instance).data,
+        "periods": InstitutionBirthMonthSerializer(periods_query, many=True).data,
+        "has_date": has_query.count(),
+        "no_date": none_query.count(),
     }

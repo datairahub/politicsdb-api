@@ -8,6 +8,7 @@ from positions.selectors.institutions import (
     get_institution_distribution_age_stats,
     get_institution_mean_age_stats,
     get_institution_genre_stats,
+    get_institution_birth_month_stats,
 )
 
 
@@ -45,3 +46,10 @@ class InstitutionViewSet(BaseModelViewSet):
         Return institution genre stats
         """
         return Response(get_institution_genre_stats(pk, request.GET))
+
+    @action(detail=True, methods=["get"])
+    def stats_month(self, request, pk):
+        """
+        Return institution birth month stats
+        """
+        return Response(get_institution_birth_month_stats(pk, request.GET))

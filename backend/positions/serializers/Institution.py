@@ -75,3 +75,12 @@ class InstitutionGenreSerializer(serializers.Serializer):
     end = serializers.DateField()
     genre = serializers.CharField()
     total = serializers.IntegerField()
+
+
+class InstitutionBirthMonthSerializer(serializers.Serializer):
+    id = serializers.CharField()
+    name = serializers.CharField()
+    start = serializers.DateField()
+    end = serializers.DateField()
+    month = serializers.IntegerField()
+    total = serializers.IntegerField()
