@@ -9,6 +9,7 @@ class PersonFilter(rf_filters.FilterSet):
     search = CharFilter(method="filter_search")
     period = CharFilter(method="filter_period")
     institution = CharFilter(method="filter_institution")
+    birth_date__isnull = CharFilter(method="filter_birth_date__isnull")
 
     def filter_search(self, queryset, name, value):
         return queryset.filter(
@@ -36,6 +37,13 @@ class PersonFilter(rf_filters.FilterSet):
             .filter(positions__period__institution=value)
             .distinct()
         )
+    
+    def filter_birth_date__isnull(self, queryset, name, value):
+        if value == "true":
+            return queryset.filter(birth_date__isnull=True)
+        if value == "false":
+            return queryset.filter(birth_date__isnull=False)
+        return queryset
 
     class Meta:
         model = Person
@@ -46,4 +54,5 @@ class PersonFilter(rf_filters.FilterSet):
             "genre",
             "period",
             "institution",
+            "birth_date__isnull",
         )
