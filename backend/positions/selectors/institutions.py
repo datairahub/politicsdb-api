@@ -15,7 +15,7 @@ def get_institution_distribution_age_stats(pk: str, params: dict) -> dict:
     :param params: filter params
     """
     instance = models.Institution.objects.get(pk=pk)
-    query = Person.objects.prefetch_related(
+    positions_query = Person.objects.prefetch_related(
         "positions",
         "positions__period",
         "positions__period__institution",
@@ -23,11 +23,20 @@ def get_institution_distribution_age_stats(pk: str, params: dict) -> dict:
         positions__period__institution_id=pk,
         birth_date__isnull=False,
     )
+    none_query = Person.objects.prefetch_related(
+        "positions",
+        "positions__period",
+        "positions__period__institution",
+    ).filter(
+        positions__period__institution_id=pk,
+        birth_date__isnull=True,
+    )
 
     if params.get("genre"):
-        query = query.filter(genre=params.get("genre"))
+        positions_query = positions_query.filter(genre=params.get("genre"))
+        none_query = none_query.filter(genre=params.get("genre"))
 
-    query = query.annotate(
+    positions_query = positions_query.annotate(
         position_start=F("positions__start"),
         position_end=F("positions__end"),
     )
@@ -35,8 +44,10 @@ def get_institution_distribution_age_stats(pk: str, params: dict) -> dict:
     return {
         "instance": serializers.InstitutionRetrieveSerializer(instance).data,
         "positions": serializers.InstitutionDistributionAgeSerializer(
-            query, many=True
+            positions_query,
+            many=True,
         ).data,
+        "no_date": none_query.count(),
     }
 
 
@@ -50,7 +61,7 @@ def get_institution_mean_age_stats(pk: str, params: dict) -> dict:
     """
     instance = models.Institution.objects.get(pk=pk)
 
-    query = models.Period.objects.prefetch_related(
+    periods_query = models.Period.objects.prefetch_related(
         "positions",
         "positions__person",
     ).filter(
@@ -58,19 +69,45 @@ def get_institution_mean_age_stats(pk: str, params: dict) -> dict:
         positions__person__birth_date__isnull=False,
     )
 
-    if params.get("genre"):
-        query = query.filter(positions__person__genre=params.get("genre"))
+    has_query = Person.objects.prefetch_related(
+        "positions",
+        "positions__period",
+        "positions__period__institution",
+    ).filter(
+        positions__period__institution_id=pk,
+        birth_date__isnull=False,
+    )
 
-    query = query.values("id", "name", "start", "end").annotate(
+    none_query = models.Period.objects.prefetch_related(
+        "positions",
+        "positions__person",
+    ).filter(
+        institution=instance,
+        positions__person__birth_date__isnull=True,
+    )
+
+    if params.get("genre"):
+        periods_query = periods_query.filter(
+            positions__person__genre=params.get("genre")
+        )
+        has_query = none_query.filter(genre=params.get("genre"))
+        none_query = none_query.filter(positions__person__genre=params.get("genre"))
+
+    periods_query = periods_query.values("id", "name", "start", "end").annotate(
         mean_age=Avg(F("positions__start") - F("positions__person__birth_date"))
     )
 
     if params.get("split") and params.get("split") == "genre":
-        query = query.annotate(genre=F("positions__person__genre"))
+        periods_query = periods_query.annotate(genre=F("positions__person__genre"))
 
-    query = query.order_by("id")
+    periods_query = periods_query.order_by("id")
 
     return {
         "instance": serializers.InstitutionRetrieveSerializer(instance).data,
-        "periods": serializers.InstitutionMeanAgeSerializer(query, many=True).data,
+        "periods": serializers.InstitutionMeanAgeSerializer(
+            periods_query,
+            many=True,
+        ).data,
+        "has_date": has_query.count(),
+        "no_date": none_query.count(),
     }
