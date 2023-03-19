@@ -35,11 +35,11 @@ class PersonAdmin(BaseMetadataAdmin):
         "genre",
     )
     readonly_fields = BaseMetadataAdmin.readonly_fields + (
+        "id_name",
         "birth_date",
         "birth_date_accuracy",
     )
     exclude = BaseMetadataAdmin.exclude + (
-        "id_name",
         "birth_place",
         "birth_place_name",
         "death_date",

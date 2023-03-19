@@ -17,6 +17,13 @@ from people.models import Person
 logger = logging.getLogger("commands")
 
 
+INCORRECT_PERSONS_MATCH = [
+    # People who are marked as correct
+    # but they are an incorrect match
+    "pedro_fernandez_hernandez",
+]
+
+
 class Command(BaseCommand):
     """
     Enrich spain deputies data from congreso.es historical
@@ -33,6 +40,9 @@ class Command(BaseCommand):
         names = self.get_historical_legislators_names()
 
         for person in Person.objects.filter(birth_date=None):
+            if person.id_name in INCORRECT_PERSONS_MATCH:
+                continue
+
             if not names.get(person.id_name):
                 continue
 
