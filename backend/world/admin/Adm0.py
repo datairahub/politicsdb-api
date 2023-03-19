@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from core.admins import BaseAdmin
+from core.admins import BaseMetadataAdmin
 from world.models import Adm0
 
 
-class Adm0Admin(BaseAdmin):
+class Adm0Admin(BaseMetadataAdmin):
     model = Adm0
     list_display = (
         "name",

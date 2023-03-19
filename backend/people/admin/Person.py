@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from core.admins import BaseAdmin, ReadOnlyInline
+from core.admins import BaseMetadataAdmin, ReadOnlyInline
 from people.models import (
     Person,
     BirthDateSource,
@@ -18,7 +18,7 @@ class BiographySourceInline(ReadOnlyInline):
     fields = ("value", "url")
 
 
-class PersonAdmin(BaseAdmin):
+class PersonAdmin(BaseMetadataAdmin):
     model = Person
     list_display = (
         "full_name",
@@ -34,17 +34,19 @@ class PersonAdmin(BaseAdmin):
         "death_date",
         "genre",
     )
-    readonly_fields = BaseAdmin.readonly_fields + (
-        # "birth_date",
-        # "birth_date_accuracy",
-        # "birth_place",
-        # "birth_place_name",
-        # "death_date",
-        # "death_date_accuracy",
-        # "death_place",
-        # "death_place_name",
+    readonly_fields = BaseMetadataAdmin.readonly_fields + (
+        "birth_date",
+        "birth_date_accuracy",
     )
-    exclude = BaseAdmin.exclude + ("id_name",)
+    exclude = BaseMetadataAdmin.exclude + (
+        "id_name",
+        "birth_place",
+        "birth_place_name",
+        "death_date",
+        "death_date_accuracy",
+        "death_place",
+        "death_place_name",
+    )
     inlines = (
         BirthDateSourceInline,
         BiographySourceInline,

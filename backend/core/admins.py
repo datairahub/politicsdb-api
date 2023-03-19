@@ -10,41 +10,7 @@ from django.http import HttpResponse
 
 
 class BaseAdmin(admin.OSMGeoAdmin):
-    readonly_fields = ("pretty_metadata",)
-    exclude = ("metadata",)
     actions = ("download_csv",)
-
-    # def has_add_permission(self, request, obj=None):
-    #     return False
-
-    # def has_delete_permission(self, request, obj=None):
-    #     return False
-
-    # def has_change_permission(self, request, obj=None):
-    #     return True
-
-    def pretty_metadata(self, instance):
-        """Function to display pretty version of our data"""
-
-        # Convert the data to sorted, indented JSON
-        response = json.dumps(instance.metadata, sort_keys=True, indent=2)
-
-        # Truncate the data. Alter as needed
-        # response = response[:5000]
-
-        # Get the Pygments formatter
-        formatter = HtmlFormatter(style="colorful")
-
-        # Highlight the data
-        response = highlight(response, JsonLexer(), formatter)
-
-        # Get the stylesheet
-        style = "<style>" + formatter.get_style_defs() + "</style><br>"
-
-        # Safe the output
-        return mark_safe(style + response)  # nosec
-
-    pretty_metadata.short_description = "Metadata"
 
     def download_csv(modeladmin, request, queryset):
         opts = queryset.model._meta
@@ -72,6 +38,52 @@ class BaseAdmin(admin.OSMGeoAdmin):
         return response
 
     download_csv.short_description = "Download selected as csv"
+
+
+class BaseMetadataAdmin(BaseAdmin):
+    readonly_fields = ("pretty_metadata",)
+    exclude = ("metadata",)
+
+    def pretty_metadata(self, instance):
+        """Function to display pretty version of our data"""
+
+        response = json.dumps(instance.metadata, sort_keys=True, indent=2)
+        formatter = HtmlFormatter(style="colorful")
+        response = highlight(response, JsonLexer(), formatter)
+        style = "<style>" + formatter.get_style_defs() + "</style><br>"
+        return mark_safe(style + response)  # nosec
+
+    pretty_metadata.short_description = "Metadata"
+
+
+class DateSourceAdmin(BaseAdmin):
+    list_display = (
+        "person",
+        "name",
+        "value",
+    )
+    ordering = ("date",)
+    list_filter = (
+        "date",
+        "accuracy",
+    )
+    autocomplete_fields = ("person",)
+    search_fields = ("person__full_name", "value")
+    exclude = (
+        "name",
+        "date",
+        "pretty_metadata",
+    )
+
+    def get_readonly_fields(self, request, obj=None):
+        return (
+            (
+                "person",
+                "accuracy",
+            )
+            if obj
+            else ("accuracy",)
+        )
 
 
 class ReadOnlyInline(admin.TabularInline):

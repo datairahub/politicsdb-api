@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from core.admins import BaseAdmin
+from core.admins import BaseMetadataAdmin
 from positions.models import Position
 
 
-class PositionAdmin(BaseAdmin):
+class PositionAdmin(BaseMetadataAdmin):
     model = Position
     list_display = (
         "full_name",
@@ -19,7 +19,17 @@ class PositionAdmin(BaseAdmin):
         "start",
         "end",
     )
-    readonly_fields = ("person",)
+    autocomplete_fields = ("person", "period")
+
+    def get_readonly_fields(self, request, obj=None):
+        return (
+            (
+                "person",
+                "period",
+            )
+            if obj
+            else tuple()
+        )
 
 
 admin.site.register(Position, PositionAdmin)

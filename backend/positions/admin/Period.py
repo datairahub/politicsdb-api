@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from core.admins import BaseAdmin, ReadOnlyInline
+from core.admins import BaseMetadataAdmin, ReadOnlyInline
 from positions.models import Period, Position
 
 
@@ -10,7 +10,7 @@ class PositionInline(ReadOnlyInline):
     fields = ("full_name", "person")
 
 
-class PeriodAdmin(BaseAdmin):
+class PeriodAdmin(BaseMetadataAdmin):
     model = Period
     list_display = (
         "__str__",

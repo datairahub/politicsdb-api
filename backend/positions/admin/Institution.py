@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from core.admins import BaseAdmin, ReadOnlyInline
+from core.admins import BaseMetadataAdmin, ReadOnlyInline
 from positions.models import Institution, Period
 
 
@@ -9,7 +9,7 @@ class PeriodInline(ReadOnlyInline):
     fields = ("name", "code", "number", "start", "end")
 
 
-class InstitutionAdmin(BaseAdmin):
+class InstitutionAdmin(BaseMetadataAdmin):
     model = Institution
     list_display = (
         "name",

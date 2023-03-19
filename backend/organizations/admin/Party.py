@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from core.admins import BaseAdmin
+from core.admins import BaseMetadataAdmin
 from organizations.models import Party
 
 
-class PartyAdmin(BaseAdmin):
+class PartyAdmin(BaseMetadataAdmin):
     model = Party
     list_display = (
         "short_name",
@@ -14,7 +14,7 @@ class PartyAdmin(BaseAdmin):
     )
     search_fields = ("name", "short_name")
     ordering = ("name",)
-    readonly_fields = ("adm0",)
+    autocomplete_fields = ("adm0",)
 
 
 admin.site.register(Party, PartyAdmin)
