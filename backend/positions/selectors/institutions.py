@@ -116,6 +116,7 @@ def get_institution_mean_age_stats(pk: str, params: dict) -> dict:
     }
 
 
+@cached_stats(base="INSTITUTION_GENRE")
 def get_institution_genre_stats(pk: str, params: dict) -> dict:
     """
     Return institution genre stats
