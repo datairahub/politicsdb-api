@@ -7,6 +7,7 @@ from positions import models, serializers
 from positions.selectors.institutions import (
     get_institution_distribution_age_stats,
     get_institution_mean_age_stats,
+    get_institution_genre_stats,
 )
 
 
@@ -37,3 +38,10 @@ class InstitutionViewSet(BaseModelViewSet):
         Return institution mean age stats
         """
         return Response(get_institution_mean_age_stats(pk, request.GET))
+
+    @action(detail=True, methods=["get"])
+    def stats_genre(self, request, pk):
+        """
+        Return institution genre stats
+        """
+        return Response(get_institution_genre_stats(pk, request.GET))

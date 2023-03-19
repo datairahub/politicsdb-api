@@ -66,3 +66,12 @@ class InstitutionMeanAgeSerializer(serializers.Serializer):
 
     def get_genre(self, obj):
         return obj.get("genre")
+
+
+class InstitutionGenreSerializer(serializers.Serializer):
+    id = serializers.CharField()
+    name = serializers.CharField()
+    start = serializers.DateField()
+    end = serializers.DateField()
+    genre = serializers.CharField()
+    total = serializers.IntegerField()

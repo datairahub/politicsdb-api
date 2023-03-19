@@ -4,6 +4,7 @@ from .Institution import (
     InstitutionRetrieveSerializer,
     InstitutionDistributionAgeSerializer,
     InstitutionMeanAgeSerializer,
+    InstitutionGenreSerializer,
 )
 from .Period import (
     PeriodListSerializer,
