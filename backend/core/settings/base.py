@@ -143,6 +143,12 @@ SCRAPERS = {
 }
 
 PUBLIC_DATA = {
-    "EXCLUDED_FIELDS": ("metadata",),
+    "EXCLUDED_FIELDS": (
+        "metadata",
+        "death_date",
+        "death_date_accuracy",
+        "death_place",
+        "death_place_name",
+    ),
     "EXCLUDED_APPS": ("world", "admin", "auth", "contenttypes", "sessions", "gis"),
 }
