@@ -7,7 +7,7 @@ from core.models import DateSourceAbstractModel
 
 class BirthDateSource(DateSourceAbstractModel):
     """
-    Fuente (informativa) para la fecha de nacimiento
+    Fuente de fecha de nacimiento
     """
 
     class Meta(DateSourceAbstractModel.Meta):

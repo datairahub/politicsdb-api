@@ -11,14 +11,6 @@ logger = logging.getLogger("commands")
 DUMPS_DIR = settings.BASE_DIR.parent / "static" / "dump"
 DUMPS_TEMP_DIR = DUMPS_DIR / "temp"
 LICENSES_DIR = settings.BASE_DIR.parent / "static" / "licenses"
-EXCLUDED_APPS = (
-    "world",
-    "admin",
-    "auth",
-    "contenttypes",
-    "sessions",
-)
-EXCLUDED_FIELDS = ("metadata",)
 
 
 def get_dump_info_text():
@@ -45,13 +37,13 @@ def dump_data():
     # Dump models
     for model in apps.get_models():
         app_label = model._meta.label.split(".")[0]
-        if app_label in EXCLUDED_APPS:
+        if app_label in settings.PUBLIC_DATA["EXCLUDED_APPS"]:
             continue
 
         field_names = [
             field.name
             for field in model._meta.fields
-            if not field.name in EXCLUDED_FIELDS
+            if not field.name in settings.PUBLIC_DATA["EXCLUDED_FIELDS"]
         ]
 
         with open(DUMPS_TEMP_DIR / f"{model.__name__}.csv", "w") as csvfile:

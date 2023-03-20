@@ -10,14 +10,13 @@ class BaseModel(models.Model):
         primary_key=True,
         default=uuid.uuid4,
         editable=False,
+        help_text="Identificador único de la instancia del modelo",
     )
     created_at = models.DateTimeField(
-        auto_now_add=True,
-        null=False,
+        auto_now_add=True, null=False, help_text="Fecha de creación de la instancia"
     )
     updated_at = models.DateTimeField(
-        auto_now=True,
-        null=False,
+        auto_now=True, null=False, help_text="Última actualización de la instancia"
     )
 
     def get_admin_url(self):

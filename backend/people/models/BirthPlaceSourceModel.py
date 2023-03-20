@@ -4,7 +4,7 @@ from core.models import LocationSourceAbstractModel
 
 class BirthPlaceSource(LocationSourceAbstractModel):
     """
-    Fuente (informativa) para el lugar de nacimiento
+    Fuente del lugar de nacimiento
     """
 
     class Meta(LocationSourceAbstractModel.Meta):

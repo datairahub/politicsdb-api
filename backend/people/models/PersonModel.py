@@ -9,7 +9,7 @@ from people.services.staticfiles import person_profile_image_path
 
 class Person(BaseAbstractModel):
     """
-    Persona (física)
+    Persona física
     """
 
     DATE_ACCURACY = (

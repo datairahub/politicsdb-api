@@ -5,7 +5,7 @@ from core.models import BaseAbstractModel
 
 class PositionParty(BaseAbstractModel):
     """
-    Representación del cargo por partido
+    Representación del cargo en nombre de partido
     """
 
     position = models.ForeignKey(

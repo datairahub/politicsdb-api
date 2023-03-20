@@ -4,7 +4,7 @@ from core.models import DateSourceAbstractModel
 
 class DeathDateSource(DateSourceAbstractModel):
     """
-    Fuente (informativa) para la fecha de fallecimiento
+    Fuente de fecha de fallecimiento
     """
 
     class Meta(DateSourceAbstractModel.Meta):

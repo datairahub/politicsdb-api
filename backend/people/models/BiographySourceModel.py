@@ -5,7 +5,7 @@ from core.models import DataSourceAbstractModel
 
 class BiographySource(DataSourceAbstractModel):
     """
-    Fuente (informativa) para la biografía
+    Fuente de biografía
     """
 
     value = models.TextField(null=False, blank=False, help_text="Biografía")

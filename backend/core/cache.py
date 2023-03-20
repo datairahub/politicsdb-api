@@ -32,3 +32,21 @@ def cached_stats(base: str):
         return wrapper
 
     return decorator
+
+
+def cached_value(cache_name: str):
+    """
+    Custom decorator to cache a value
+    """
+
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            if cache.get(cache_name):
+                return cache.get(cache_name)
+            result = func(*args, **kwargs)
+            cache.set(cache_name, result, 60 * 60 * 24 * 30)
+            return result
+
+        return wrapper
+
+    return decorator

@@ -5,7 +5,7 @@ from core.models import BaseAbstractModel
 
 class Party(BaseAbstractModel):
     """
-    Partido político (global)
+    Partido político (nivel nacional)
     """
 
     name = models.CharField(

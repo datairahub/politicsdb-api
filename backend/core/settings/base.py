@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     "django_filters",
     # Apps
     "admin_extension",
+    "universe",
     "world",
     "people",
     "positions",
@@ -139,4 +140,9 @@ SCRAPERS = {
         "referer": "https://www.congreso.es/busqueda-de-diputados",
         "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
     },
+}
+
+PUBLIC_DATA = {
+    "EXCLUDED_FIELDS": ("metadata",),
+    "EXCLUDED_APPS": ("world", "admin", "auth", "contenttypes", "sessions", "gis"),
 }

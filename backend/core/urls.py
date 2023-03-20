@@ -11,6 +11,7 @@ urlpatterns = [
 
     path(f"{settings.API_PATH}position/",   include(("positions.urls", "position"),   namespace="position")),
     path(f"{settings.API_PATH}people/",     include(("people.urls",    "people"),     namespace="people")),
+    path(f"{settings.API_PATH}universe/",   include(("universe.urls",  "universe"),   namespace="universe")),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 # fmt: on
