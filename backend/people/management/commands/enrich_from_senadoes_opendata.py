@@ -10,7 +10,6 @@ from people.services.birth_dates import register_birth_date_source
 from people.services.death_dates import register_death_date_source
 from people.services.biographies import register_biography_source
 from positions.models import (
-    Institution,
     Period,
     Position,
 )
@@ -47,11 +46,11 @@ class Command(BaseCommand):
         )
 
     def get_periods(self, *args, **options):
-        spain_congress = Institution.objects.get(name="Senado de España")
-
-        periods = Period.objects.filter(institution=spain_congress)
+        periods = Period.objects.filter(institution__name="Senado de España")
         if options["period"]:
             periods = periods.filter(number=options["period"])
+        else:
+            periods = periods.filter(number__gte=12)  # periods with open data files
 
         return periods.order_by("-number")
 
@@ -61,12 +60,12 @@ class Command(BaseCommand):
         for period in self.get_periods(*args, **options):
             for position in Position.objects.filter(period=period):
 
-                if not position.metadata["www.senado.es"].get("xml_data", None):
-                    # senators without open data
-                    continue
+                cod = position.metadata["www.senado.es"]["person_id"]
+                legis = period.number
+                url = f"https://www.senado.es/web/ficopendataservlet?tipoFich=1&cod={cod}&legis={legis}"
 
                 if not options["override"]:
-                    if position.metadata["www.senado.es"].get("sexo", None):
+                    if position.person.metadata["www.senado.es"].get("ficha_url"):
                         # senators already fetched
                         continue
 
@@ -74,16 +73,16 @@ class Command(BaseCommand):
                     # senators already fetched in other period (current execution)
                     continue
 
-                url = position.metadata["www.senado.es"]["xml_data"]
-                url = url.split(".xml")[0] + ".xml"
-                url = url.replace("web/../", "")
+                position.person.metadata["www.senado.es"]["ficha_url"] = url
 
                 try:
                     response = request_page(url)
                 except HTTPError:
+                    position.person.save(update_fields=["metadata"])
                     continue
 
                 if not response:
+                    position.person.save(update_fields=["metadata"])
                     continue
 
                 soup = BeautifulSoup(response, "html.parser")
