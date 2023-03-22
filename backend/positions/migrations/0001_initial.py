@@ -28,10 +28,21 @@ class Migration(migrations.Migration):
                         editable=False,
                         primary_key=True,
                         serialize=False,
+                        help_text="Identificador único de la instancia del modelo",
                     ),
                 ),
-                ("created_at", models.DateTimeField(auto_now_add=True)),
-                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        auto_now_add=True, help_text="Fecha de creación de la instancia"
+                    ),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(
+                        auto_now=True, help_text="Última actualización de la instancia"
+                    ),
+                ),
                 (
                     "metadata",
                     models.JSONField(
@@ -116,10 +127,21 @@ class Migration(migrations.Migration):
                         editable=False,
                         primary_key=True,
                         serialize=False,
+                        help_text="Identificador único de la instancia del modelo",
                     ),
                 ),
-                ("created_at", models.DateTimeField(auto_now_add=True)),
-                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        auto_now_add=True, help_text="Fecha de creación de la instancia"
+                    ),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(
+                        auto_now=True, help_text="Última actualización de la instancia"
+                    ),
+                ),
                 (
                     "metadata",
                     models.JSONField(
@@ -181,10 +203,21 @@ class Migration(migrations.Migration):
                         editable=False,
                         primary_key=True,
                         serialize=False,
+                        help_text="Identificador único de la instancia del modelo",
                     ),
                 ),
-                ("created_at", models.DateTimeField(auto_now_add=True)),
-                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        auto_now_add=True, help_text="Fecha de creación de la instancia"
+                    ),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(
+                        auto_now=True, help_text="Última actualización de la instancia"
+                    ),
+                ),
                 (
                     "metadata",
                     models.JSONField(
@@ -243,10 +276,21 @@ class Migration(migrations.Migration):
                         editable=False,
                         primary_key=True,
                         serialize=False,
+                        help_text="Identificador único de la instancia del modelo",
                     ),
                 ),
-                ("created_at", models.DateTimeField(auto_now_add=True)),
-                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        auto_now_add=True, help_text="Fecha de creación de la instancia"
+                    ),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(
+                        auto_now=True, help_text="Última actualización de la instancia"
+                    ),
+                ),
                 (
                     "metadata",
                     models.JSONField(
