@@ -12,7 +12,6 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ("organizations", "0001_initial"),
         ("people", "0001_initial"),
         ("world", "0005_fill_spain_adm3_adm4"),
     ]

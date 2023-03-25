@@ -8,6 +8,14 @@ class Party(BaseAbstractModel):
     Partido político (nivel nacional)
     """
 
+    LEVELS = (
+        ("adm0", "Estatal"),
+        ("adm1", "CCAA"),
+        ("adm2", "Provincial"),
+        ("adm3", "Regional"),
+        ("adm4", "Municipal"),
+        ("adm5", "Sub-municipal"),
+    )
     name = models.CharField(
         max_length=255,
         db_index=True,
@@ -21,6 +29,7 @@ class Party(BaseAbstractModel):
     color = models.CharField(
         max_length=7,
         help_text="Color principal del partido político",
+        default="#000000",
     )
     adm0 = models.ForeignKey(
         "world.Adm0",
@@ -28,6 +37,35 @@ class Party(BaseAbstractModel):
         on_delete=models.PROTECT,
         related_name="parties",
         help_text="País al que pertenece el partido político",
+    )
+    level = models.CharField(
+        max_length=4,
+        choices=LEVELS,
+        default=LEVELS[0][0],
+        help_text="Ámbito (estatal, municipal...)",
+    )
+    start = models.DateField(
+        help_text="Fecha de creación del partido",
+    )
+    end = models.DateField(
+        help_text="Fecha de disolución del partido",
+    )
+    address = models.TextField(
+        null=True,
+        blank=True,
+        help_text="Domicilio social del partido",
+    )
+    email = models.EmailField(
+        max_length=255,
+        null=True,
+        blank=True,
+        help_text="Email principal del partido",
+    )
+    web = models.URLField(
+        max_length=255,
+        null=True,
+        blank=True,
+        help_text="Página web del partido",
     )
 
     def __str__(self):
@@ -38,7 +76,4 @@ class Party(BaseAbstractModel):
         db_table = "organizations_party"
         verbose_name = "Partido"
         verbose_name_plural = "Partidos"
-        unique_together = (
-            ("name", "adm0"),
-            ("short_name", "adm0"),
-        )
+        unique_together = (("name", "adm0"),)

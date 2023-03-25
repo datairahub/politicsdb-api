@@ -448,11 +448,11 @@ DATA = [
     # Sánchez II
     ['2020-01-08', '2999-12-31', 'Presidente', 'Sánchez II', 'Pedro Sánchez Pérez-Castejón', 'Presidente del Gobierno', 'PSOE'],
     ['2020-01-13', '2021-07-12', 'Vicepresidente', 'Sánchez II', 'Carmen Calvo Poyato', 'Vicepresidenta Primera del Gobierno', 'PSOE'],
-    ['2020-01-13', '2021-03-31', 'Vicepresidente', 'Sánchez II', 'Pablo Iglesias Turrión', 'Vicepresidente Segundo del Gobierno', 'Podemos'],
+    ['2020-01-13', '2021-03-31', 'Vicepresidente', 'Sánchez II', 'Pablo Iglesias Turrión', 'Vicepresidente Segundo del Gobierno', 'UP'],
     ['2020-01-13', '2021-03-31', 'Vicepresidente', 'Sánchez II', 'Nadia Calviño Santamaría', 'Vicepresidenta Tercera del Gobierno', 'PSOE'],
     ['2020-01-13', '2021-07-12', 'Vicepresidente', 'Sánchez II', 'Teresa Ribera Rodríguez', 'Vicepresidenta Cuarta del Gobierno', 'PSOE'],
     ['2020-01-13', '2021-07-12', 'Ministro', 'Sánchez II', 'Carmen Calvo Poyato', 'Ministra de Presidencia, Relaciones con las Cortes y Memoria Democrática', 'PSOE'],
-    ['2020-01-13', '2021-03-31', 'Ministro', 'Sánchez II', 'Pablo Iglesias Turrión', 'Ministro de Derechos Sociales y Agenda 2030', 'Podemos'],
+    ['2020-01-13', '2021-03-31', 'Ministro', 'Sánchez II', 'Pablo Iglesias Turrión', 'Ministro de Derechos Sociales y Agenda 2030', 'UP'],
     ['2020-01-13', '2999-12-31', 'Ministro', 'Sánchez II', 'Nadia Calviño Santamaría', 'Ministra de Asuntos Económicos y Transformación Digital', 'PSOE'],
     ['2020-01-13', '2999-12-31', 'Ministro', 'Sánchez II', 'Teresa Ribera Rodríguez', 'Ministra de Transición Ecológica y Reto Demográfico', 'PSOE'],
     ['2020-01-13', '2021-07-12', 'Ministro', 'Sánchez II', 'Arancha González Laya', 'Ministra de Exteriores, Unión Europea y Cooperación', 'PSOE'],
@@ -462,24 +462,24 @@ DATA = [
     ['2020-01-13', '2999-12-31', 'Ministro', 'Sánchez II', 'Fernando Grande-Marlaska Gómez', 'Ministro de Interior', 'PSOE'],
     ['2020-01-13', '2021-07-12', 'Ministro', 'Sánchez II', 'José Luis Ábalos Meco', 'Ministro de Transportes, Movilidad y Agenda Urbana', 'PSOE'],
     ['2020-01-13', '2021-07-12', 'Ministro', 'Sánchez II', 'María Isabel Celaá Diéguez', 'Ministra de Educación y Formación Profesional', 'PSOE'],
-    ['2020-01-13', '2999-12-31', 'Ministro', 'Sánchez II', 'Yolanda Díaz Pérez', 'Ministra de Trabajo y Economía Social', 'Podemos'],
+    ['2020-01-13', '2999-12-31', 'Ministro', 'Sánchez II', 'Yolanda Díaz Pérez', 'Ministra de Trabajo y Economía Social', 'UP'],
     ['2020-01-13', '2999-12-31', 'Ministro', 'Sánchez II', 'Reyes Maroto Illera', 'Ministra de Industria, Comercio y Turismo', 'PSOE'],
     ['2020-01-13', '2999-12-31', 'Ministro', 'Sánchez II', 'Luis Planas Puchades', 'Ministro de Agricultura, Pesca y Alimentación', 'PSOE'],
     ['2020-01-13', '2021-01-27', 'Ministro', 'Sánchez II', 'Carolina Darias San Sebastián', 'Ministra de Política Territorial y Función Pública', 'PSOE'],
     ['2020-01-13', '2021-07-12', 'Ministro', 'Sánchez II', 'José Manuel Rodríguez Uribes', 'Ministro de Cultura y Deporte', 'PSOE'],
     ['2020-01-13', '2021-01-27', 'Ministro', 'Sánchez II', 'Salvador Illa Roca', 'Ministro de Sanidad', 'PSOE'],
     ['2020-01-13', '2021-07-12', 'Ministro', 'Sánchez II', 'Pedro Duque Duque', 'Ministro de Ciencia e Innovación', 'PSOE'],
-    ['2020-01-13', '2999-12-31', 'Ministro', 'Sánchez II', 'Irene Montero Gil', 'Ministra de Igualdad', 'Podemos'],
-    ['2020-01-13', '2999-12-31', 'Ministro', 'Sánchez II', 'Alberto Garzón Espinosa', 'Ministro de Consumo', 'Podemos'],
+    ['2020-01-13', '2999-12-31', 'Ministro', 'Sánchez II', 'Irene Montero Gil', 'Ministra de Igualdad', 'UP'],
+    ['2020-01-13', '2999-12-31', 'Ministro', 'Sánchez II', 'Alberto Garzón Espinosa', 'Ministro de Consumo', 'UP'],
     ['2020-01-13', '2999-12-31', 'Ministro', 'Sánchez II', 'José Luis Escrivá Belmonte', 'Ministro de Inclusión, Seguridad Social y Migraciones', 'PSOE'],
-    ['2020-01-13', '2021-12-20', 'Ministro', 'Sánchez II', 'Manuel Castells Oliván', 'Ministro de Universidades', 'Podemos'],
+    ['2020-01-13', '2021-12-20', 'Ministro', 'Sánchez II', 'Manuel Castells Oliván', 'Ministro de Universidades', 'UP'],
     ['2021-01-27', '2021-07-12', 'Ministro', 'Sánchez II', 'Miquel Iceta Llorens', 'Ministro de Política Territorial y Función Pública', 'PSOE'],
     ['2021-01-27', '2999-12-31', 'Ministro', 'Sánchez II', 'Carolina Darias San Sebastián', 'Ministra de Sanidad', 'PSOE'],
     ['2021-03-31', '2021-07-12', 'Vicepresidente', 'Sánchez II', 'Nadia Calviño Santamaría', 'Vicepresidenta Segunda del Gobierno', 'PSOE'],
-    ['2021-03-31', '2021-07-12', 'Vicepresidente', 'Sánchez II', 'Yolanda Díaz Pérez', 'Vicepresidenta Tercera del Gobierno', 'Podemos'],
-    ['2021-03-31', '2999-12-31', 'Ministro', 'Sánchez II', 'Ione Belarra Urteaga', 'Ministra de Derechos Sociales y Agenda 2030', 'Podemos'],
+    ['2021-03-31', '2021-07-12', 'Vicepresidente', 'Sánchez II', 'Yolanda Díaz Pérez', 'Vicepresidenta Tercera del Gobierno', 'UP'],
+    ['2021-03-31', '2999-12-31', 'Ministro', 'Sánchez II', 'Ione Belarra Urteaga', 'Ministra de Derechos Sociales y Agenda 2030', 'UP'],
     ['2021-07-12', '2999-12-31', 'Vicepresidente', 'Sánchez II', 'Nadia Calviño Santamaría', 'Vicepresidenta Primera del Gobierno', 'PSOE'],
-    ['2021-07-12', '2999-12-31', 'Vicepresidente', 'Sánchez II', 'Yolanda Díaz Pérez', 'Vicepresidenta Segunda del Gobierno', 'Podemos'],
+    ['2021-07-12', '2999-12-31', 'Vicepresidente', 'Sánchez II', 'Yolanda Díaz Pérez', 'Vicepresidenta Segunda del Gobierno', 'UP'],
     ['2021-07-12', '2999-12-31', 'Vicepresidente', 'Sánchez II', 'Teresa Ribera Rodríguez', 'Vicepresidenta Tercera del Gobierno', 'PSOE'],
     ['2021-07-12', '2999-12-31', 'Ministro', 'Sánchez II', 'José Manuel Albares Bueno', 'Ministro de Exteriores, Unión Europea y Cooperación', 'PSOE'],
     ['2021-07-12', '2999-12-31', 'Ministro', 'Sánchez II', 'Pilar Llop Cuenca', 'Ministra de Justicia', 'PSOE'],
@@ -490,7 +490,7 @@ DATA = [
     ['2021-07-12', '2999-12-31', 'Ministro', 'Sánchez II', 'Isabel Rodríguez García', 'Ministra de Política Territorial', 'PSOE'],
     ['2021-07-12', '2999-12-31', 'Ministro', 'Sánchez II', 'Miquel Iceta Llorens', 'Ministro de Cultura y Deporte', 'PSOE'],
     ['2021-07-12', '2999-12-31', 'Ministro', 'Sánchez II', 'Diana Morant Ripoll', 'Ministra de Ciencia e Innovación', 'PSOE'],
-    ['2021-07-12', '2999-12-31', 'Ministro', 'Sánchez II', 'Joan Subirats Humet', 'Ministro de Universidades', 'Podemos'],
+    ['2021-07-12', '2999-12-31', 'Ministro', 'Sánchez II', 'Joan Subirats Humet', 'Ministro de Universidades', 'UP'],
 ]
 # fmt: on
 
@@ -499,16 +499,10 @@ def apply_migration(apps, schema_editor):
     Person = apps.get_model("people", "Person")
     Period = apps.get_model("positions", "Period")
     Position = apps.get_model("positions", "Position")
-    PositionParty = apps.get_model("positions", "PositionParty")
-    Party = apps.get_model("organizations", "Party")
-    spain = apps.get_model("world", "Adm0").objects.get(code="es")
-
-    call_command("update_parties", verbosity=1)
 
     for row in DATA:
         person = Person.objects.get(full_name=row[4])
         period = Period.objects.get(name=row[3])
-        party = Party.objects.get(adm0=spain, short_name=row[6])
         position = Position(
             short_name=row[2],
             full_name=row[5],
@@ -518,12 +512,6 @@ def apply_migration(apps, schema_editor):
             end=row[1],
         )
         position.save()
-        PositionParty(
-            position=position,
-            party=party,
-            start=row[0],
-            end=row[1],
-        )
 
 
 def revert_migration(apps, schema_editor):
@@ -535,7 +523,6 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ("positions", "0004_fill_spain_goverments"),
-        ("organizations", "0001_initial"),
     ]
 
     operations = [

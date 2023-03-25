@@ -7,8 +7,8 @@ from organizations.models import Party
 class PartyAdmin(BaseMetadataAdmin):
     model = Party
     list_display = (
-        "short_name",
         "name",
+        "short_name",
         "color",
         "adm0",
     )

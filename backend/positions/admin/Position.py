@@ -26,6 +26,7 @@ class PositionAdmin(BaseMetadataAdmin):
             (
                 "person",
                 "period",
+                "pretty_metadata",
             )
             if obj
             else tuple()

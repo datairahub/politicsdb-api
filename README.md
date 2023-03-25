@@ -2,14 +2,6 @@
 
 ## Update commands
 
-### Update spain parties
-
-Update Spain parties from file `data_input/parties/adm0_parties.csv`
-
-```sh
-python backend/manage.py update_parties
-```
-
 ### Update spain deputies (congress)
 
 Get or update spanish congress members from the index of the congress page. The following data are obtained:
