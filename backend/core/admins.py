@@ -47,7 +47,9 @@ class BaseMetadataAdmin(BaseAdmin):
     def pretty_metadata(self, instance):
         """Function to display pretty version of our data"""
 
-        response = json.dumps(instance.metadata, sort_keys=True, indent=2)
+        response = json.dumps(
+            instance.metadata, sort_keys=True, indent=2, ensure_ascii=False
+        )
         formatter = HtmlFormatter(style="colorful")
         response = highlight(response, JsonLexer(), formatter)
         style = "<style>" + formatter.get_style_defs() + "</style><br>"

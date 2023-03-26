@@ -23,7 +23,7 @@ class Command(BaseCommand):
     detail = "https://servicio.mir.es/nfrontal/webpartido_politico/recurso/partido_politicoDetalle.html"
 
     def handle(self, *args, **options):
-        spain = Adm0.objects.get(code="es")
+        adm0 = Adm0.objects.get(code="es")
         session = requests.Session()
 
         r = session.get(self.main)
@@ -75,11 +75,12 @@ class Command(BaseCommand):
                 .replace(".", "")
                 .strip()[1:-1]
             )
+            country_code = f"{adm0.code}-{code}"
 
-            party = Party.objects.filter(name=name, adm0=spain).first()
+            party = Party.objects.filter(code=country_code).first()
             if not party:
-                party = Party(name=name, adm0=spain, metadata={})
-
+                party = Party(adm0=adm0, code=country_code, metadata={})
+            party.name = name
             party.short_name = acronim
             party.start = datetime.strptime(registered, "%d/%m/%Y").date()
             party.end = date(2999, 12, 31)
@@ -93,8 +94,6 @@ class Command(BaseCommand):
             party.metadata["servicio.mir.es"]["name"] = name
             party.metadata["servicio.mir.es"]["acronim"] = acronim
             party.metadata["servicio.mir.es"]["code"] = code
-
-            party.save()
             parties.append(party)
 
         for party in parties:
@@ -163,9 +162,10 @@ class Command(BaseCommand):
                             "tipo": str(title.next_sibling),
                         }
 
-            if party.metadata["servicio.mir.es"]["email"]:
+            if party.metadata["servicio.mir.es"].get("email"):
                 party.email = party.metadata["servicio.mir.es"]["email"]
-            if party.metadata["servicio.mir.es"]["paginaweb"]:
+
+            if party.metadata["servicio.mir.es"].get("paginaweb"):
                 party.web = party.metadata["servicio.mir.es"]["paginaweb"]
 
             party.save()

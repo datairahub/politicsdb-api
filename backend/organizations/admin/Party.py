@@ -9,8 +9,9 @@ class PartyAdmin(BaseMetadataAdmin):
     list_display = (
         "name",
         "short_name",
+        "code",
         "color",
-        "adm0",
+        "start",
     )
     search_fields = ("name", "short_name")
     ordering = ("name",)

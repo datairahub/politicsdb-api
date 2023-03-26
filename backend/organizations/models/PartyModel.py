@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from core.models import BaseAbstractModel
+from core.validators import validate_hex_color
 
 
 class Party(BaseAbstractModel):
@@ -26,10 +27,17 @@ class Party(BaseAbstractModel):
         db_index=True,
         help_text="Siglas del partido político",
     )
+    code = models.CharField(
+        max_length=255,
+        unique=True,
+        db_index=True,
+        help_text="Código único de registro. Números mayores de 100000 son no encotrados en registro",
+    )
     color = models.CharField(
         max_length=7,
         help_text="Color principal del partido político",
         default="#000000",
+        validators=[validate_hex_color],
     )
     adm0 = models.ForeignKey(
         "world.Adm0",
