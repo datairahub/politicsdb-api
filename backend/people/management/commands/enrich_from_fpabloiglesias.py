@@ -77,6 +77,9 @@ INCORRECT_PERSONS_MISMATCH = [
     # person.last_name with a profile pares.mcu.es page title
     # but they are an incorrect match
     "jose_latorre_ruiz",
+    "andres_lorite_lorite",
+    "gerard_alvarez_garcia",
+    "leopoldo_herrero_ruiz",
 ]
 
 
