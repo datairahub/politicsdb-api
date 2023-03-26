@@ -311,23 +311,23 @@ class Command(BaseCommand):
             "PSE-EE-PSOE": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE)",
             "PSDEG-PSOE": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
             "PP": "PARTIDO POPULAR",
-            "PP-FORO": "PARTIDO POPULAR,FORO ASTURIAS",
-            "UP": "PODEMOS,IZQUIERDA UNIDA,VERDES EQUO",
-            "ECP-GUAYEM EL CANVI": "PODEMOS,CATALUNYA EN COMÚ,ESQUERRA UNIDA I ALTERNATIVA",
-            "EC-UP": "PODEMOS,IZQUIERDA UNIDA",
-            "MÁS PAÍS-EQUO": "MÁS PAÍS,VERDES EQUO",
+            "PP-FORO": "PARTIDO POPULAR,FORO ASTURIAS",  # http://www.juntaelectoralcentral.es/cs/jec/documentos/JEPAsturias-COALICION%20PP-FORO.pdf
+            "UP": "PODEMOS,IZQUIERDA UNIDA,BATZARRE-ASAMBLEA DE IZQUIERDAS,ALTO ARAGÓN EN COMÚN",  # https://app.juntaelectoralcentral.es/svtjec/descargarFichero?tipo=tipoCoalicion&codigoCoalicion=32389
+            "ECP-GUAYEM EL CANVI": "EN COMÚ PODEM,CATALUNYA EN COMÚ,PODEMOS",  # https://app.juntaelectoralcentral.es/svtjec/descargarFichero?tipo=tipoCoalicion&codigoCoalicion=32440
+            "EC-UP": "PODEMOS,ESQUERDA UNIDA GALEGA",  # https://app.juntaelectoralcentral.es/svtjec/descargarFichero?tipo=tipoCoalicion&codigoCoalicion=32444
+            "MÁS PAÍS-EQUO": "MÁS PAÍS,VERDES EQUO",  # https://app.juntaelectoralcentral.es/svtjec/descargarFichero?tipo=tipoCoalicion&codigoCoalicion=32446
             "EAJ-PNV": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
             "EH BILDU": "EUSKAL HERRIA BILDU",
-            "JXCAT-JUNTS": "PARTIT DEMÒCRATA EUROPEU CATALÀ,CONVERGÈNCIA DEMOCRÀTICA DE CATALUNYA,JUNTS PER CATALUNYA",
-            "JXCAT-JUNTS (JUNTS)": "PARTIT DEMÒCRATA EUROPEU CATALÀ,CONVERGÈNCIA DEMOCRÀTICA DE CATALUNYA,JUNTS PER CATALUNYA",
-            "JXCAT-JUNTS (PDECAT)": "PARTIT DEMÒCRATA EUROPEU CATALÀ,CONVERGÈNCIA DEMOCRÀTICA DE CATALUNYA,JUNTS PER CATALUNYA",
-            "ERC-S": "ESQUERRA REPUBLICANA DE CATALUNYA",
-            "CUP-PR": "CANDIDATURA D'UNITAT POPULAR",
-            "CCA-PNC-NC": "COALICION CANARIA,PARTIDO NACIONALISTA CANARIO,NUEVA CANARIAS",
-            "NC-CCA-PNC": "COALICION CANARIA,PARTIDO NACIONALISTA CANARIO,NUEVA CANARIAS",
-            "NA+": "UNION DEL PUEBLO NAVARRO,PARTIDO POPULAR,CIUDADANOS-PARTIDO DE LA CIUDADANIA",
+            "JXCAT-JUNTS": "PARTIT DEMÒCRATA EUROPEU CATALÀ,JUNTS PER CATALUNYA",  # https://app.juntaelectoralcentral.es/svtjec/descargarFichero?tipo=tipoCoalicion&codigoCoalicion=32427
+            "JXCAT-JUNTS (JUNTS)": "PARTIT DEMÒCRATA EUROPEU CATALÀ,JUNTS PER CATALUNYA",  # https://app.juntaelectoralcentral.es/svtjec/descargarFichero?tipo=tipoCoalicion&codigoCoalicion=32427
+            "JXCAT-JUNTS (PDECAT)": "PARTIT DEMÒCRATA EUROPEU CATALÀ,JUNTS PER CATALUNYA",  # https://app.juntaelectoralcentral.es/svtjec/descargarFichero?tipo=tipoCoalicion&codigoCoalicion=32427
+            "ERC-S": "ESQUERRA REPUBLICANA DE CATALUNYA",  # https://app.juntaelectoralcentral.es/svtjec/descargarFichero?tipo=tipoCoalicion&codigoCoalicion=32424
+            "CUP-PR": "CANDIDATURA D'UNITAT POPULAR,CAPGIREM",  # https://app.juntaelectoralcentral.es/svtjec/descargarFichero?tipo=tipoCoalicion&codigoCoalicion=32436
+            "CCA-PNC-NC": "COALICION CANARIA,PARTIDO NACIONALISTA CANARIO,NUEVA CANARIAS",  # https://app.juntaelectoralcentral.es/svtjec/descargarFichero?tipo=tipoCoalicion&codigoCoalicion=32442
+            "NC-CCA-PNC": "COALICION CANARIA,PARTIDO NACIONALISTA CANARIO,NUEVA CANARIAS",  # https://app.juntaelectoralcentral.es/svtjec/descargarFichero?tipo=tipoCoalicion&codigoCoalicion=32442
+            "NA+": "UNION DEL PUEBLO NAVARRO,CIUDADANOS-PARTIDO DE LA CIUDADANIA",  # http://www.juntaelectoralcentral.es/cs/jec/documentos/JEPNavarra-COALICION%20NAVARRA%20SUMA.pdf
             "¡TERUEL EXISTE!": "TERUEL EXISTE",
-            "MÉS COMPROMÍS": "MÉS-COMPROMÍS,INICIATIVA DEL POBLE VALENCIA,VERDES EQUO,MÁS PAÍS",
+            "MÉS COMPROMÍS": "MÉS-COMPROMÍS,INICIATIVA DEL POBLE VALENCIA,VERDS EQUO DEL PAÍS VALENCIÀ,COALICIO COMPROMIS,MÁS PAÍS",  # https://app.juntaelectoralcentral.es/svtjec/descargarFichero?tipo=tipoCoalicion&codigoCoalicion=32447
             "CS": "CIUDADANOS-PARTIDO DE LA CIUDADANIA",
             "VOX": "VOX",
             "PRC": "PARTIDO REGIONALISTA DE CANTABRIA",
