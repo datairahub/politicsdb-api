@@ -10,10 +10,9 @@ class PartyAdmin(BaseMetadataAdmin):
         "name",
         "short_name",
         "code",
-        "color",
         "start",
     )
-    search_fields = ("name", "short_name")
+    search_fields = ("name", "short_name", "code")
     ordering = ("name",)
     autocomplete_fields = ("adm0",)
 

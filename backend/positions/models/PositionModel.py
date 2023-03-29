@@ -23,9 +23,17 @@ class Position(BaseAbstractModel):
     )
     period = models.ForeignKey(
         "positions.Period",
-        on_delete=models.PROTECT,
+        on_delete=models.CASCADE,
         related_name="positions",
         help_text="Periodo vinculado al cargo",
+    )
+    candidacy = models.ForeignKey(
+        "organizations.Candidacy",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="positions",
+        help_text="Candidatura que consigue el cargo",
     )
     start = models.DateField(
         help_text="Fecha de inicio del cargo",

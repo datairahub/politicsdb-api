@@ -1,0 +1,472 @@
+start,end,person_name,position_short_name,position_full_name,period_name,candidacy
+1976-07-05,1977-06-17,Adolfo Suárez González,Presidente,Presidente del Gobierno,Suárez I,UCD
+1976-07-08,1976-09-23,Fernando de Santiago Díaz de Mendívil,Vicepresidente,Vicepresidente Primero del Gobierno,Suárez I,UCD
+1976-07-08,1977-07-05,Alfonso Osorio García,Vicepresidente,Vicepresidente Segundo del Gobierno,Suárez I,UCD
+1976-07-08,1977-07-05,Alfonso Osorio García,Ministro,Ministro de Presidencia,Suárez I,UCD
+1976-07-08,1977-07-05,Marcelino Oreja Aguirre,Ministro,Ministro de Exteriores,Suárez I,UCD
+1976-07-08,1977-07-05,Landelino Lavilla Alsina,Ministro,Ministro de Justicia,Suárez I,UCD
+1976-07-08,1977-07-05,Félix Álvarez-Arenas Pacheco,Ministro,Ministro del Ejército,Suárez I,UCD
+1976-07-08,1977-04-15,Gabriel Pita da Veiga Sanz,Ministro,Ministro de la Marina,Suárez I,UCD
+1976-07-08,1977-07-05,Eduardo Carriles Galarraga,Ministro,Ministro de Hacienda,Suárez I,UCD
+1976-07-08,1977-07-05,Rodolfo Martín Villa,Ministro,Ministro de Interior,Suárez I,UCD
+1976-07-08,1977-04-23,Leopoldo Calvo-Sotelo Bustelo,Ministro,Ministro de Obras Públicas,Suárez I,UCD
+1976-07-08,1977-07-05,Aurelio Menéndez Menéndez,Ministro,Ministro de Educación y Ciencia,Suárez I,UCD
+1976-07-08,1977-07-05,Álvaro Rengifo Calderón,Ministro,Ministro de Trabajo,Suárez I,UCD
+1976-07-08,1977-07-05,Carlos Pérez de Bricio Olariaga,Ministro,Ministro de Industria,Suárez I,UCD
+1976-07-08,1977-07-05,Carlos Franco Iribarnegaray,Ministro,Ministro del Aire,Suárez I,UCD
+1976-07-08,1977-07-05,Fernando Abril Martorell,Ministro,Ministro de Agricultura,Suárez I,UCD
+1976-07-08,1977-04-07,Ignacio García López,Ministro,Ministro-secretario General del Movimiento,Suárez I,UCD
+1976-07-08,1977-07-05,José Lladó Fernández Urrutia,Ministro,Ministro de Comercio,Suárez I,UCD
+1976-07-08,1977-07-05,Andrés Reguera Guajardo,Ministro,Ministro de Información y Turismo,Suárez I,UCD
+1976-07-08,1977-07-05,Francisco Lozano Vicente,Ministro,Ministro de Vivienda,Suárez I,UCD
+1976-07-08,1977-07-05,Enrique de la Mata Gorostizaga,Ministro,Ministro de Relaciones Sindicales,Suárez I,UCD
+1976-09-23,1977-07-05,Manuel Gutiérrez Mellado,Vicepresidente,Vicepresidente Primero del Gobierno,Suárez I,UCD
+1976-09-23,1977-07-05,Pascual Pery Junquera,Ministro,Ministro de la Marina,Suárez I,UCD
+1977-05-11,1977-07-05,Luis Ortiz González,Ministro,Ministro de Obras Públicas,Suárez I,UCD
+1976-04-07,1977-04-07,Ignacio García López,Ministro,Ministro-secretario del Gobierno,Suárez I,UCD
+1977-06-17,1979-04-02,Adolfo Suárez González,Presidente,Presidente del Gobierno,Suárez II,UCD
+1977-07-05,1979-04-06,Manuel Gutiérrez Mellado,Vicepresidente,Vicepresidente Primero del Gobierno,Suárez II,UCD
+1977-07-05,1979-04-06,Manuel Gutiérrez Mellado,Ministro,Ministro de Defensa,Suárez II,UCD
+1977-07-05,1978-02-25,Enrique Fuentes Quintana,Vicepresidente,Vicepresidente Segundo del Gobierno,Suárez II,UCD
+1977-07-05,1978-02-25,Enrique Fuentes Quintana,Ministro,Ministro de Economía,Suárez II,UCD
+1977-07-05,1978-02-25,Fernando Abril Martorell,Vicepresidente,Vicepresidente Tercero del Gobierno,Suárez II,UCD
+1977-07-05,1979-04-06,Marcelino Oreja Aguirre,Ministro,Ministro de Exteriores,Suárez II,UCD
+1977-07-05,1979-03-22,Landelino Lavilla Alsina,Ministro,Ministro de Justicia,Suárez II,UCD
+1977-07-05,1979-04-06,Francisco Fernández Ordóñez,Ministro,Ministro de Hacienda,Suárez II,UCD
+1977-07-05,1979-04-06,Rodolfo Martín Villa,Ministro,Ministro de Interior,Suárez II,UCD
+1977-07-05,1979-04-06,Joaquín Garrigues Walker,Ministro,Ministro de Obras Públicas y Urbanismo,Suárez II,UCD
+1977-07-05,1979-04-06,Íñigo Cavero Lataillade,Ministro,Ministro de Educación y Ciencia,Suárez II,UCD
+1977-07-05,1978-02-25,Manuel Jiménez de Parga Cabrera,Ministro,Ministro de Trabajo,Suárez II,UCD
+1977-07-05,1978-02-25,Alberto Oliart Saussol,Ministro,Ministro de Industria y Energía,Suárez II,UCD
+1977-07-05,1978-02-25,José Enrique Martínez Genique,Ministro,Ministro de Agricultura,Suárez II,UCD
+1977-07-05,1979-04-06,Juan Antonio García Díez,Ministro,Ministro de Comercio y Turismo,Suárez II,UCD
+1977-07-05,1979-04-06,José Manuel Otero Novas,Ministro,Ministro de Presidencia,Suárez II,UCD
+1977-07-05,1979-02-25,José Lladó Fernández Urrutia,Ministro,Ministro de Transportes y Comunicaciones,Suárez II,UCD
+1977-07-05,1979-04-06,Enrique Sánchez de León Pérez,Ministro,Ministro de Sanidad y Seguridad Social,Suárez II,UCD
+1977-07-05,1977-09-01,Pío Cabanillas Gallas,Ministro,Ministro de Cultura y Bienestar,Suárez II,UCD
+1977-07-05,1979-04-06,Manuel Clavero Arévalo,Ministro Adjunto,Ministro Adjunto para las Regiones de España,Suárez II,UCD
+1977-07-05,1977-09-27,Ignacio Camuñas Solís,Ministro Adjunto,Ministro Adjunto para las Relaciones con las Cortes,Suárez II,UCD
+1977-09-01,1979-04-06,Pío Cabanillas Gallas,Ministro,Ministro de Cultura,Suárez II,UCD
+1978-02-25,1979-04-06,Fernando Abril Martorell,Vicepresidente,Vicepresidente Segundo del Gobierno,Suárez II,UCD
+1978-02-25,1979-04-06,Fernando Abril Martorell,Ministro,Ministro de Economía,Suárez II,UCD
+1978-02-25,1979-04-06,Rafael Calvo Ortega,Ministro,Ministro de Trabajo,Suárez II,UCD
+1978-02-25,1979-04-06,Agustín Rodríguez Sahagún,Ministro,Ministro de Industria y Energía,Suárez II,UCD
+1978-02-25,1979-04-06,Jaime Lamo de Espinosa Michels de Champourcin,Ministro,Ministro de Agricultura,Suárez II,UCD
+1978-02-25,1979-04-06,Salvador Sánchez-Terán Hernández,Ministro,Ministro de Transportes y Comunicaciones,Suárez II,UCD
+1978-02-11,1979-04-06,Leopoldo Calvo-Sotelo Bustelo,Ministro,Ministro para las Relaciones con las Comunidades Europeas,Suárez II,UCD
+1979-04-02,1981-02-26,Adolfo Suárez González,Presidente,Presidente del Gobierno,Suárez III,UCD
+1979-04-06,1981-02-27,Manuel Gutiérrez Mellado,Vicepresidente,Vicepresidente Primero del Gobierno,Suárez III,UCD
+1979-04-06,1980-09-09,Fernando Abril Martorell,Vicepresidente,Vicepresidente Segundo del Gobierno,Suárez III,UCD
+1979-04-06,1980-09-09,Marcelino Oreja Aguirre,Ministro,Ministro de Exteriores,Suárez III,UCD
+1979-04-06,1980-09-09,Íñigo Cavero Lataillade,Ministro,Ministro de Justicia,Suárez III,UCD
+1979-04-06,1981-02-27,Agustín Rodríguez Sahagún,Ministro,Ministro de Defensa,Suárez III,UCD
+1979-04-06,1981-02-27,Jaime García Añoveros,Ministro,Ministro de Hacienda,Suárez III,UCD
+1979-04-06,1980-05-03,Antonio Ibáñez Freire,Ministro,Ministro de Interior,Suárez III,UCD
+1979-04-06,1981-02-27,Jesús Sancho Rof,Ministro,Ministro de Obras Públicas y Urbanismo,Suárez III,UCD
+1979-04-06,1980-09-09,José Manuel Otero Novas,Ministro,Ministro de Educación,Suárez III,UCD
+1979-04-06,1980-05-03,Rafael Calvo Ortega,Ministro,Ministro de Trabajo,Suárez III,UCD
+1979-04-06,1980-05-03,Carlos Bustelo García del Real,Ministro,Ministro de Industria y Energía,Suárez III,UCD
+1979-04-06,1981-02-27,Jaime Lamo de Espinosa Michels de Champourcin,Ministro,Ministro de Agricultura,Suárez III,UCD
+1979-04-06,1980-05-03,Juan Antonio García Díez,Ministro,Ministro de Comercio y Turismo,Suárez III,UCD
+1979-04-06,1980-05-03,José Pedro Pérez-Llorca Rodrigo,Ministro,Ministro de Presidencia,Suárez III,UCD
+1979-04-06,1980-09-09,José Luis Leal Maldonado,Ministro,Ministro de Economía,Suárez III,UCD
+1979-04-06,1980-05-03,Salvador Sánchez-Terán Hernández,Ministro,Ministro de Transportes y Comunicaciones,Suárez III,UCD
+1979-04-06,1980-09-09,Juan Rovira Tarazona,Ministro,Ministro de Sanidad y Seguridad Social,Suárez III,UCD
+1979-04-06,1980-01-17,Manuel Clavero Arévalo,Ministro,Ministro de Cultura,Suárez III,UCD
+1979-04-06,1980-05-03,Joaquín Garrigues Walker,Ministro Adjunto,Ministro Adjunto al Presidente,Suárez III,UCD
+1979-04-06,1980-09-09,Leopoldo Calvo-Sotelo Bustelo,Ministro,Ministro para las Relaciones con las Comunidades Europeas,Suárez III,UCD
+1979-04-06,1980-01-18,Rafael Arias-Salgado Montalvo,Ministro,Ministro Adjunto para las Relaciones con las Cortes,Suárez III,UCD
+1979-04-06,1980-05-03,Antonio Fontán Pérez,Ministro,Ministro de Administración Territorial,Suárez III,UCD
+1979-04-06,1981-02-27,Luis González Seara,Ministro,Ministro de Universidades e Investigación,Suárez III,UCD
+1980-01-18,1980-09-09,Ricardo de la Cierva Hoces,Ministro,Ministro de Cultura,Suárez III,UCD
+1980-01-18,1980-05-03,Rafael Arias-Salgado Montalvo,Ministro Adjunto,Ministro Adjunto al Presidente,Suárez III,UCD
+1980-05-03,1981-02-27,Juan José Rosón Pérez,Ministro,Ministro de Interior,Suárez III,UCD
+1980-05-03,1980-09-09,Salvador Sánchez-Terán Hernández,Ministro,Ministro de Trabajo,Suárez III,UCD
+1980-05-03,1981-02-27,Ignacio Bayón Mariné,Ministro,Ministro de Industria y Energía,Suárez III,UCD
+1980-05-03,1980-09-09,Luis Gámir Casares,Ministro,Ministro de Comercio y Turismo,Suárez III,UCD
+1980-05-03,1981-02-27,Rafael Arias-Salgado Montalvo,Ministro,Ministro de Presidencia,Suárez III,UCD
+1980-05-03,1981-02-27,José Luis Álvarez Álvarez,Ministro,Ministro de Transportes y Comunicaciones,Suárez III,UCD
+1980-05-03,1980-09-09,José Pedro Pérez-Llorca Rodrigo,Ministro,Ministro de Administración Territorial,Suárez III,UCD
+1980-05-03,1981-02-27,Sebastián Martín-Retortillo Baquer,Ministro Adjunto,Ministro Adjunto al Presidente encargado de la Administración Pública,Suárez III,UCD
+1980-05-03,1980-09-09,Juan Antonio Ortega Díaz-Ambrona,Ministro Adjunto,Ministro Adjunto al Presidente encargado de la Coordinación Legislativa,Suárez III,UCD
+1980-09-09,1981-02-27,Leopoldo Calvo-Sotelo Bustelo,Vicepresidente,Vicepresidente Segundo del Gobierno,Suárez III,UCD
+1980-09-09,1981-02-27,José Pedro Pérez-Llorca Rodrigo,Ministro,Ministro de Exteriores,Suárez III,UCD
+1980-09-09,1981-02-27,Francisco Fernández Ordóñez,Ministro,Ministro de Justicia,Suárez III,UCD
+1980-09-09,1981-02-27,Juan Antonio Ortega Díaz-Ambrona,Ministro,Ministro de Educación,Suárez III,UCD
+1980-09-09,1981-02-27,Félix Manuel Pérez Miyares,Ministro,Ministro de Trabajo,Suárez III,UCD
+1980-09-09,1980-10-07,Juan Antonio García Díez,Ministro,Ministro de Economía,Suárez III,UCD
+1980-09-09,1980-10-07,Juan Antonio García Díez,Ministro,Ministro de Comercio,Suárez III,UCD
+1980-09-09,1981-02-27,Alberto Oliart Saussol,Ministro,Ministro de Sanidad y Seguridad Social,Suárez III,UCD
+1980-09-09,1981-02-27,Rodolfo Martín Villa,Ministro,Ministro de Administración Territorial,Suárez III,UCD
+1980-09-09,1981-02-27,Íñigo Cavero Lataillade,Ministro,Ministro de Cultura,Suárez III,UCD
+1980-09-09,1981-02-27,Pío Cabanillas Gallas,Ministro Adjunto,Ministro Adjunto al Presidente,Suárez III,UCD
+1980-09-09,1981-02-27,Eduard Punset Casals,Ministro,Ministro para las Relaciones con las Comunidades Europeas,Suárez III,UCD
+1980-10-07,1981-02-27,Juan Antonio García Díez,Ministro,Ministro de Economía y Comercio,Suárez III,UCD
+1981-02-26,1982-12-02,Leopoldo Calvo-Sotelo Bustelo,Presidente,Presidente del Gobierno,Calvo-Sotelo I,UCD
+1981-02-27,1982-12-03,José Pedro Pérez-Llorca Rodrigo,Ministro,Ministro de Exteriores,Calvo-Sotelo I,UCD
+1981-02-27,1981-08-31,Francisco Fernández Ordóñez,Ministro,Ministro de Justicia,Calvo-Sotelo I,UCD
+1981-02-27,1982-12-03,Alberto Oliart Saussol,Ministro,Ministro de Defensa,Calvo-Sotelo I,UCD
+1981-02-27,1982-12-03,Jaime García Añoveros,Ministro,Ministro de Hacienda,Calvo-Sotelo I,UCD
+1981-02-27,1982-12-03,Juan José Rosón Pérez,Ministro,Ministro de Interior,Calvo-Sotelo I,UCD
+1981-02-27,1982-12-03,Luis Ortiz González,Ministro,Ministro de Obras Públicas y Urbanismo,Calvo-Sotelo I,UCD
+1981-02-27,1981-03-07,Juan Antonio Ortega Díaz-Ambrona,Ministro,Ministro de Educación,Calvo-Sotelo I,UCD
+1981-02-27,1981-03-07,Juan Antonio Ortega Díaz-Ambrona,Ministro,Ministro de Universidades e Investigación,Calvo-Sotelo I,UCD
+1981-02-27,1981-03-07,Jesús Sancho Rof,Ministro,Ministro de Trabajo,Calvo-Sotelo I,UCD
+1981-02-27,1981-03-07,Jesús Sancho Rof,Ministro,Ministro de Sanidad y Seguridad Social,Calvo-Sotelo I,UCD
+1981-02-27,1982-12-03,Ignacio Bayón Mariné,Ministro,Ministro de Industria y Energía,Calvo-Sotelo I,UCD
+1981-02-27,1981-05-14,Jaime Lamo de Espinosa Michels de Champourcin,Ministro,Ministro de Agricultura,Calvo-Sotelo I,UCD
+1981-02-27,1981-12-02,Juan Antonio García Díez,Ministro,Ministro de Economía y Comercio,Calvo-Sotelo I,UCD
+1981-02-27,1981-09-01,Pío Cabanillas Gallas,Ministro,Ministro de Presidencia,Calvo-Sotelo I,UCD
+1981-02-27,1981-03-07,José Luis Álvarez Álvarez,Ministro,Ministro de Transporte y Comunicaciones,Calvo-Sotelo I,UCD
+1981-02-27,1981-12-02,Íñigo Cavero Lataillade,Ministro,Ministro de Cultura,Calvo-Sotelo I,UCD
+1981-02-27,1981-12-02,Rodolfo Martín Villa,Ministro,Ministro de Administración Territorial,Calvo-Sotelo I,UCD
+1981-03-07,1981-12-02,Juan Antonio Ortega Díaz-Ambrona,Ministro,Ministro de Educación y Ciencia,Calvo-Sotelo I,UCD
+1981-03-07,1981-12-02,Jesús Sancho Rof,Ministro,"Ministro de Trabajo, Sanidad y Seguridad Social",Calvo-Sotelo I,UCD
+1981-03-07,1981-12-02,José Luis Álvarez Álvarez,Ministro,"Ministro de Transporte, Turismo y Comunicaciones",Calvo-Sotelo I,UCD
+1981-05-14,1981-12-02,Jaime Lamo de Espinosa Michels de Champourcin,Ministro,Ministro de Agricultura y Pesca,Calvo-Sotelo I,UCD
+1981-09-01,1981-12-03,Pío Cabanillas Gallas,Ministro,Ministro de Justicia,Calvo-Sotelo I,UCD
+1981-09-01,1981-12-03,Matías Rodríguez Inciarte,Ministro,Ministro de Presidencia,Calvo-Sotelo I,UCD
+1981-12-02,1982-07-30,Rodolfo Martín Villa,Vicepresidente,Vicepresidente Primero del Gobierno,Calvo-Sotelo I,UCD
+1981-12-02,1982-07-30,Juan Antonio García Díez,Vicepresidente,Vicepresidente Segundo del Gobierno,Calvo-Sotelo I,UCD
+1981-12-02,1982-07-30,Juan Antonio García Díez,Ministro,Ministro de Economía y Comercio,Calvo-Sotelo I,UCD
+1981-12-02,1982-12-03,Federico Mayor Zaragoza,Ministro,Ministro de Educación y Ciencia,Calvo-Sotelo I,UCD
+1981-12-02,1982-12-03,Santiago Rodríguez-Miranda Gómez,Ministro,Ministro de Trabajo y Seguridad Social,Calvo-Sotelo I,UCD
+1981-12-02,1982-09-13,José Luis Álvarez Álvarez,Ministro,"Ministro de Agricultura, Pesca y Alimentación",Calvo-Sotelo I,UCD
+1981-12-02,1982-12-03,Luis Gámir Casares,Ministro,"Ministro de Transporte, Turismo y Comunicaciones",Calvo-Sotelo I,UCD
+1981-12-02,1982-12-03,Soledad Becerril Bustamante,Ministro,Ministra de Cultura,Calvo-Sotelo I,UCD
+1981-12-02,1982-07-30,Rafael Arias-Salgado Montalvo,Ministro,Ministro de Administración Territorial,Calvo-Sotelo I,UCD
+1981-12-02,1982-12-03,Manuel Núñez Pérez,Ministro,Ministro de Sanidad y Consumo,Calvo-Sotelo I,UCD
+1981-12-02,1982-07-30,Jaime Lamo de Espinosa Michels de Champourcin,Ministro Adjunto,Ministro Adjunto al Presidente,Calvo-Sotelo I,UCD
+1982-07-30,1982-12-03,Juan Antonio García Díez,Vicepresidente,Vicepresidente del Gobierno,Calvo-Sotelo I,UCD
+1982-07-30,1982-12-03,Juan Antonio García Díez,Ministro,Ministro de Economía y Comercio,Calvo-Sotelo I,UCD
+1982-07-30,1982-12-03,Luis Manuel Cosculluela Montaner,Ministro,Ministro de Administración Territorial,Calvo-Sotelo I,UCD
+1982-09-12,1982-12-03,José Luis García Ferrero,Ministro,"Ministro de Agricultura, Pesca y Alimentación",Calvo-Sotelo I,UCD
+1982-12-02,1986-07-24,Felipe González Márquez,Presidente,Presidente del Gobierno,González I,PSOE
+1982-12-03,1986-07-26,Alfonso Guerra González,Vicepresidente,Vicepresidente del Gobierno,González I,PSOE
+1982-12-03,1985-07-05,Fernando Morán López,Ministro,Ministro de Exteriores,González I,PSOE
+1982-12-03,1986-07-26,Fernando Ledesma Bartret,Ministro,Ministro de Justicia,González I,PSOE
+1982-12-03,1986-07-26,Narcís Serra Serra,Ministro,Ministro de Defensa,González I,PSOE
+1982-12-03,1982-12-08,Miguel Boyer Salvador,Ministro,Ministro de Hacienda,González I,PSOE
+1982-12-03,1982-12-08,Miguel Boyer Salvador,Ministro,Ministro de Economía y Comercio,González I,PSOE
+1982-12-03,1986-07-26,José Barrionuevo Peña,Ministro,Ministro de Interior,González I,PSOE
+1982-12-03,1985-07-05,Julián Campo Sainz de Rozas,Ministro,Ministro de Obras Públicas y Urbanismo,González I,PSOE
+1982-12-03,1986-07-26,José María Maravall Herrero,Ministro,Ministro de Educación y Ciencia,González I,PSOE
+1982-12-03,1986-07-26,José Joaquín Almunia Amann,Ministro,Ministro de Trabajo y Seguridad Social,González I,PSOE
+1982-12-03,1985-07-05,Carlos Solchaga Catalán,Ministro,Ministro de Industria y Energía,González I,PSOE
+1982-12-03,1986-07-26,Carlos Romero Herrera,Ministro,"Ministro de Agricultura, Pesca y Alimentación",González I,PSOE
+1982-12-03,1986-07-26,Javier Moscoso del Prado Muñoz,Ministro,Ministro de Presidencia,González I,PSOE
+1982-12-03,1985-07-05,Enrique Barón Crespo,Ministro,"Ministro de Transporte, Turismo y Comunicaciones",González I,PSOE
+1982-12-03,1986-07-26,Javier Solana Madariaga,Ministro,Ministro de Cultura,González I,PSOE
+1982-12-03,1985-07-05,Tomás de la Quadra-Salcedo Fernández del Castillo,Ministro,Ministro de Administración Territorial,González I,PSOE
+1982-12-03,1986-07-26,Ernest Lluch Martín,Ministro,Ministro de Sanidad y Consumo,González I,PSOE
+1982-12-08,1985-07-05,Miguel Boyer Salvador,Ministro,Ministro de Economía y Hacienda,González I,PSOE
+1985-07-05,1986-07-26,Francisco Fernández Ordóñez,Ministro,Ministro de Exteriores,González I,PSOE
+1985-07-05,1986-07-26,Carlos Solchaga Catalán,Ministro,Ministro de Economía y Hacienda,González I,PSOE
+1985-07-05,1986-07-26,Javier Luis Sáenz de Cosculluela,Ministro,Ministro de Obras Públicas y Urbanismo,González I,PSOE
+1985-07-05,1986-07-26,Joan Majó Cruzate,Ministro,Ministro de Industria y Energía,González I,PSOE
+1985-07-05,1986-07-26,Abel Ramón Caballero Álvarez,Ministro,"Ministro de Transporte, Turismo y Comunicaciones",González I,PSOE
+1985-07-05,1986-07-14,Félix Pons Irazazábal,Ministro,Ministro de Administración Territorial,González I,PSOE
+1986-07-24,1989-12-06,Felipe González Márquez,Presidente,Presidente del Gobierno,González II,PSOE
+1986-07-26,1989-12-07,Alfonso Guerra González,Vicepresidente,Vicepresidente del Gobierno,González II,PSOE
+1986-07-26,1989-12-07,Francisco Fernández Ordóñez,Ministro,Ministro de Exteriores,González II,PSOE
+1986-07-26,1988-07-12,Fernando Ledesma Bartret,Ministro,Ministro de Justicia,González II,PSOE
+1986-07-26,1989-12-07,Narcís Serra Serra,Ministro,Ministro de Defensa,González II,PSOE
+1986-07-26,1989-12-07,Carlos Solchaga Catalán,Ministro,Ministro de Economía y Hacienda,González II,PSOE
+1986-07-26,1988-07-12,José Barrionuevo Peña,Ministro,Ministro de Interior,González II,PSOE
+1986-07-26,1989-12-07,Javier Luis Sáenz de Cosculluela,Ministro,Ministro de Obras Públicas y Urbanismo,González II,PSOE
+1986-07-26,1988-07-12,José María Maravall Herrero,Ministro,Ministro de Educación y Ciencia,González II,PSOE
+1986-07-26,1989-12-07,Manuel Chaves González,Ministro,Ministro de Trabajo y Seguridad Social,González II,PSOE
+1986-07-26,1988-07-12,Luis Carlos Croissier Batista,Ministro,Ministro de Industria y Energía,González II,PSOE
+1986-07-26,1989-12-07,Carlos Romero Herrera,Ministro,"Ministro de Agricultura, Pesca y Alimentación",González II,PSOE
+1986-07-26,1989-12-07,José Joaquín Almunia Amann,Ministro,Ministro de Administraciones Públicas,González II,PSOE
+1986-07-26,1988-07-12,Abel Ramón Caballero Álvarez,Ministro,"Ministro de Transporte, Turismo y Comunicaciones",González II,PSOE
+1986-07-26,1988-07-12,Javier Solana Madariaga,Ministro,Ministro de Cultura,González II,PSOE
+1986-07-26,1989-12-07,Julián García Vargas,Ministro,Ministro de Sanidad y Consumo,González II,PSOE
+1986-07-26,1989-12-07,Virgilio Zapatero Gómez,Ministro,Ministro de Relaciones con las Cortes y de Secretaría del Gobierno,González II,PSOE
+1988-07-12,1989-12-07,Enrique Múgica Herzog,Ministro,Ministro de Justicia,González II,PSOE
+1988-07-12,1989-12-07,José Luis Corcuera Cuesta,Ministro,Ministro de Interior,González II,PSOE
+1988-07-12,1989-12-07,Javier Solana Madariaga,Ministro,Ministro de Educación y Ciencia,González II,PSOE
+1988-07-12,1989-12-07,José Claudio Aranzadi Martínez,Ministro,Ministro de Industria y Energía,González II,PSOE
+1988-07-12,1989-12-07,José Barrionuevo Peña,Ministro,"Ministro de Transporte, Turismo y Comunicaciones",González II,PSOE
+1988-07-12,1989-12-07,Jorge Semprún Maura,Ministro,Ministro de Cultura,González II,PSOE
+1988-07-12,1989-12-07,Matilde Fernández Sanz,Ministro,Ministra de Asuntos Sociales,González II,PSOE
+1988-07-12,1989-12-07,Rosa Conde Gutiérrez del Álamo,Ministro,Ministra Portavoz del Gobierno,González II,PSOE
+1989-12-06,1993-07-13,Felipe González Márquez,Presidente,Presidente del Gobierno,González III,PSOE
+1989-12-07,1991-01-14,Alfonso Guerra González,Vicepresidente,Vicepresidente del Gobierno,González III,PSOE
+1989-12-07,1992-06-16,Francisco Fernández Ordóñez,Ministro,Ministro de Exteriores,González III,PSOE
+1989-12-07,1991-03-13,Enrique Múgica Herzog,Ministro,Ministro de Justicia,González III,PSOE
+1989-12-07,1991-03-13,Narcís Serra Serra,Ministro,Ministro de Defensa,González III,PSOE
+1989-12-07,1993-07-14,Carlos Solchaga Catalán,Ministro,Ministro de Economía y Hacienda,González III,PSOE
+1989-12-07,1993-07-14,José Luis Corcuera Cuesta,Ministro,Ministro de Interior,González III,PSOE
+1989-12-07,1991-03-13,Javier Luis Sáenz de Cosculluela,Ministro,Ministro de Obras Públicas y Urbanismo,González III,PSOE
+1989-12-07,1992-06-24,Javier Solana Madariaga,Ministro,Ministro de Educación y Ciencia,González III,PSOE
+1989-12-07,1990-05-02,Manuel Chaves González,Ministro,Ministro de Trabajo y Seguridad Social,González III,PSOE
+1989-12-07,1991-03-13,José Claudio Aranzadi Martínez,Ministro,Ministro de Industria y Energía,González III,PSOE
+1989-12-07,1991-03-13,Carlos Romero Herrera,Ministro,"Ministro de Agricultura, Pesca y Alimentación",González III,PSOE
+1989-12-07,1991-03-13,José Joaquín Almunia Amann,Ministro,Ministro de Administraciones Públicas,González III,PSOE
+1989-12-07,1991-03-13,José Barrionuevo Peña,Ministro,"Ministro de Transporte, Turismo y Comunicaciones",González III,PSOE
+1989-12-07,1991-03-13,Jorge Semprún Maura,Ministro,Ministro de Cultura,González III,PSOE
+1989-12-07,1991-03-13,Julián García Vargas,Ministro,Ministro de Sanidad y Consumo,González III,PSOE
+1989-12-07,1993-07-14,Virgilio Zapatero Gómez,Ministro,Ministro de Relaciones con las Cortes y de Secretaría del Gobierno,González III,PSOE
+1989-12-07,1993-07-14,Matilde Fernández Sanz,Ministro,Ministra de Asuntos Sociales,González III,PSOE
+1989-12-07,1993-07-14,Rosa Conde Gutiérrez del Álamo,Ministro,Ministra Portavoz del Gobierno,González III,PSOE
+1990-05-02,1993-07-14,Luis Martínez Noval,Ministro,Ministro de Trabajo y Seguridad Social,González III,PSOE
+1991-03-13,1993-07-14,Narcís Serra Serra,Vicepresidente,Vicepresidente del Gobierno,González III,PSOE
+1991-03-13,1993-07-14,Tomás de la Quadra-Salcedo Fernández del Castillo,Ministro,Ministro de Justicia,González III,PSOE
+1991-03-13,1993-07-14,Julián García Vargas,Ministro,Ministro de Defensa,González III,PSOE
+1991-03-13,1993-07-14,Josep Borrell Fontelles,Ministro,Ministro de Obras Públicas y Transporte,González III,PSOE
+1991-03-13,1993-07-14,José Claudio Aranzadi Martínez,Ministro,"Ministro de Industria, Comercio y Turismo",González III,PSOE
+1991-03-13,1993-07-14,Pedro Solbes Mira,Ministro,"Ministro de Agricultura, Pesca y Alimentación",González III,PSOE
+1991-03-13,1993-07-14,Juan Manuel Eguiagaray Ucelay,Ministro,Ministro de Administraciones Públicas,González III,PSOE
+1991-03-13,1993-07-14,Jordi Solé Tura,Ministro,Ministro de Cultura,González III,PSOE
+1991-03-13,1992-01-13,Julián García Valverde,Ministro,Ministro de Sanidad y Consumo,González III,PSOE
+1992-01-13,1993-07-14,José Antonio Griñán Martínez,Ministro,Ministro de Sanidad y Consumo,González III,PSOE
+1992-06-24,1993-07-14,Javier Solana Madariaga,Ministro,Ministro de Exteriores,González III,PSOE
+1992-06-24,1993-07-14,Alfredo Pérez Rubalcaba,Ministro,Ministro de Educación y Ciencia,González III,PSOE
+1993-07-13,1996-05-05,Felipe González Márquez,Presidente,Presidente del Gobierno,González IV,PSOE
+1993-07-14,1995-07-02,Narcís Serra Serra,Vicepresidente,Vicepresidente del Gobierno,González IV,PSOE
+1993-07-14,1995-12-19,Javier Solana Madariaga,Ministro,Ministro de Exteriores,González IV,PSOE
+1993-07-14,1994-05-06,Juan Alberto Belloch Julbe,Ministro,Ministro de Justicia,González IV,PSOE
+1993-07-14,1995-07-02,Julián García Vargas,Ministro,Ministro de Defensa,González IV,PSOE
+1993-07-14,1996-05-06,Pedro Solbes Mira,Ministro,Ministro de Economía y Hacienda,González IV,PSOE
+1993-07-14,1993-11-24,José Luis Corcuera Cuesta,Ministro,Ministro de Interior,González IV,PSOE
+1993-07-14,1996-05-06,Josep Borrell Fontelles,Ministro,Ministro de Obras Públicas y Transporte,González IV,PSOE
+1993-07-14,1995-07-03,Gustavo Suárez Pertierra,Ministro,Ministro de Educación y Ciencia,González IV,PSOE
+1993-07-14,1996-05-06,José Antonio Griñán Martínez,Ministro,Ministro de Trabajo y Seguridad Social,González IV,PSOE
+1993-07-14,1996-05-06,Juan Manuel Eguiagaray Ucelay,Ministro,Ministro de Industria y Energía,González IV,PSOE
+1993-07-14,1994-05-04,Vicente Albero Silla,Ministro,"Ministro de Agricultura, Pesca y Alimentación",González IV,PSOE
+1993-07-14,1996-05-06,Alfredo Pérez Rubalcaba,Ministro,Ministro de Presidencia,González IV,PSOE
+1993-07-14,1995-07-03,Jerónimo Saavedra Acevedo,Ministro,Ministro de Administraciones Públicas,González IV,PSOE
+1993-07-14,1996-05-06,Carmen Alborch Bataller,Ministro,Ministra de Cultura,González IV,PSOE
+1993-07-14,1996-05-06,María Ángeles Amador Millán,Ministro,Ministra de Sanidad y Consumo,González IV,PSOE
+1993-07-14,1996-05-06,Cristina Alberdi Alonso,Ministro,Ministra de Asuntos Sociales,González IV,PSOE
+1993-07-14,1996-05-06,Javier Gómez-Navarro Navarrete,Ministro,Ministro de Comercio y Turismo,González IV,PSOE
+1993-11-25,1994-05-04,Antoni Asunción Hernández,Ministro,Ministro de Interior,González IV,PSOE
+1994-05-06,1996-05-06,Juan Alberto Belloch Julbe,Ministro,Ministro de Justicia e Interior,González IV,PSOE
+1994-05-06,1996-05-06,Luis María Atienza Serna,Ministro,"Ministro de Agricultura, Pesca y Alimentación",González IV,PSOE
+1995-07-03,1996-05-06,Gustavo Suárez Pertierra,Ministro,Ministro de Defensa,González IV,PSOE
+1995-07-03,1996-05-06,Jerónimo Saavedra Acevedo,Ministro,Ministro de Educación y Ciencia,González IV,PSOE
+1995-07-03,1996-05-06,Joan Lerma Blasco,Ministro,Ministro de Administraciones Públicas,González IV,PSOE
+1995-12-19,1996-05-06,Carlos Westendorp Cabeza,Ministro,Ministro de Exteriores,González IV,PSOE
+1996-05-05,2000-04-27,José María Aznar López,Presidente,Presidente del Gobierno,Aznar I,PP
+1996-05-06,2000-04-28,Francisco Álvarez-Cascos Fernández,Vicepresidente,Vicepresidente Primero del Gobierno,Aznar I,PP
+1996-05-06,2000-04-28,Francisco Álvarez-Cascos Fernández,Ministro,Ministro de Presidencia,Aznar I,PP
+1996-05-06,2000-04-28,Rodrigo de Rato Figaredo,Vicepresidente,Vicepresidente Segundo del Gobierno,Aznar I,PP
+1996-05-06,2000-04-28,Rodrigo de Rato Figaredo,Ministro,Ministro de Economía y Hacienda,Aznar I,PP
+1996-05-06,2000-04-28,Abel Matutes Juan,Ministro,Ministro de Exteriores,Aznar I,PP
+1996-05-06,2000-04-28,Margarita Mariscal de Gante Mirón,Ministro,Ministra de Justicia,Aznar I,PP
+1996-05-06,2000-04-28,Eduardo Serra Rexach,Ministro,Ministro de Defensa,Aznar I,PP
+1996-05-06,2000-04-28,Jaime Mayor Oreja,Ministro,Ministro de Interior,Aznar I,PP
+1996-05-06,2000-04-28,Rafael Arias-Salgado Montalvo,Ministro,Ministro de Fomento,Aznar I,PP
+1996-05-06,1999-01-19,Esperanza Aguirre Gil de Biedma,Ministro,Ministra de Educación y Cultura,Aznar I,PP
+1996-05-06,1999-01-19,Francisco Javier Arenas Bocanegra,Ministro,Ministro de Trabajo y Asuntos Sociales,Aznar I,PP
+1996-05-06,2000-04-28,Josep Piqué Camps,Ministro,Ministro de Industria y Energía,Aznar I,PP
+1996-05-06,1999-04-30,Loyola de Palacio del Valle-Lersundi,Ministro,"Ministra de Agricultura, Pesca y Alimentación",Aznar I,PP
+1996-05-06,1999-01-19,Mariano Rajoy Brey,Ministro,Ministro de Administraciones Públicas,Aznar I,PP
+1996-05-06,2000-04-28,José Manuel Romay Beccaría,Ministro,Ministro de Sanidad y Consumo,Aznar I,PP
+1996-05-06,2000-04-28,Isabel Tocino Biscarolasaga,Ministro,Ministra de Medio Ambiente,Aznar I,PP
+1999-01-19,2000-04-28,Mariano Rajoy Brey,Ministro,Ministro de Educación y Cultura,Aznar I,PP
+1999-01-19,2000-02-20,Manuel Pimentel Siles,Ministro,Ministro de Trabajo y Asuntos Sociales,Aznar I,PP
+1999-01-19,2000-04-28,Ángel Acebes Paniagua,Ministro,Ministro de Administraciones Públicas,Aznar I,PP
+1999-04-30,2000-04-28,Jesús María Posada Moreno,Ministro,"Ministro de Agricultura, Pesca y Alimentación",Aznar I,PP
+1999-04-30,2000-04-28,Juan Carlos Aparicio Pérez,Ministro,Ministro de Trabajo y Asuntos Sociales,Aznar I,PP
+2000-04-27,2004-04-17,José María Aznar López,Presidente,Presidente del Gobierno,Aznar II,PP
+2000-04-28,2003-09-04,Mariano Rajoy Brey,Vicepresidente,Vicepresidente Primero del Gobierno,Aznar II,PP
+2000-04-28,2001-02-28,Mariano Rajoy Brey,Ministro,Ministro de Presidencia,Aznar II,PP
+2000-04-28,2003-09-04,Rodrigo de Rato Figaredo,Vicepresidente,Vicepresidente Segundo del Gobierno,Aznar II,PP
+2000-04-28,2004-04-18,Rodrigo de Rato Figaredo,Ministro,Ministro de Economía,Aznar II,PP
+2000-04-28,2002-07-10,Josep Piqué Camps,Ministro,Ministro de Exteriores,Aznar II,PP
+2000-04-28,2002-07-10,Ángel Acebes Paniagua,Ministro,Ministro de Justicia,Aznar II,PP
+2000-04-28,2004-04-18,Federico Trillo-Figueroa Martínez-Conde,Ministro,Ministro de Defensa,Aznar II,PP
+2000-04-28,2004-04-18,Cristóbal Ricardo Montoro Romero,Ministro,Ministro de Hacienda,Aznar II,PP
+2000-04-28,2001-02-28,Jaime Mayor Oreja,Ministro,Ministro de Interior,Aznar II,PP
+2000-04-28,2004-04-18,Francisco Álvarez-Cascos Fernández,Ministro,Ministro de Fomento,Aznar II,PP
+2000-04-28,2004-04-18,Pilar del Castillo Vera,Ministro,"Ministra de Educación, Cultura y Deporte",Aznar II,PP
+2000-04-28,2002-07-10,Juan Carlos Aparicio Pérez,Ministro,Ministro de Trabajo y Asuntos Sociales,Aznar II,PP
+2000-04-28,2004-04-18,Miguel Arias Cañete,Ministro,"Ministro de Agricultura, Pesca y Alimentación",Aznar II,PP
+2000-04-28,2002-07-10,Jesús María Posada Moreno,Ministro,Ministro de Administraciones Públicas,Aznar II,PP
+2000-04-28,2002-07-10,Celia Villalobos Talero,Ministro,Ministra de Sanidad y Consumo,Aznar II,PP
+2000-04-28,2003-03-03,Jaume Matas Palou,Ministro,Ministro de Medio Ambiente,Aznar II,PP
+2000-04-28,2002-07-10,Anna María Birulés Bertrán,Ministro,Ministra de Ciencia y Tecnología,Aznar II,PP
+2001-02-28,2002-07-10,Mariano Rajoy Brey,Ministro,Ministro de Interior,Aznar II,PP
+2001-02-28,2002-07-10,Juan José Lucas Jiménez,Ministro,Ministro de Presidencia,Aznar II,PP
+2002-07-10,2003-09-04,Mariano Rajoy Brey,Ministro,Ministro de Presidencia,Aznar II,PP
+2002-07-10,2004-04-18,Ana Palacio Vallelersundi,Ministro,Ministra de Exteriores,Aznar II,PP
+2002-07-10,2004-04-18,José María Michavila Núñez,Ministro,Ministro de Justicia,Aznar II,PP
+2002-07-10,2004-04-18,Ángel Acebes Paniagua,Ministro,Ministro de Interior,Aznar II,PP
+2002-07-10,2004-04-18,Eduardo Andrés Zaplana Hernández-Soro,Ministro,Ministro de Trabajo y Asuntos Sociales,Aznar II,PP
+2002-07-10,2003-09-04,Francisco Javier Arenas Bocanegra,Ministro,Ministro de Administraciones Públicas,Aznar II,PP
+2002-07-10,2004-04-18,Ana María Pastor Julián,Ministro,Ministra de Sanidad y Consumo,Aznar II,PP
+2002-07-10,2003-09-04,Josep Piqué Camps,Ministro,Ministro de Ciencia y Tecnología,Aznar II,PP
+2003-03-03,2004-04-18,María Elvira Rodríguez Herrer,Ministro,Ministra de Medio Ambiente,Aznar II,PP
+2003-09-04,2004-04-18,Rodrigo de Rato Figaredo,Vicepresidente,Vicepresidente Primero del Gobierno,Aznar II,PP
+2003-09-04,2004-04-18,Francisco Javier Arenas Bocanegra,Vicepresidente,Vicepresidente Segundo del Gobierno,Aznar II,PP
+2003-09-04,2004-04-18,Julia García-Valdecasas Salgado,Ministro,Ministra de Administraciones Públicas,Aznar II,PP
+2003-09-04,2004-04-18,Juan Costa Climent,Ministro,Ministro de Ciencia y Tecnología,Aznar II,PP
+2004-04-17,2008-04-12,José Luis Rodríguez Zapatero,Presidente,Presidente del Gobierno,Zapatero I,PSOE
+2004-04-18,2008-04-14,María Teresa Fernández de la Vega Sanz,Vicepresidente,Vicepresidenta Primera del Gobierno,Zapatero I,PSOE
+2004-04-18,2008-04-14,María Teresa Fernández de la Vega Sanz,Ministro,Ministra de Presidencia,Zapatero I,PSOE
+2004-04-18,2008-04-14,Pedro Solbes Mira,Vicepresidente,Vicepresidente Segundo del Gobierno,Zapatero I,PSOE
+2004-04-18,2008-04-14,Pedro Solbes Mira,Ministro,Ministro de Economía y Hacienda,Zapatero I,PSOE
+2004-04-18,2008-04-14,Miguel Ángel Moratinos Cuyaubé,Ministro,Ministro de Exteriores y Cooperación,Zapatero I,PSOE
+2004-04-18,2007-02-12,Juan Fernando López Aguilar,Ministro,Ministro de Justicia,Zapatero I,PSOE
+2004-04-18,2006-04-11,José Bono Martínez,Ministro,Ministro de Defensa,Zapatero I,PSOE
+2004-04-18,2006-04-11,José Antonio Alonso Suárez,Ministro,Ministro de Interior,Zapatero I,PSOE
+2004-04-18,2008-04-14,Magdalena Álvarez Arza,Ministro,Ministra de Fomento,Zapatero I,PSOE
+2004-04-18,2006-04-11,María Jesús San Segundo Gómez de Cadiñanos,Ministro,Ministra de Educación y Ciencia,Zapatero I,PSOE
+2004-04-18,2008-04-14,Jesús Caldera Sánchez-Capitán,Ministro,Ministro de Trabajo y Asuntos Sociales,Zapatero I,PSOE
+2004-04-18,2006-09-08,José Montilla Aguilera,Ministro,"Ministro de Industria, Turismo y Comercio",Zapatero I,PSOE
+2004-04-18,2008-04-14,Elena Espinosa Mangana,Ministro,"Ministra de Agricultura, Pesca y Alimentación",Zapatero I,PSOE
+2004-04-18,2007-07-09,Jordi Sevilla Segura,Ministro,Ministro de Administraciones Públicas,Zapatero I,PSOE
+2004-04-18,2007-07-09,María del Carmen Calvo Poyato,Ministro,Ministra de Cultura,Zapatero I,PSOE
+2004-04-18,2007-07-09,Elena Salgado Méndez,Ministro,Ministra de Sanidad y Consumo,Zapatero I,PSOE
+2004-04-18,2008-04-14,Cristina Narbona Ruiz,Ministro,Ministra de Medio Ambiente,Zapatero I,PSOE
+2004-04-18,2007-07-09,María Antonia Trujillo Rincón,Ministro,Ministra de Vivienda,Zapatero I,PSOE
+2006-04-11,2008-04-14,José Antonio Alonso Suárez,Ministro,Ministro de Defensa,Zapatero I,PSOE
+2006-04-11,2008-04-14,Alfredo Pérez Rubalcaba,Ministro,Ministro de Interior,Zapatero I,PSOE
+2006-04-11,2008-04-14,Mercedes Cabrera Calvo-Sotelo,Ministro,Ministra de Educación y Ciencia,Zapatero I,PSOE
+2006-09-08,2008-04-14,Joan Clos Matheu,Ministro,"Ministro de Industria, Turismo y Comercio",Zapatero I,PSOE
+2007-02-12,2008-04-14,Mariano Fernández Bermejo,Ministro,Ministro de Justicia,Zapatero I,PSOE
+2007-07-09,2008-04-14,Elena Salgado Méndez,Ministro,Ministra de Administraciones Públicas,Zapatero I,PSOE
+2007-07-09,2008-04-14,César Antonio Molina Sánchez,Ministro,Ministro de Cultura,Zapatero I,PSOE
+2007-07-09,2008-04-14,Bernat Soria Escoms,Ministro,Ministro de Sanidad y Consumo,Zapatero I,PSOE
+2007-07-09,2008-04-14,Carme Chacón Piqueras,Ministro,Ministra de Vivienda,Zapatero I,PSOE
+2008-04-12,2011-12-21,José Luis Rodríguez Zapatero,Presidente,Presidente del Gobierno,Zapatero II,PSOE
+2008-04-14,2010-10-21,María Teresa Fernández de la Vega Sanz,Vicepresidente,Vicepresidenta Primera,Zapatero II,PSOE
+2008-04-14,2010-10-21,María Teresa Fernández de la Vega Sanz,Ministro,Ministra de Presidencia,Zapatero II,PSOE
+2008-04-14,2009-04-07,Pedro Solbes Mira,Vicepresidente,Vicepresidente Segundo,Zapatero II,PSOE
+2008-04-14,2009-04-07,Pedro Solbes Mira,Ministro,Ministro de Economía y Hacienda,Zapatero II,PSOE
+2008-04-14,2010-02-23,Mariano Fernández Bermejo,Ministro,Ministro de Justicia,Zapatero II,PSOE
+2008-04-14,2011-12-22,Carme Chacón Piqueras,Ministro,Ministra de Defensa,Zapatero II,PSOE
+2008-04-14,2011-07-12,Alfredo Pérez Rubalcaba,Ministro,Ministro de Interior,Zapatero II,PSOE
+2008-04-14,2009-04-07,Magdalena Álvarez Arza,Ministro,Ministra de Fomento,Zapatero II,PSOE
+2008-04-14,2009-04-07,Mercedes Cabrera Calvo-Sotelo,Ministro,"Ministra de Educación, Política Social y Deporte",Zapatero II,PSOE
+2008-04-14,2010-10-21,Celestino Corbacho Chaves,Ministro,Ministro de Trabajo e Inmigración,Zapatero II,PSOE
+2008-04-14,2011-12-22,Miguel Sebastián Gascón,Ministro,"Ministro de Industria, Comercio y Turismo",Zapatero II,PSOE
+2008-04-14,2010-10-21,Elena Espinosa Mangana,Ministro,Ministra de Medio Ambiente y Medio Rural y Marino,Zapatero II,PSOE
+2008-04-14,2009-04-07,Elena Salgado Méndez,Ministro,Ministra de Administraciones Públicas,Zapatero II,PSOE
+2008-04-14,2009-04-07,César Antonio Molina Sánchez,Ministro,Ministro de Cultura,Zapatero II,PSOE
+2008-04-14,2009-04-07,Bernat Soria Escoms,Ministro,Ministro de Sanidad y Consumo,Zapatero II,PSOE
+2008-04-14,2010-10-21,Beatriz Corredor Sierra,Ministro,Ministra de Vivienda,Zapatero II,PSOE
+2008-04-14,2011-12-22,Cristina Garmendia Mendizábal,Ministro,Ministra de Ciencia e Innovación,Zapatero II,PSOE
+2008-04-14,2010-10-21,Bibiana Aído Almagro,Ministro,Ministra de Igualdad,Zapatero II,PSOE
+2009-02-24,2011-12-22,Francisco Caamaño Domínguez,Ministro,Ministro de Justicia,Zapatero II,PSOE
+2009-04-07,2011-07-12,Elena Salgado Méndez,Vicepresidente,Vicepresidenta Segunda del Gobierno,Zapatero II,PSOE
+2009-04-07,2011-12-22,Elena Salgado Méndez,Ministro,Ministra de Economía y Hacienda,Zapatero II,PSOE
+2009-04-07,2011-07-12,Manuel Chaves González,Vicepresidente,Vicepresidente Tercero del Gobierno,Zapatero II,PSOE
+2009-04-07,2010-10-21,Manuel Chaves González,Ministro,Ministro de Política Territorial,Zapatero II,PSOE
+2009-04-07,2011-12-22,José Blanco López,Ministro,Ministro de Fomento,Zapatero II,PSOE
+2009-04-07,2011-12-22,Ángel Gabilondo Pujol,Ministro,Ministro de Educación,Zapatero II,PSOE
+2009-04-07,2011-12-22,Ángeles González-Sinde Reig,Ministro,Ministra de Cultura,Zapatero II,PSOE
+2009-04-07,2011-12-22,Trinidad Jiménez García-Herrera,Ministro,Ministra de Sanidad y Política Social,Zapatero II,PSOE
+2010-10-21,2011-07-12,Alfredo Pérez Rubalcaba,Vicepresidente,Vicepresidente Primero del Gobierno,Zapatero II,PSOE
+2010-10-21,2011-12-22,Manuel Chaves González,Ministro,Ministro de Política Territorial y Administración Pública,Zapatero II,PSOE
+2010-10-21,2011-12-22,Trinidad Jiménez García-Herrera,Ministro,Ministra de Exteriores y Cooperación,Zapatero II,PSOE
+2010-10-21,2011-12-22,Valeriano Gómez Sánchez,Ministro,Ministro de Trabajo e Inmigración,Zapatero II,PSOE
+2010-10-21,2011-12-22,Rosa Aguilar Rivero,Ministro,Ministra de Medio Ambiente y Medio Rural y Marino,Zapatero II,PSOE
+2010-10-21,2011-12-22,Ramón Jáuregui Atondo,Ministro,Ministro de Presidencia,Zapatero II,PSOE
+2010-10-21,2011-12-22,Leire Pajín Iraola,Ministro,"Ministra de Sanidad, Política Social e Igualdad",Zapatero II,PSOE
+2011-07-12,2011-12-22,Elena Salgado Méndez,Vicepresidente,Vicepresidenta de Asuntos Económicos del Gobierno,Zapatero II,PSOE
+2011-07-12,2011-12-22,Manuel Chaves González,Vicepresidente,Vicepresidente de Política Territorial del Gobierno,Zapatero II,PSOE
+2011-07-12,2011-12-22,Antonio Camacho Vizcaíno,Ministro,Ministro de Interior,Zapatero II,PSOE
+2011-12-21,2016-10-31,Mariano Rajoy Brey,Presidente,Presidente del Gobierno,Rajoy I,PP
+2011-12-22,2016-11-04,María Soraya Sáenz de Santamaría Antón,Vicepresidente,Vicepresidenta del Gobierno,Rajoy I,PP
+2011-12-22,2016-11-04,María Soraya Sáenz de Santamaría Antón,Ministro,Ministra de Presidencia,Rajoy I,PP
+2011-12-22,2016-11-04,José Manuel García-Margallo Marfil,Ministro,Ministro de Exteriores y Cooperación,Rajoy I,PP
+2011-12-22,2014-09-23,Alberto Ruiz-Gallardón Jiménez,Ministro,Ministro de Justicia,Rajoy I,PP
+2011-12-22,2016-11-04,Pedro Morenés Eulate,Ministro,Ministro de Defensa,Rajoy I,PP
+2011-12-22,2016-11-04,Cristóbal Ricardo Montoro Romero,Ministro,Ministro de Hacienda y Administraciones Públicas,Rajoy I,PP
+2011-12-22,2016-11-04,Jorge Fernández Díaz,Ministro,Ministro de Interior,Rajoy I,PP
+2011-12-22,2016-07-18,Ana María Pastor Julián,Ministro,Ministra de Fomento,Rajoy I,PP
+2011-12-22,2015-06-26,José Ignacio Wert Ortega,Ministro,"Ministro de Educación, Cultura y Deporte",Rajoy I,PP
+2011-12-22,2016-11-04,María Fátima Báñez García,Ministro,Ministra de Empleo y Seguridad Social,Rajoy I,PP
+2011-12-22,2016-04-15,José Manuel Soria López,Ministro,"Ministro de Industria, Energía y Turismo",Rajoy I,PP
+2011-12-22,2014-04-28,Miguel Arias Cañete,Ministro,"Ministro de Agricultura, Alimentación y Medio Ambiente",Rajoy I,PP
+2011-12-22,2016-11-04,Luis de Guindos Jurado,Ministro,Ministro de Economía y Competitividad,Rajoy I,PP
+2011-12-22,2014-11-26,Ana Mato Adrover,Ministro,"Ministra de Sanidad, Servicios Sociales e Igualdad",Rajoy I,PP
+2014-04-28,2016-11-04,Isabel García Tejerina,Ministro,"Ministra de Agricultura, Alimentación y Medio Ambiente",Rajoy I,PP
+2014-09-29,2016-11-04,Rafael Catalá Polo,Ministro,Ministro de Justicia,Rajoy I,PP
+2014-12-03,2016-08-10,Alfonso Alonso Aranegui,Ministro,"Ministro de Sanidad, Servicios Sociales e Igualdad",Rajoy I,PP
+2015-06-26,2016-11-04,Íñigo Méndez de Vigo Montojo,Ministro,"Ministro de Educación, Cultura y Deporte",Rajoy I,PP
+2016-10-31,2018-06-01,Mariano Rajoy Brey,Presidente,Presidente del Gobierno,Rajoy II,PP
+2016-11-04,2018-06-07,María Soraya Sáenz de Santamaría Antón,Vicepresidente,Vicepresidenta del Gobierno,Rajoy II,PP
+2016-11-04,2018-06-07,María Soraya Sáenz de Santamaría Antón,Ministro,Ministra de Presidencia y Administración Territorial,Rajoy II,PP
+2016-11-04,2018-06-07,Alfonso Dastis Quecedo,Ministro,Ministro de Exteriores y Cooperación,Rajoy II,PP
+2016-11-04,2018-06-07,Rafael Catalá Polo,Ministro,Ministro de Justicia,Rajoy II,PP
+2016-11-04,2018-06-07,María Dolores de Cospedal García,Ministro,Ministra de Defensa,Rajoy II,PP
+2016-11-04,2018-06-07,Cristóbal Ricardo Montoro Romero,Ministro,Ministro de Hacienda y Función Pública,Rajoy II,PP
+2016-11-04,2018-06-07,Juan Ignacio Zoido Álvarez,Ministro,Ministro de Interior,Rajoy II,PP
+2016-11-04,2018-06-07,Íñigo de la Serna Hernáiz,Ministro,Ministro de Fomento,Rajoy II,PP
+2016-11-04,2018-06-07,Íñigo Méndez de Vigo Montojo,Ministro,"Ministro de Educación, Cultura y Deporte",Rajoy II,PP
+2016-11-04,2018-06-07,María Fátima Báñez García,Ministro,Ministra de Empleo y Seguridad Social,Rajoy II,PP
+2016-11-04,2018-06-07,Álvaro Nadal Belda,Ministro,"Ministro de Energía, Turismo y Agenda Digital",Rajoy II,PP
+2016-11-04,2018-06-07,Isabel García Tejerina,Ministro,"Ministra de Agricultura y Pesca, Alimentación y Medio Ambiente",Rajoy II,PP
+2016-11-04,2018-03-08,Luis de Guindos Jurado,Ministro,"Ministro de Economía, Industria y Competitividad",Rajoy II,PP
+2016-11-04,2018-06-07,Dolors Montserrat Montserrat,Ministro,"Ministra de Sanidad, Servicios Sociales e Igualdad",Rajoy II,PP
+2018-03-08,2018-06-07,Román Escolano Olivares,Ministro,"Ministro de Economía, Industria y Competitividad",Rajoy II,PP
+2018-06-02,2020-01-08,Pedro Sánchez Pérez-Castejón,Presidente,Presidente del Gobierno,Sánchez I,PSOE
+2018-06-07,2020-01-13,Carmen Calvo Poyato,Vicepresidente,Vicepresidenta del Gobierno,Sánchez I,PSOE
+2018-06-07,2020-01-13,Carmen Calvo Poyato,Ministro,"Ministra de Presidencia, Relaciones con las Cortes e Igualdad",Sánchez I,PSOE
+2018-06-07,2019-11-30,Josep Borrell Fontelles,Ministro,"Ministro de Asuntos Exteriores, Unión Europea y Cooperación",Sánchez I,PSOE
+2018-06-07,2020-01-13,Dolores Delgado García,Ministro,Ministra de Justicia,Sánchez I,PSOE
+2018-06-07,2020-01-13,Margarita Robles Fernández,Ministro,Ministra de Defensa,Sánchez I,PSOE
+2018-06-07,2020-01-13,María Jesús Montero Cuadrado,Ministro,Ministra de Hacienda,Sánchez I,PSOE
+2018-06-07,2020-01-13,Fernando Grande-Marlaska Gómez,Ministro,Ministro de Interior,Sánchez I,PSOE
+2018-06-07,2020-01-13,José Luis Ábalos Meco,Ministro,Ministro de Fomento,Sánchez I,PSOE
+2018-06-07,2020-01-13,María Isabel Celaá Diéguez,Ministro,Ministra de Educación y Formación Profesional,Sánchez I,PSOE
+2018-06-07,2020-01-13,Magdalena Valerio Cordero,Ministro,"Ministra de Trabajo, Migraciones y Seguridad Social",Sánchez I,PSOE
+2018-06-07,2020-01-13,Reyes Maroto Illera,Ministro,"Ministra de Industria, Comercio y Turismo",Sánchez I,PSOE
+2018-06-07,2020-01-13,Luis Planas Puchades,Ministro,"Ministro de Agricultura, Pesca y Alimentación",Sánchez I,PSOE
+2018-06-07,2019-05-20,Meritxell Batet Lamaña,Ministro,Ministra de Política Territorial y Función Pública,Sánchez I,PSOE
+2018-06-07,2020-01-13,Teresa Ribera Rodríguez,Ministro,Ministra para la Transición Ecológica,Sánchez I,PSOE
+2018-06-07,2018-06-18,Màxim Huerta Hernández,Ministro,Ministro de Cultura y Deporte,Sánchez I,PSOE
+2018-06-07,2020-01-13,Nadia Calviño Santamaría,Ministro,Ministra de Economía y Empresa,Sánchez I,PSOE
+2018-06-07,2018-09-11,Carmen Montón Giménez,Ministro,"Ministra de Sanidad, Consumo y Bienestar Social",Sánchez I,PSOE
+2018-06-07,2020-01-13,Pedro Duque Duque,Ministro,"Ministro de Ciencia, Innovación y Universidades",Sánchez I,PSOE
+2018-06-14,2020-01-13,José Guirao Cabrera,Ministro,Ministro de Cultura y Deporte,Sánchez I,PSOE
+2018-09-12,2020-01-13,María Luisa Carcedo Roces,Ministro,"Ministra de Sanidad, Consumo y Bienestar Social",Sánchez I,PSOE
+2020-01-08,2999-12-31,Pedro Sánchez Pérez-Castejón,Presidente,Presidente del Gobierno,Sánchez II,PSOE
+2020-01-13,2021-07-12,Carmen Calvo Poyato,Vicepresidente,Vicepresidenta Primera del Gobierno,Sánchez II,PSOE
+2020-01-13,2021-03-31,Pablo Iglesias Turrión,Vicepresidente,Vicepresidente Segundo del Gobierno,Sánchez II,UP
+2020-01-13,2021-03-31,Nadia Calviño Santamaría,Vicepresidente,Vicepresidenta Tercera del Gobierno,Sánchez II,PSOE
+2020-01-13,2021-07-12,Teresa Ribera Rodríguez,Vicepresidente,Vicepresidenta Cuarta del Gobierno,Sánchez II,PSOE
+2020-01-13,2021-07-12,Carmen Calvo Poyato,Ministro,"Ministra de Presidencia, Relaciones con las Cortes y Memoria Democrática",Sánchez II,PSOE
+2020-01-13,2021-03-31,Pablo Iglesias Turrión,Ministro,Ministro de Derechos Sociales y Agenda 2030,Sánchez II,UP
+2020-01-13,2999-12-31,Nadia Calviño Santamaría,Ministro,Ministra de Asuntos Económicos y Transformación Digital,Sánchez II,PSOE
+2020-01-13,2999-12-31,Teresa Ribera Rodríguez,Ministro,Ministra de Transición Ecológica y Reto Demográfico,Sánchez II,PSOE
+2020-01-13,2021-07-12,Arancha González Laya,Ministro,"Ministra de Exteriores, Unión Europea y Cooperación",Sánchez II,PSOE
+2020-01-13,2021-07-12,Juan Carlos Campo Moreno,Ministro,Ministro de Justicia,Sánchez II,PSOE
+2020-01-13,2999-12-31,Margarita Robles Fernández,Ministro,Ministra de Defensa,Sánchez II,PSOE
+2020-01-13,2021-07-12,María Jesús Montero Cuadrado,Ministro,Ministra de Hacienda,Sánchez II,PSOE
+2020-01-13,2999-12-31,Fernando Grande-Marlaska Gómez,Ministro,Ministro de Interior,Sánchez II,PSOE
+2020-01-13,2021-07-12,José Luis Ábalos Meco,Ministro,"Ministro de Transportes, Movilidad y Agenda Urbana",Sánchez II,PSOE
+2020-01-13,2021-07-12,María Isabel Celaá Diéguez,Ministro,Ministra de Educación y Formación Profesional,Sánchez II,PSOE
+2020-01-13,2999-12-31,Yolanda Díaz Pérez,Ministro,Ministra de Trabajo y Economía Social,Sánchez II,EC-UP
+2020-01-13,2999-12-31,Reyes Maroto Illera,Ministro,"Ministra de Industria, Comercio y Turismo",Sánchez II,PSOE
+2020-01-13,2999-12-31,Luis Planas Puchades,Ministro,"Ministro de Agricultura, Pesca y Alimentación",Sánchez II,PSOE
+2020-01-13,2021-01-27,Carolina Darias San Sebastián,Ministro,Ministra de Política Territorial y Función Pública,Sánchez II,PSOE
+2020-01-13,2021-07-12,José Manuel Rodríguez Uribes,Ministro,Ministro de Cultura y Deporte,Sánchez II,PSOE
+2020-01-13,2021-01-27,Salvador Illa Roca,Ministro,Ministro de Sanidad,Sánchez II,PSOE
+2020-01-13,2021-07-12,Pedro Duque Duque,Ministro,Ministro de Ciencia e Innovación,Sánchez II,PSOE
+2020-01-13,2999-12-31,Irene Montero Gil,Ministro,Ministra de Igualdad,Sánchez II,UP
+2020-01-13,2999-12-31,Alberto Garzón Espinosa,Ministro,Ministro de Consumo,Sánchez II,UP
+2020-01-13,2999-12-31,José Luis Escrivá Belmonte,Ministro,"Ministro de Inclusión, Seguridad Social y Migraciones",Sánchez II,PSOE
+2020-01-13,2021-12-20,Manuel Castells Oliván,Ministro,Ministro de Universidades,Sánchez II,ECP-GUAYEM EL CANVI
+2021-01-27,2021-07-12,Miquel Iceta Llorens,Ministro,Ministro de Política Territorial y Función Pública,Sánchez II,PSOE
+2021-01-27,2999-12-31,Carolina Darias San Sebastián,Ministro,Ministra de Sanidad,Sánchez II,PSOE
+2021-03-31,2021-07-12,Nadia Calviño Santamaría,Vicepresidente,Vicepresidenta Segunda del Gobierno,Sánchez II,PSOE
+2021-03-31,2021-07-12,Yolanda Díaz Pérez,Vicepresidente,Vicepresidenta Tercera del Gobierno,Sánchez II,EC-UP
+2021-03-31,2999-12-31,Ione Belarra Urteaga,Ministro,Ministra de Derechos Sociales y Agenda 2030,Sánchez II,UP
+2021-07-12,2999-12-31,Nadia Calviño Santamaría,Vicepresidente,Vicepresidenta Primera del Gobierno,Sánchez II,PSOE
+2021-07-12,2999-12-31,Yolanda Díaz Pérez,Vicepresidente,Vicepresidenta Segunda del Gobierno,Sánchez II,EC-UP
+2021-07-12,2999-12-31,Teresa Ribera Rodríguez,Vicepresidente,Vicepresidenta Tercera del Gobierno,Sánchez II,PSOE
+2021-07-12,2999-12-31,José Manuel Albares Bueno,Ministro,"Ministro de Exteriores, Unión Europea y Cooperación",Sánchez II,PSOE
+2021-07-12,2999-12-31,Pilar Llop Cuenca,Ministro,Ministra de Justicia,Sánchez II,PSOE
+2021-07-12,2999-12-31,María Jesús Montero Cuadrado,Ministro,Ministra de Hacienda y Función Pública,Sánchez II,PSOE
+2021-07-12,2999-12-31,Raquel Sánchez Jiménez,Ministro,"Ministra de Transportes, Movilidad y Agenda Urbana",Sánchez II,PSOE
+2021-07-12,2999-12-31,Pilar Alegría Continente,Ministro,Ministra de Educación y Formación Profesional,Sánchez II,PSOE
+2021-07-12,2999-12-31,Félix Bolaños García,Ministro,"Ministro de Presidencia, Relaciones con las Cortes y Memoria Democrática",Sánchez II,PSOE
+2021-07-12,2999-12-31,Isabel Rodríguez García,Ministro,Ministra de Política Territorial,Sánchez II,PSOE
+2021-07-12,2999-12-31,Miquel Iceta Llorens,Ministro,Ministro de Cultura y Deporte,Sánchez II,PSOE
+2021-07-12,2999-12-31,Diana Morant Ripoll,Ministro,Ministra de Ciencia e Innovación,Sánchez II,PSOE
+2021-07-12,2999-12-31,Joan Subirats Humet,Ministro,Ministro de Universidades,Sánchez II,ECP-GUAYEM EL CANVI

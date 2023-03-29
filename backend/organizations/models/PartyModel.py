@@ -6,7 +6,7 @@ from core.validators import validate_hex_color
 
 class Party(BaseAbstractModel):
     """
-    Partido político (nivel nacional)
+    Partido político
     """
 
     LEVELS = (
@@ -25,13 +25,16 @@ class Party(BaseAbstractModel):
     short_name = models.CharField(
         max_length=255,
         db_index=True,
+        null=True,
+        blank=True,
+        default=None,
         help_text="Siglas del partido político",
     )
     code = models.CharField(
         max_length=255,
         unique=True,
         db_index=True,
-        help_text="Código único de registro. Números mayores de 100000 son no encotrados en registro",
+        help_text="Código único de registro. Números mayores de 100000 son no existentes",
     )
     color = models.CharField(
         max_length=7,
@@ -52,8 +55,13 @@ class Party(BaseAbstractModel):
         default=LEVELS[0][0],
         help_text="Ámbito (estatal, municipal...)",
     )
-    start = models.DateField(
+    founded = models.DateField(
+        null=True,
+        blank=True,
         help_text="Fecha de creación del partido",
+    )
+    start = models.DateField(
+        help_text="Fecha de registro del partido",
     )
     end = models.DateField(
         help_text="Fecha de disolución del partido",
@@ -67,7 +75,7 @@ class Party(BaseAbstractModel):
         max_length=255,
         null=True,
         blank=True,
-        help_text="Email principal del partido",
+        help_text="Email del partido",
     )
     web = models.URLField(
         max_length=255,

@@ -3,9 +3,9 @@ from django.db import models
 from core.models import BaseAbstractModel
 
 
-class PositionParty(BaseAbstractModel):
+class PositionFoundation(BaseAbstractModel):
     """
-    Cargo en partido político (secretario, fundador...)
+    Cargo en fundación (secreatario, fundador...)
     """
 
     name = models.TextField(
@@ -14,14 +14,14 @@ class PositionParty(BaseAbstractModel):
     person = models.ForeignKey(
         "people.Person",
         on_delete=models.CASCADE,
-        related_name="party_positions",
+        related_name="foundation_positions",
         help_text="Persona que ostenta el cargo",
     )
-    party = models.ForeignKey(
-        "organizations.Party",
+    foundation = models.ForeignKey(
+        "organizations.Foundation",
         on_delete=models.CASCADE,
-        related_name="party_positions",
-        help_text="Partido al que pertenece el cargo",
+        related_name="foundation_positions",
+        help_text="Fundación a la que pertenece el cargo",
     )
     start = models.DateField(
         help_text="Fecha de inicio del cargo",
@@ -31,9 +31,9 @@ class PositionParty(BaseAbstractModel):
     )
 
     def __str__(self):
-        return f"{self.person.full_name} - {self.name} de {self.party.full_name}"
+        return f"{self.person.full_name} - {self.name} de {self.foundation.full_name}"
 
     class Meta(BaseAbstractModel.Meta):
-        db_table = "positions_partyposition"
-        verbose_name = "Cargo en partido"
-        verbose_name_plural = "Cargos en partidos"
+        db_table = "positions_foundationposition"
+        verbose_name = "Cargo en fundación"
+        verbose_name_plural = "Cargos en fundaciones"

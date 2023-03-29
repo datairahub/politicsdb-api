@@ -36,6 +36,7 @@ class Command(BaseCommand):
                         level="adm0",
                     )
 
+                party.founded = self.normalize_date(row["start"])
                 party.short_name = row["short_name"]
                 party.color = row["color"] or "#000000"
                 party.end = self.normalize_date(row["end"])

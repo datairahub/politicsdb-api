@@ -2,6 +2,58 @@
 
 ## Update commands
 
+### Update institutions
+
+Get or update institutions. The following data are obtained:
+
+```
+Institution:
+- name
+- adm0, adm1, adm2, adm3, adm4   # Updated always
+```
+
+```sh
+python backend/manage.py update_institutions [-v <int>]
+# Example: update_institutions -v 2
+```
+
+### Update periods
+
+Get or update periods. The following data are obtained:
+
+```
+Period:
+- institution
+- number
+- name         # Always updated
+- start        # Always updated
+- end          # Always updated
+- code         # Always updated
+```
+
+```sh
+python backend/manage.py update_periods [-v <int>]
+# Example: update_periods -v 2
+```
+
+### Update spain goverment positions
+
+Get or update spanish goverment positions from the source file. The following data are obtained:
+
+```
+Position:
+- short_name, full_name
+- person
+- period
+- start, end
+- candidacy
+```
+
+```sh
+python backend/manage.py update_spain_governors [-v <int>]
+# Example: update_spain_governors -v 2
+```
+
 ### Update spain deputies (congress)
 
 Get or update spanish congress members from the index of the congress page. The following data are obtained:
