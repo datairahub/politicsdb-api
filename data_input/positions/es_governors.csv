@@ -442,7 +442,7 @@ start,end,person_name,position_short_name,position_full_name,period_name,candida
 2020-01-13,2021-07-12,José Luis Ábalos Meco,Ministro,"Ministro de Transportes, Movilidad y Agenda Urbana",Sánchez II,PSOE
 2020-01-13,2021-07-12,María Isabel Celaá Diéguez,Ministro,Ministra de Educación y Formación Profesional,Sánchez II,PSOE
 2020-01-13,2999-12-31,Yolanda Díaz Pérez,Ministro,Ministra de Trabajo y Economía Social,Sánchez II,EC-UP
-2020-01-13,2999-12-31,Reyes Maroto Illera,Ministro,"Ministra de Industria, Comercio y Turismo",Sánchez II,PSOE
+2020-01-13,2023-03-27,Reyes Maroto Illera,Ministro,"Ministra de Industria, Comercio y Turismo",Sánchez II,PSOE
 2020-01-13,2999-12-31,Luis Planas Puchades,Ministro,"Ministro de Agricultura, Pesca y Alimentación",Sánchez II,PSOE
 2020-01-13,2021-01-27,Carolina Darias San Sebastián,Ministro,Ministra de Política Territorial y Función Pública,Sánchez II,PSOE
 2020-01-13,2021-07-12,José Manuel Rodríguez Uribes,Ministro,Ministro de Cultura y Deporte,Sánchez II,PSOE
@@ -453,7 +453,7 @@ start,end,person_name,position_short_name,position_full_name,period_name,candida
 2020-01-13,2999-12-31,José Luis Escrivá Belmonte,Ministro,"Ministro de Inclusión, Seguridad Social y Migraciones",Sánchez II,PSOE
 2020-01-13,2021-12-20,Manuel Castells Oliván,Ministro,Ministro de Universidades,Sánchez II,ECP-GUAYEM EL CANVI
 2021-01-27,2021-07-12,Miquel Iceta Llorens,Ministro,Ministro de Política Territorial y Función Pública,Sánchez II,PSOE
-2021-01-27,2999-12-31,Carolina Darias San Sebastián,Ministro,Ministra de Sanidad,Sánchez II,PSOE
+2021-01-27,2023-03-27,Carolina Darias San Sebastián,Ministro,Ministra de Sanidad,Sánchez II,PSOE
 2021-03-31,2021-07-12,Nadia Calviño Santamaría,Vicepresidente,Vicepresidenta Segunda del Gobierno,Sánchez II,PSOE
 2021-03-31,2021-07-12,Yolanda Díaz Pérez,Vicepresidente,Vicepresidenta Tercera del Gobierno,Sánchez II,EC-UP
 2021-03-31,2999-12-31,Ione Belarra Urteaga,Ministro,Ministra de Derechos Sociales y Agenda 2030,Sánchez II,UP
@@ -470,3 +470,5 @@ start,end,person_name,position_short_name,position_full_name,period_name,candida
 2021-07-12,2999-12-31,Miquel Iceta Llorens,Ministro,Ministro de Cultura y Deporte,Sánchez II,PSOE
 2021-07-12,2999-12-31,Diana Morant Ripoll,Ministro,Ministra de Ciencia e Innovación,Sánchez II,PSOE
 2021-07-12,2999-12-31,Joan Subirats Humet,Ministro,Ministro de Universidades,Sánchez II,ECP-GUAYEM EL CANVI
+2023-03-27,2999-12-31,Héctor José Gómez Hernández,Ministro,"Ministro de Industria, Comercio y Turismo",Sánchez II,PSOE
+2023-03-27,2999-12-31,José Manuel Miñones Conde,Ministro,Ministro de Sanidad,Sánchez II,PSOE
