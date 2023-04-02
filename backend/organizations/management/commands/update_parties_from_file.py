@@ -11,8 +11,16 @@ logger = logging.getLogger("commands")
 
 class Command(BaseCommand):
     """
-    Actualizar los partidos políticos en base al archivo
-    data_input/parties/adm0_parties.csv
+    Create or update spanish goverment positions from
+    local file. The following data is fetched:
+
+    Party
+    - name
+    - start
+    - founded     # Always updated
+    - short_name  # Always updated
+    - color       # Always updated
+    - end         # Always updated
     """
 
     help = "Update Parties"

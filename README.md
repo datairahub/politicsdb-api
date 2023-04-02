@@ -4,7 +4,7 @@
 
 ### Update institutions
 
-Get or update institutions. The following data are obtained:
+Create or update institutions from file. The following data is fetched:
 
 ```
 Institution:
@@ -19,7 +19,7 @@ python backend/manage.py update_institutions [-v <int>]
 
 ### Update periods
 
-Get or update periods. The following data are obtained:
+Create or update periods from file. The following data is fetched:
 
 ```
 Period:
@@ -36,27 +36,9 @@ python backend/manage.py update_periods [-v <int>]
 # Example: update_periods -v 2
 ```
 
-### Update spain goverment positions
-
-Get or update spanish goverment positions from the source file. The following data are obtained:
-
-```
-Position:
-- short_name, full_name
-- person
-- period
-- start, end
-- candidacy
-```
-
-```sh
-python backend/manage.py update_spain_governors [-v <int>]
-# Example: update_spain_governors -v 2
-```
-
 ### Update spain deputies (congress)
 
-Get or update spanish congress members from the index of the congress page. The following data are obtained:
+Create or update spanish congress members from the index of the congress page. The following data is fetched:
 
 ```
 Person:
@@ -79,7 +61,7 @@ python backend/manage.py update_spain_legislators [--period <int>] [-v <int>]
 
 ### Update spain senators (senate)
 
-Get or update spanish senators from the index of the senate page. The following data are obtained:
+Create or update spanish senators from the index of the senate page. The following data is fetched:
 
 ```
 Person:
@@ -97,6 +79,78 @@ python backend/manage.py update_spain_senators [--period <int>] [-v <int>]
 # Example: update_spain_senators --period 14 -v 2
 ```
 
+### Update spain parties from parties registry
+
+Create or update spain parties from public registry. The following data is fetched:
+
+```
+Party
+- name                    # Always updated
+- short_name              # Always updated
+- start                   # Always updated
+- address, email, web     # Always updated
+```
+
+```sh
+python backend/manage.py update_spain_parties_from_registry [-v <int>]
+# Example: update_spain_parties_from_registry -v 2
+```
+
+### Update parties from local file
+
+Create or update parties from file. The following data is fetched:
+
+```
+Party
+- name
+- start
+- founded     # Always updated
+- short_name  # Always updated
+- color       # Always updated
+- end         # Always updated
+```
+
+```sh
+python backend/manage.py update_parties_from_file [-v <int>]
+# Example: update_parties_from_file -v 2
+```
+
+### Update candidacies from local file
+
+Create or update spanish candidatures from local file. The following data is fetched:
+
+```
+Candidacy
+- short_name
+- name              # Always updated
+- period            # Always updated
+- political_space   # Always updated
+- source            # Always updated
+```
+
+```sh
+python backend/manage.py update_candidatures_from_file [-v <int>]
+# Example: update_candidatures_from_file -v 2
+```
+
+### Update spain goverment positions
+
+Create or update spanish goverment positions from file. The following data is fetched:
+
+```
+Position:
+- short_name, full_name
+- person
+- period
+- start, end
+- candidacy
+```
+
+```sh
+python backend/manage.py update_spain_governors [-v <int>]
+# Example: update_spain_governors -v 2
+```
+
 ## Fix commands
 
 ### Fix duplicated people
@@ -110,7 +164,7 @@ python backend/manage.py fix_duplicated_people [-v <int>]
 
 ### Fix genres
 
-Update people's genre based on their counttry and first name
+Update people's genre based on their country and first name
 
 ```sh
 python backend/manage.py fix_genres [-v <int>]
@@ -121,7 +175,7 @@ python backend/manage.py fix_genres [-v <int>]
 
 ### Enrich data using local files
 
-Enrich people data using local files. The following data are obtained:
+Enrich people data using local files. The following data is fetched:
 
 ```
 Person:
@@ -135,7 +189,7 @@ python backend/manage.py enrich_from_local_files [-v <int>]
 
 ### Enrich deputies data using profile detail page
 
-Enrich spanish deputies data using the detail page of each deputy. The following data are obtained:
+Enrich spanish deputies data using the detail page of each deputy. The following data is fetched:
 
 ```
 Person:
@@ -151,7 +205,7 @@ python backend/manage.py enrich_from_congresoes [--period <int>] [--override] [-
 
 ### Enrich deputies data using congreso history
 
-Enrich deputies data from congreso.es historical archive. The following data are obtained:
+Enrich deputies data from congreso.es historical archive. The following data is fetched:
 
 ```
 Person:
@@ -165,7 +219,7 @@ python backend/manage.py enrich_from_congresoes_historical [-v <int>]
 
 ### Enrich senators data using profile detail page
 
-Enrich spanish senators data using the detail page of each senator. The following data are obtained:
+Enrich spanish senators data using the detail page of each senator. The following data is fetched:
 
 ```
 Person:
@@ -184,7 +238,7 @@ python backend/manage.py enrich_from_senadoes [--period <int>] [-v <int>]
 
 ### Enrich senators data using profile open data xml files
 
-Enrich spanish senators data using each senator open data xml file (only a few have it). The following data are obtained:
+Enrich spanish senators data using each senator open data xml file (only a few have it). The following data is fetched:
 
 ```
 Person
@@ -201,7 +255,7 @@ python backend/manage.py enrich_from_senadoes_opendata [--period <int>] [--overr
 
 ### Enrich using wikidata
 
-Enrich people's data using wikidata project "WikiProject every politician". The following data are obtained:
+Enrich people's data using wikidata project "WikiProject every politician". The following data is fetched:
 
 ```
 Person:
@@ -216,7 +270,7 @@ python backend/manage.py enrich_from_wikidata [-v <int>]
 
 ### Enrich using wikipedia
 
-Enrich people's data using its own wikipedia page. **Only searchs for people without birth date**. The following data are obtained:
+Enrich people's data using its own wikipedia page. **Only searchs for people without birth date**. The following data is fetched:
 
 ```
 Person:

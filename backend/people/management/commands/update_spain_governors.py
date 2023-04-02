@@ -43,9 +43,18 @@ class Command(BaseCommand):
 
             for row in csv_reader:
 
-                person = Person.objects.get(full_name=row.get("person_name"))
+                person = Person.objects.filter(
+                    id_name=people_id_from_name(row.get("person_name"))
+                ).first()
+                if not person:
+                    person = Person(full_name=row.get("person_name"), genre="O")
+                    person.save()
+
                 period = Period.objects.get(name=row.get("period_name"))
-                candidacy = Candidacy.objects.get(short_name=row.get("candidacy"))
+                candidacy = Candidacy.objects.get(
+                    short_name=row.get("candidacy"),
+                    period__number=int(row["legislature"]),
+                )
 
                 position = Position(
                     short_name=row.get("position_short_name"),

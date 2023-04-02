@@ -34,7 +34,7 @@ class Party(BaseAbstractModel):
         max_length=255,
         unique=True,
         db_index=True,
-        help_text="Código único de registro. Números mayores de 100000 son no existentes",
+        help_text="Código único de registro. Números mayores de 100000 son partidos disueltos",
     )
     color = models.CharField(
         max_length=7,
@@ -83,6 +83,18 @@ class Party(BaseAbstractModel):
         blank=True,
         help_text="Página web del partido",
     )
+
+    def save(self, *args, **kwargs):
+        while "  " in self.name:
+            self.name = self.name.replace("  ", " ")
+        self.name = self.name.strip().upper()
+
+        if self.address:
+            while "  " in self.address:
+                self.address = self.address.replace("  ", " ")
+            self.address = self.address.strip()
+
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name

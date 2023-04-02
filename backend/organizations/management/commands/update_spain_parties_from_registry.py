@@ -13,10 +13,19 @@ logger = logging.getLogger("commands")
 
 
 class Command(BaseCommand):
-    """ """
+    """
+    Get or update spain parties from public
+    registry. The following data are obtained:
+
+    Party
+    - name                    # Always updated
+    - short_name              # Always updated
+    - start                   # Always updated
+    - address, email, web     # Always updated
+    """
 
     help = "Update Parties"
-    sleep = 0.2
+    sleep = 0
     main = "https://servicio.mir.es/nfrontal/webpartido_politico.html"
     search = "https://servicio.mir.es/nfrontal/webpartido_politico/partido_politicoBuscar.html"
     detail_set = "https://servicio.mir.es/nfrontal/webpartido_politico/partido_politicoDatos.html?nmformacion="
@@ -80,13 +89,12 @@ class Command(BaseCommand):
             party = Party.objects.filter(code=country_code).first()
             if not party:
                 party = Party(adm0=adm0, code=country_code, metadata={})
+
             party.name = name
             party.short_name = acronim
             party.start = datetime.strptime(registered, "%d/%m/%Y").date()
             party.end = date(2999, 12, 31)
-            party.address = f"{address} {adm2}".replace("\n", " ").strip()
-            while "  " in party.address:
-                party.address = party.address.replace("  ", " ")
+            party.address = f"{address} {adm2}".replace("\n", " ")
 
             if not party.metadata.get("servicio.mir.es"):
                 party.metadata["servicio.mir.es"] = {}

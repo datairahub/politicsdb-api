@@ -85,12 +85,12 @@ INCORRECT_PERSONS_MISMATCH = [
 
 class Command(BaseCommand):
     """
-    Enriquecer con datos de la página fpabloiglesias.es
-    Datos a obtener:
-        - Descripción
-        - Posición
-        - Fecha de nacimiento
-        - Imágenes (urls)
+    Enrich people's data using using fpabloiglesias.es
+
+    Person:
+    - biography   # Updated always
+    - birth_date  # Updated always
+    - metadata    # Updated always
     """
 
     help = "Update birth dates using fpabloiglesias.es"

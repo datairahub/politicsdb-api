@@ -34,10 +34,14 @@ class Person(BaseAbstractModel):
         help_text="Identificador único del nombre",
     )
     first_name = models.CharField(
+        null=True,
+        blank=True,
         max_length=255,
         help_text="Nombre de pila",
     )
     last_name = models.CharField(
+        null=True,
+        blank=True,
         max_length=255,
         help_text="Apellido/s",
     )

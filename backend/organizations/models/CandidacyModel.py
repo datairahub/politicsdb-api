@@ -21,8 +21,11 @@ class Candidacy(BaseAbstractModel):
         default=None,
         help_text="Siglas de la candidatura",
     )
-    date = models.DateField(
-        help_text="Fecha de la elección de la candidatura",
+    period = models.ForeignKey(
+        "positions.Period",
+        on_delete=models.CASCADE,
+        related_name="candidatures",
+        help_text="Periodo al cual se presenta la candidatura",
     )
     political_space = models.ForeignKey(
         "organizations.PoliticalSpace",
@@ -31,6 +34,12 @@ class Candidacy(BaseAbstractModel):
         blank=True,
         related_name="candidatures",
         help_text="Espacio político al que pertenece la candidatura",
+    )
+    source = models.URLField(
+        max_length=255,
+        null=True,
+        blank=True,
+        help_text="Fuente de la candidatura",
     )
 
     def __str__(self):
@@ -41,3 +50,13 @@ class Candidacy(BaseAbstractModel):
         db_table = "organizations_candidacy"
         verbose_name = "Candidatura"
         verbose_name_plural = "Candidaturas"
+        unique_together = (
+            (
+                "name",
+                "period",
+            ),
+            (
+                "short_name",
+                "period",
+            ),
+        )
