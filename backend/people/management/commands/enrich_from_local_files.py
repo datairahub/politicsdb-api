@@ -7,6 +7,7 @@ from django.core.management.base import BaseCommand
 
 from people.models import Person
 from people.services.birth_dates import register_birth_date_source
+from people.services.people_id import people_id_from_name
 
 logger = logging.getLogger("commands")
 
@@ -36,15 +37,9 @@ class Command(BaseCommand):
                 if not row.get("source") or not row.get("birth_date"):
                     continue
 
-                if not row.get("full_name") and not (
-                    row.get("first_name") and row.get("last_name")
-                ):
-                    continue
-
-                full_name = row.get(
-                    "full_name", f"{row.get('first_name')} {row.get('last_name')}"
-                )
-                person = Person.objects.filter(full_name=full_name).first()
+                full_name = f"{row.get('first_name')} {row.get('last_name')}"
+                id_name = people_id_from_name(full_name)
+                person = Person.objects.filter(id_name=id_name).first()
 
                 if not person:
                     logger.warn(f"{full_name}: NOT FOUND")
